@@ -1,17 +1,14 @@
 package piu.dictionary;
 
-import org.json.simple.JSONObject;
-import org.json.simple.JSONArray;
-import org.json.simple.parser.ParseException;
-import org.json.simple.parser.JSONParser;
+import org.json.JSONObject;
+import org.json.JSONArray;
+
 
 public class Reader {
     
     public String convert(String json) {  
-        //Get data from fetcher
-        //Create an object
-        //Set fields
-        //Return object
-        return "wee";
+        JSONObject response = new JSONObject(json);
+        JSONObject metadata = response.getJSONObject("metadata");
+        return metadata.getString("provider");
     }
 }
