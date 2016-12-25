@@ -6,7 +6,7 @@ import java.net.URL;
 import javax.net.ssl.HttpsURLConnection;
 
 public class Fetcher { 
-    public String fetchSynonym(String word) {
+    public String fetchJson(String word) {
 
         //Example code from https://developer.oxforddictionaries.com/documentation#/
         String language = "en";
