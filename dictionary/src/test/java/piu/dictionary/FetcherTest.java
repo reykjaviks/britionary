@@ -18,7 +18,7 @@ public class FetcherTest {
 
     @Test
     public void testFetchSynonym() {
-        assertEquals("pulu", fetcher.fetchSynonym("little"));
+        assertEquals("pulu", fetcher.fetch("little"));
     }
     
 }
