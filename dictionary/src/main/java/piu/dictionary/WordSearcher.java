@@ -10,7 +10,6 @@ public class WordSearcher {
     }
 
     public String search(String word) {
-        System.out.println(fetcher.fetchJson("Little"));
-        return "wee";
+        return reader.convert(fetcher.fetch(word));
     }
 }
