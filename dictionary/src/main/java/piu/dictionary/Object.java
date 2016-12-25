@@ -6,9 +6,9 @@ public class Object {
     private String region;
     
     Object(String id, String language, String region) {
-        setId(id);
-        setLang(language);
-        setReg(region);
+        this.id = id;
+        this.language = language;
+        this.region = region;
     }
     private void setId(String id){
         this.id = id;
