@@ -1,9 +1,9 @@
 package piu.dictionary;
-public class WordSearcher {
+public class Searcher {
 
     private Fetcher fetcher;
 
-    WordSearcher() {
+    Searcher() {
         fetcher = new Fetcher();
     }
 
