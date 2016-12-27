@@ -6,7 +6,6 @@ import java.net.URL;
 import javax.net.ssl.HttpsURLConnection;
 import org.json.JSONObject;
 
-//Javadoc
 public class Fetcher {
 
     private StringBuilder str;
@@ -52,7 +51,6 @@ public class Fetcher {
         return this.word;
     }
 
-    //Javadoc
     public String fetchJSON(String word) {
 
         //TODO: Raise exception
@@ -60,7 +58,6 @@ public class Fetcher {
                 || this.appID.isEmpty() || this.addKey.isEmpty()) {
             return "";
         }
-        
         String wordID = convertWord(word);
         
         //Example code from https://developer.oxforddictionaries.com/documentation#/
