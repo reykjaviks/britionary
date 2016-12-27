@@ -6,34 +6,55 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class FetcherTest {
-    
+
     Fetcher fetcher;
-    
+    Fetcher fetcher2;
+
     public FetcherTest() {
     }
-    
+
     @Before
     public void setUp() {
         fetcher = new Fetcher();
     }
 
     @Test
-    public void testConvertLowerCase() {
+    public void testConvertWordLowerCase() {
         assertEquals("little", fetcher.convertWord("LITTLE"));
     }
+    
     @Test
-    public void testConvertUnderscore() {
+    public void testConvertWordUnderscores() {
         assertEquals("a great deal of", fetcher.convertWord("a_great_deal_of"));
     }
+
     @Test
-    public void testConvertLastSpace() {
-        assertEquals("little", fetcher.convertWord("little "));
-    }
-    @Test
-    public void testConvertNumber() {
+    public void testConvertWordNumbers() {
         assertEquals("little", fetcher.convertWord("littl3e4"));
     }
-    
+
+    @Test
+    public void testConvertWordLeadingSpace() {
+        assertEquals("wee", fetcher.convertWord(" wee"));
+    }
+
+    @Test
+    public void testConvertWordTracingSpace() {
+        assertEquals("wee", fetcher.convertWord("wee "));
+    }
+
+    @Test
+    public void testConstructor() {
+        fetcher2 = new Fetcher("", "");
+        assertEquals("", fetcher2.fetchJSON("little"));
+    }
+
+    @Test
+    public void testConstructorNull() {
+        fetcher2 = new Fetcher(null, null);
+        assertEquals("", fetcher2.fetchJSON("little"));
+    }
+
     //Prototype
     @Test
     public void testJsonToObject() {
@@ -983,10 +1004,10 @@ public class FetcherTest {
                 + "        }\n"
                 + "    ]\n"
                 + "}";
-        
+
         //TODO: Change later
         assertEquals("Oxford University Press", fetcher.convertJSON(json));
 
     }
-    
+
 }
