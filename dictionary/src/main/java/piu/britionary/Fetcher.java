@@ -12,7 +12,7 @@ public class Fetcher {
     private StringBuilder str;
     private String word;
     
-    //Javadoc
+    //TODO: Should be private
     public String convertWord(String word) {
         
         str = new StringBuilder(word.toLowerCase());
