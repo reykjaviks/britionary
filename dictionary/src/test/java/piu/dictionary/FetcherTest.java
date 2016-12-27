@@ -17,8 +17,21 @@ public class FetcherTest {
     }
 
     @Test
-    public void testFetchSynonym() {
-        assertEquals("pulu", fetcher.fetch("little"));
+    public void testConvertLowerCase() {
+        assertEquals("little", fetcher.convertWord("LITTLE"));
     }
+    @Test
+    public void testConvertUnderscore() {
+        assertEquals("a great deal of", fetcher.convertWord("a_great_deal_of"));
+    }
+    @Test
+    public void testConvertLastSpace() {
+        assertEquals("little", fetcher.convertWord("little "));
+    }
+    @Test
+    public void testConvertNumber() {
+        assertEquals("little", fetcher.convertWord("littl3e4"));
+    }
+    
     
 }
