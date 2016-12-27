@@ -1,4 +1,4 @@
-package piu.dictionary;
+package piu.britionary;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;

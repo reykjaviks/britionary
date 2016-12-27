@@ -1,5 +1,6 @@
-package piu.dictionary;
+package piu.britionary;
 
+import piu.britionary.Fetcher;
 import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;

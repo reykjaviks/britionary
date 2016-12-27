@@ -1,4 +1,4 @@
-package piu.dictionary;
+package piu.britionary;
 
 import java.util.Scanner;
 

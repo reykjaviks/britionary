@@ -1,4 +1,4 @@
-package piu.dictionary;
+package piu.britionary;
 public class Searcher {
 
     private Fetcher fetcher;
