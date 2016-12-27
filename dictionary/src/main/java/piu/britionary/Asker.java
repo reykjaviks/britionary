@@ -1,22 +1,30 @@
 package piu.britionary;
-
+import java.io.InputStream;
 import java.util.Scanner;
 
 public class Asker { //Singleton?
     
-    private Scanner reader;
-    private String word;
+    private Scanner scanner;
+    private InputStream systemIn; //Used for testing
     
-    public void scan() {
-        reader = new Scanner(System.in);
-        
+    public Asker() {
+        this.systemIn = System.in;
+    }
+    public Asker(InputStream in) {
+        this.systemIn = in;
+    }
+    
+    private String scan() {
+       
         try {
-            word = reader.nextLine();
+            scanner = new Scanner(systemIn);
+            return scanner.nextLine();
         } catch (Exception e) {
             System.out.println("Error: " + e);
         }
+        return "";
     }
     public String getWord() {
-        return word;
+        return scan();
     }
 }
