@@ -13,3 +13,6 @@ Kaikki, jotka haluavat kehittää brittiläistä aksenttiaan.
 * Sanojen hakeminen
 * Synonyymien listaus
 * Äänitiedoston soittaminen
+
+### **Luokkakaavio**
+![Luokkakaavio](luokkakaavio.png)
