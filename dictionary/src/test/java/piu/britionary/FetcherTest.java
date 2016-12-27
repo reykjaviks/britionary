@@ -984,7 +984,8 @@ public class FetcherTest {
                 + "    ]\n"
                 + "}";
         
-        assertEquals("wee", fetcher.convertJSON(json));
+        //TODO: Change later
+        assertEquals("Oxford University Press", fetcher.convertJSON(json));
 
     }
     
