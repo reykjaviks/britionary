@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Asker { //Singleton?
     
     private Scanner scanner;
-    private InputStream systemIn; //Used for testing
+    private final InputStream systemIn; //Used for testing
     
     public Asker() {
         this.systemIn = System.in;
