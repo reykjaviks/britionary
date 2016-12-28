@@ -3,13 +3,14 @@ import java.io.InputStream;
 import java.util.Scanner;
 
 public class Asker { //Singleton?
-    
+
     private Scanner scanner;
     private final InputStream systemIn; //Used for testing
-    
+
     public Asker() {
         this.systemIn = System.in;
     }
+
     public Asker(InputStream in) {
         this.systemIn = in;
     }
