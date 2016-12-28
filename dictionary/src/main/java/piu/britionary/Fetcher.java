@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.URL;
 import javax.net.ssl.HttpsURLConnection;
+import org.json.JSONArray;
 import org.json.JSONObject;
 
 public class Fetcher {
@@ -56,14 +57,9 @@ public class Fetcher {
     //Prototype
     public String convertJSON(String json) {
         JSONObject response = new JSONObject(json);
-        JSONObject metadata = response.getJSONObject("metadata");
-        return metadata.getString("provider");
-
-        /*
-         JSONObject response = new JSONObject(json);
-         JSONArray results = response.getJSONArray("results");
-         return results.getString(0);
-         */
+        JSONArray results = response.getJSONArray("results");
+        JSONObject id = results.getJSONObject(0);
+        return id.getString("id");
     }
 
     public String fetchJSON(String word) {
