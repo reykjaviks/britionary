@@ -84,6 +84,7 @@ public class Fetcher {
 
             return stringBuilder.toString();
 
+        //TODO: remove stack trace    
         } catch (Exception e) {
             e.printStackTrace();
             return e.toString();
