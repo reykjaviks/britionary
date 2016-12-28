@@ -57,7 +57,7 @@ public class Fetcher {
     //Prototype
     public String parseJSON(String json) {
         JSONObject response = new JSONObject(json);
-        
+
         JSONObject metadata = response.getJSONObject("metadata");
         
         JSONArray results = response.getJSONArray("results");
@@ -69,10 +69,28 @@ public class Fetcher {
         JSONObject entry = entries.getJSONObject(0); //contains homographNumber and senses
         
         JSONArray senses = entry.getJSONArray("senses");
+        JSONObject sense = senses.getJSONObject(0);
         
-        return metadata.getString("provider") + "+" + result.getString("id") 
-                + ":" + result.getString("language") + ":" + entries.length() 
-                + ":" + entry.getString("homographNumber");
+        JSONArray subsenses = sense.getJSONArray("subsenses");
+        JSONObject subsense = subsenses.getJSONObject(0);
+        JSONArray senseSynonyms = sense.getJSONArray("synonyms");
+        JSONObject senseSynonym = senseSynonyms.getJSONObject(0);
+        JSONObject senseSynonymX = senseSynonyms.getJSONObject(1);
+        
+        JSONArray subSenseSynonyms = subsense.getJSONArray("synonyms");
+        JSONObject subSenseSynonym = subSenseSynonyms.getJSONObject(0);
+        JSONObject subSenseSynonymX = subSenseSynonyms.getJSONObject(1);
+        
+        return metadata.getString("provider") + ": " 
+                + result.getString("id") + ": " 
+                + result.getString("language") + ": " 
+                + entries.length() + ": " 
+                + entry.getString("homographNumber") + ": " 
+                + subsense.getString("id") + ": " 
+                + senseSynonym.getString("id") + ": " 
+                + senseSynonymX.getString("id") + ": " 
+                + subSenseSynonym.getString("id") + ": "
+                + subSenseSynonymX.getString("id");
     }
 
     public String fetchJSON(String word) {
