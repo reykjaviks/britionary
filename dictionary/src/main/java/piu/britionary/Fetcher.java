@@ -12,20 +12,22 @@ public class Fetcher {
     private String word;
     private final String appID;
     private final String addKey;
-    
+
     public Fetcher() {
         this.appID = "19275027";
         this.addKey = "fbf42d1294623d8ecfe2f595a193fdaa";
     }
+
     public Fetcher(String appID, String appKey) {
         this.appID = appID;
         this.addKey = appKey;
     }
+
     //TODO: Should be private
     public String convertWord(String word) {
-        
+
         str = new StringBuilder(word.toLowerCase());
-        
+
         //Replace underscores
         for (int i = 0; i < word.length(); i++) {
             if (word.charAt(i) == '_') {
@@ -59,7 +61,7 @@ public class Fetcher {
             return "";
         }
         String wordID = convertWord(word);
-        
+
         //Example code from https://developer.oxforddictionaries.com/documentation#/
         String language = "en";
         String link = "https://od-api.oxforddictionaries.com:443/api/v1/entries/" + language + "/" + wordID + "/synonyms;antonyms";
@@ -93,11 +95,11 @@ public class Fetcher {
         JSONObject response = new JSONObject(json);
         JSONObject metadata = response.getJSONObject("metadata");
         return metadata.getString("provider");
-        
+
         /*
          JSONObject response = new JSONObject(json);
          JSONArray results = response.getJSONArray("results");
          return results.getString(0);
-        */
+         */
     }
 }
