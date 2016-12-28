@@ -57,9 +57,20 @@ public class Fetcher {
     //Prototype
     public String convertJSON(String json) {
         JSONObject response = new JSONObject(json);
+        
+        JSONObject metadata = response.getJSONObject("metadata");
+        
         JSONArray results = response.getJSONArray("results");
-        JSONObject id = results.getJSONObject(0);
-        return id.getString("id");
+        JSONObject result = results.getJSONObject(0); //contains id, lang and lexical entries
+        
+        JSONArray lexicalEntries = result.getJSONArray("lexicalEntries"); //contains a single array
+        JSONObject lexicalEntry = lexicalEntries.getJSONObject(0); //contains entries
+        JSONArray entries = lexicalEntry.getJSONArray("entries");
+        JSONObject entry = entries.getJSONObject(0);
+        
+        return metadata.getString("provider") + "+" + result.getString("id") 
+                + ":" + result.getString("language") + ":" + entries.length() 
+                + ":" + entry.getString("homographNumber");
     }
 
     public String fetchJSON(String word) {
