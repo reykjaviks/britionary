@@ -1006,7 +1006,7 @@ public class FetcherTest {
                 + "}";
 
         //TODO: Change later
-        assertEquals("Oxford University Press", fetcher.convertJSON(json));
+        assertEquals("Oxford University Press", fetcher.parseJSON(json));
 
     }
 

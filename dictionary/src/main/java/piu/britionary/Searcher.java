@@ -8,9 +8,9 @@ public class Searcher {
     public Searcher() {
         fetcher = new Fetcher();
     }
-    
+
     public String search(String word) {
-        return fetcher.convertJSON(fetcher.fetchJSON(word));
+        return fetcher.parseJSON(fetcher.fetchJSON(word));
     }
-    
+
 }

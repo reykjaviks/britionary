@@ -55,7 +55,7 @@ public class Fetcher {
     }
 
     //Prototype
-    public String convertJSON(String json) {
+    public String parseJSON(String json) {
         JSONObject response = new JSONObject(json);
         
         JSONObject metadata = response.getJSONObject("metadata");
@@ -63,10 +63,12 @@ public class Fetcher {
         JSONArray results = response.getJSONArray("results");
         JSONObject result = results.getJSONObject(0); //contains id, lang and lexical entries
         
-        JSONArray lexicalEntries = result.getJSONArray("lexicalEntries"); //contains a single array
-        JSONObject lexicalEntry = lexicalEntries.getJSONObject(0); //contains entries
+        JSONArray lexicalEntries = result.getJSONArray("lexicalEntries");
+        JSONObject lexicalEntry = lexicalEntries.getJSONObject(0);
         JSONArray entries = lexicalEntry.getJSONArray("entries");
-        JSONObject entry = entries.getJSONObject(0);
+        JSONObject entry = entries.getJSONObject(0); //contains homographNumber and senses
+        
+        JSONArray senses = entry.getJSONArray("senses");
         
         return metadata.getString("provider") + "+" + result.getString("id") 
                 + ":" + result.getString("language") + ":" + entries.length() 
@@ -104,9 +106,8 @@ public class Fetcher {
 
             return stringBuilder.toString();
 
-            //TODO: remove stack trace    
         } catch (Exception e) {
-            e.printStackTrace();
+            e.printStackTrace(); //TODO: remove stack trace
             return e.toString();
         }
     }
