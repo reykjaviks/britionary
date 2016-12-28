@@ -9,7 +9,7 @@ import org.json.JSONObject;
 public class Fetcher {
 
     private StringBuilder str;
-    private String word;
+    private String newWord;
     private final String appID;
     private final String addKey;
 
@@ -49,8 +49,21 @@ public class Fetcher {
         if (Character.isSpaceChar(str.charAt(str.length() - 1))) {
             str.deleteCharAt(str.length() - 1);
         }
-        this.word = str.toString();
-        return this.word;
+        this.newWord = str.toString();
+        return this.newWord;
+    }
+
+    //Prototype
+    public String convertJSON(String json) {
+        JSONObject response = new JSONObject(json);
+        JSONObject metadata = response.getJSONObject("metadata");
+        return metadata.getString("provider");
+
+        /*
+         JSONObject response = new JSONObject(json);
+         JSONArray results = response.getJSONArray("results");
+         return results.getString(0);
+         */
     }
 
     public String fetchJSON(String word) {
@@ -84,23 +97,10 @@ public class Fetcher {
 
             return stringBuilder.toString();
 
-        //TODO: remove stack trace    
+            //TODO: remove stack trace    
         } catch (Exception e) {
             e.printStackTrace();
             return e.toString();
         }
-    }
-
-    //Prototype
-    public String convertJSON(String json) {
-        JSONObject response = new JSONObject(json);
-        JSONObject metadata = response.getJSONObject("metadata");
-        return metadata.getString("provider");
-
-        /*
-         JSONObject response = new JSONObject(json);
-         JSONArray results = response.getJSONArray("results");
-         return results.getString(0);
-         */
     }
 }
