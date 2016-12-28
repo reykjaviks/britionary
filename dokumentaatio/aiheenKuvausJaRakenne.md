@@ -4,7 +4,7 @@ Toteutetaan sovellus, joka muuntaa amerikanenglannin sanat niiden brittivastinei
 
 Ohjelma hakee Oxford Dictionary:n tesauruksesta halutun sanan Englannin, Irlannin ja Skotlannin alueelliset synonyymit, sekä tulostaa näiden lausumismuodon. Lisäksi ohjelma hakee tietosanakirjasta synonyymia vastaavan äänitiedoston.
 
-Ohjelmaan toteutetaan logiikalla, joka suodattaa Oxford Dictionaryn palauttamia arvoja.
+Ohjelma toteutetaan logiikalla, joka suodattaa Oxford Dictionaryn palauttamia arvoja.
 
 ### **Käyttäjät**
 Kaikki, jotka haluavat kehittää brittiläistä aksenttiaan.
