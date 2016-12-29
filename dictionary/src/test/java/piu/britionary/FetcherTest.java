@@ -1,6 +1,6 @@
 package piu.britionary;
 
-import piu.britionary.Fetcher;
+import britionary.logic.Fetcher;
 import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;

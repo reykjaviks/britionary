@@ -1,4 +1,4 @@
-package piu.britionary;
+package britionary.logic;
 
 //TODO: setup logic
 public class Searcher {

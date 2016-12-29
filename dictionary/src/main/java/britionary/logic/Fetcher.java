@@ -1,4 +1,4 @@
-package piu.britionary;
+package britionary.logic;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;

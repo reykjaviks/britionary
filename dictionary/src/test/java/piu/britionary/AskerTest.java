@@ -1,7 +1,7 @@
 package piu.britionary;
 
 import java.io.ByteArrayInputStream;
-import piu.britionary.Asker;
+import britionary.logic.Asker;
 import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
