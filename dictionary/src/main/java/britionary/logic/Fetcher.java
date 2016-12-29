@@ -24,7 +24,7 @@ public class Fetcher {
         this.addKey = appKey;
     }
 
-    //TODO: Should be private
+    //TODO: Should be private, replace loops with String.replace() 
     public String convertWord(String word) {
 
         str = new StringBuilder(word.toLowerCase());
@@ -113,7 +113,7 @@ public class Fetcher {
             urlConnection.setRequestProperty("app_id", this.appID);
             urlConnection.setRequestProperty("app_key", this.addKey);
 
-            // read the output from the server
+            //Read output from the server
             BufferedReader reader = new BufferedReader(new InputStreamReader(urlConnection.getInputStream()));
             StringBuilder stringBuilder = new StringBuilder();
 

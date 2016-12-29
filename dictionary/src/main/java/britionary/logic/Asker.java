@@ -14,17 +14,18 @@ public class Asker { //Singleton?
     public Asker(InputStream in) {
         this.systemIn = in;
     }
-    
+
     private String scan() {
-       
+        
         try {
             scanner = new Scanner(systemIn);
             return scanner.nextLine();
         } catch (Exception e) {
             System.out.println("Error: " + e);
         }
-        return "";
+        return "";  //TODO: change later
     }
+
     public String getWord() {
         return scan();
     }

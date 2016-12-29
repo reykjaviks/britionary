@@ -5,7 +5,7 @@ public class Searcher {
 
     private Fetcher fetcher;
 
-    public Searcher() {
+    public Searcher() { //TODO: change later
         fetcher = new Fetcher();
     }
 
