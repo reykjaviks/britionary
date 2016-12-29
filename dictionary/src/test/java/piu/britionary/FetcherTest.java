@@ -8,7 +8,6 @@ import static org.junit.Assert.*;
 public class FetcherTest {
 
     Fetcher fetcher;
-    Fetcher fetcher2;
 
     public FetcherTest() {
     }
@@ -45,14 +44,14 @@ public class FetcherTest {
 
     @Test
     public void testConstructor() {
-        fetcher2 = new Fetcher("", "");
-        assertEquals("", fetcher2.fetchJSON("little"));
+        fetcher = new Fetcher("", "");
+        assertEquals("", fetcher.fetchJSON("little"));
     }
 
     @Test
     public void testConstructorNull() {
-        fetcher2 = new Fetcher(null, null);
-        assertEquals("", fetcher2.fetchJSON("little"));
+        fetcher = new Fetcher(null, null);
+        assertEquals("", fetcher.fetchJSON("little"));
     }
 
     //Prototype
