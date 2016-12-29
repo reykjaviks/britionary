@@ -1,4 +1,4 @@
-package piu.britionary;
+package britionary.logic;
 
 import org.junit.Before;
 import org.junit.Test;

@@ -1,4 +1,4 @@
-package piu.britionary;
+package britionary.logic;
 
 import britionary.logic.Fetcher;
 import org.junit.Before;
