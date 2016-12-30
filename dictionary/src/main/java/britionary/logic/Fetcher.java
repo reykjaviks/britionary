@@ -9,7 +9,6 @@ import org.json.JSONObject;
 
 public class Fetcher {
 
-    private StringBuilder str;
     private String newWord;
     private final String appID;
     private final String appKey;
@@ -27,7 +26,7 @@ public class Fetcher {
     //TODO: Should be private, replace loops with String.replace() 
     public String convertWord(String word) {
 
-        str = new StringBuilder(word.toLowerCase());
+        StringBuilder str = new StringBuilder(word.toLowerCase());
 
         //Replace underscores
         for (int i = 0; i < word.length(); i++) {
@@ -55,10 +54,55 @@ public class Fetcher {
     }
 
     //Prototype
-    public String parseJSON(String json) {
-        str = new StringBuilder();
-
+    public JSONArray findResults(JSONObject response) {
+        if (response.has("results")) {
+            return response.getJSONArray("results");
+        }
+        return null;
+    }
+    
+    public JSONObject findLexicalEntries(JSONArray results) {
+        for (int i = 0; i < results.length(); i++) {
+            if (results.getJSONObject(i).has("lexicalEntries")) {
+                return results.getJSONObject(i);
+            }
+        }
+        return null;
+    }
+    
+    public JSONArray findEntries(JSONObject lexicalEntries) {
+        if (lexicalEntries.has("entries")) {
+            return lexicalEntries.getJSONArray("entries");
+        }
+        return null;
+    }
+       
+    public String parseJSONNew(String json) {
+        StringBuilder str = new StringBuilder();
         JSONObject response = new JSONObject(json);
+        
+        if (findResults(response) == null) {
+            return "Cannot find results.";
+        } else {
+            if (findLexicalEntries((findResults(response))) == null) {
+                return "Cannot find lexical entries.";
+            } else {
+                if (findEntries(findLexicalEntries((findResults(response)))) == null) {
+                    return "Cannot find entries.";
+                } else {
+                    
+                }
+            }
+        }
+
+        return "Completion.";
+    }
+
+    //TODO: clean up
+    public String parseJSON(String json) {
+        StringBuilder str = new StringBuilder(); //TODO: change later
+        JSONObject response = new JSONObject(json);
+        
         JSONArray results = response.getJSONArray("results");
         JSONObject result = results.getJSONObject(0);
 
