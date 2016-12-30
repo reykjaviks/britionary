@@ -12,16 +12,16 @@ public class Fetcher {
     private StringBuilder str;
     private String newWord;
     private final String appID;
-    private final String addKey;
+    private final String appKey;
 
     public Fetcher() {
         this.appID = "19275027";
-        this.addKey = "fbf42d1294623d8ecfe2f595a193fdaa";
+        this.appKey = "fbf42d1294623d8ecfe2f595a193fdaa";
     }
 
     public Fetcher(String appID, String appKey) {
         this.appID = appID;
-        this.addKey = appKey;
+        this.appKey = appKey;
     }
 
     //TODO: Should be private, replace loops with String.replace() 
@@ -96,8 +96,8 @@ public class Fetcher {
     public String fetchJSON(String word) {
 
         //TODO: Raise exception
-        if (this.appID == null || this.addKey == null
-                || this.appID.isEmpty() || this.addKey.isEmpty()) {
+        if (this.appID == null || this.appKey == null
+                || this.appID.isEmpty() || this.appKey.isEmpty()) {
             return "";
         }
         String wordID = convertWord(word);
@@ -111,7 +111,7 @@ public class Fetcher {
             HttpsURLConnection urlConnection = (HttpsURLConnection) url.openConnection();
             urlConnection.setRequestProperty("Accept", "application/json");
             urlConnection.setRequestProperty("app_id", this.appID);
-            urlConnection.setRequestProperty("app_key", this.addKey);
+            urlConnection.setRequestProperty("app_key", this.appKey);
 
             //Read output from the server
             BufferedReader reader = new BufferedReader(new InputStreamReader(urlConnection.getInputStream()));
