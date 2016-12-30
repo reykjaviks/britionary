@@ -7,7 +7,7 @@ Päivä | Tunnit | Kuvaus
 25.12. | 5h  | Rakenteen suunnittelua ja UML-kaavion piirtämistä
 26.12. | 1h | Logiikan kirjoittamista
 27.12. | 7.5h | Logiikan ja testien kirjoittamista
-28.12. | 3.5h | parseJSON prototyypin valmistelua
-29.12. | 2h | Koodikatselmointia ja pikkujuttujen korjaamista
-30.12. | ... | ...
+28.12. | 3.5h | Logiikan kirjoittamista
+29.12. | 2h | Koodikatselmointia ja pikku juttujen korjaamista
+30.12. | 5.5h | Logiikan kirjoittamista
 31.12. | ... | ...
