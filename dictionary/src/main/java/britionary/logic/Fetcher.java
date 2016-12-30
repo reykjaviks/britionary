@@ -118,7 +118,8 @@ public class Fetcher {
         }
         return null;
     }
-       
+    
+    //TODO: fix method calls   
     public String parseJSONNew(String json) {
         StringBuilder str = new StringBuilder();
         JSONObject response = new JSONObject(json);
