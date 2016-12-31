@@ -27,7 +27,6 @@ public class Fetcher {
     TODO:
     Should be a private method
     Replace loops with String.replace()
-    Cut into smaller methods
     */
     public String convertWord(String word) {
 
