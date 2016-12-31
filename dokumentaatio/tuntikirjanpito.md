@@ -10,4 +10,4 @@ Päivä | Tunnit | Kuvaus
 28.12. | 3.5h | Logiikan kirjoittamista
 29.12. | 2h | Koodikatselmointia ja pikku juttujen korjaamista
 30.12. | 5.5h | Logiikan kirjoittamista
-31.12. | ... | ...
+31.12. | 3h | Projektin siistimistä
