@@ -2,13 +2,16 @@ package britionary.logic;
 
 //TODO: setup logic
 public class Searcher {
+
+    private Parser parser;
     private Fetcher fetcher;
-    //TODO: research the necessity of this constructor.
-    public Searcher() { 
+
+    public Searcher() {
+        parser = new Parser();
         fetcher = new Fetcher();
     }
 
     public String search(String word) {
-        return fetcher.parseJSONNew(fetcher.fetchJSON(word));
+        return parser.parseJSON(fetcher.fetchJSON(word));
     }
 }

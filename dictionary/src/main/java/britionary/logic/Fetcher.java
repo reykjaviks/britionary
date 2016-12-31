@@ -23,29 +23,34 @@ public class Fetcher {
         this.appKey = appKey;
     }
 
-    //TODO: use String.replace()
+    /*
+    TODO:
+    Should be a private method
+    Replace loops with String.replace()
+    Cut into smaller methods(?)
+    */
     public String convertWord(String word) {
 
         StringBuilder str = new StringBuilder(word.toLowerCase());
 
-        //Replace underscores
+        // Replace underscores
         for (int i = 0; i < word.length(); i++) {
             if (word.charAt(i) == '_') {
                 str.setCharAt(i, ' ');
             }
         }
-        //Remove digits
+        // Remove digits
         for (int i = 0; i < str.length(); i++) {
             if (Character.isDigit(str.charAt(i))) {
                 str.deleteCharAt(i);
                 i--;
             }
         }
-        //Remove leading space
+        // Remove leading space
         if (Character.isSpaceChar(str.charAt(0))) {
             str.deleteCharAt(0);
         }
-        //Remove tracing space
+        // Remove tracing space
         if (Character.isSpaceChar(str.charAt(str.length() - 1))) {
             str.deleteCharAt(str.length() - 1);
         }
@@ -53,126 +58,16 @@ public class Fetcher {
         return this.newWord;
     }
 
-
-    public JSONArray findResults(JSONObject response) {
-        if (response.has("results")) {
-            return response.getJSONArray("results");
-        }
-        return null;
-    }
-    
-    public JSONObject findLexicalEntries(JSONArray results) {
-        for (int i = 0; i < results.length(); i++) {
-            if (results.getJSONObject(i).has("lexicalEntries")) {
-                return results.getJSONObject(i);
-            }
-        }
-        return null;
-    }
-
-    public JSONArray findEntries(JSONObject lexicalEntries) {
-        if (lexicalEntries.has("entries")) {
-            return lexicalEntries.getJSONArray("entries");
-        }
-        return null;
-    }
-
-    public JSONObject findSenses(JSONArray entries) {
-        for (int i = 0; i < entries.length(); i++) {
-            if (entries.getJSONObject(i).has("senses")) {
-                return entries.getJSONObject(i);
-            }
-        }
-        return null;
-    }
-    
-    public JSONArray findSubSenses(JSONObject senses) {
-        if (senses.has("subsenses")) {
-            return senses.getJSONArray("subsenses");
-        }
-        return null;
-    }
-
-    public JSONObject findSynonyms(JSONArray subsenses) {
-        for (int i = 0; i < subsenses.length(); i++) {
-            if (subsenses.getJSONObject(i).has("synonyms")) {
-                return subsenses.getJSONObject(i);
-            }
-        }
-        return null;
-    }
-    
-    public JSONArray findRegions(JSONObject synonyms) {
-        if (synonyms.has("regions")) {
-            return synonyms.getJSONArray("regions");
-        }
-        return null;
-    }
-
-    public String findRegionalNames(JSONArray regions) {
-        for (int i = 0; i < regions.length(); i++) {
-            if (regions.getString(i).equals("British") || 
-                    regions.getString(i).equals("Scottish") ||
-                    regions.getString(i).equals("Irish")) {
-                return regions.getString(i);
-            }
-        }
-        return null;
-    }
-    
-    /*
-    Prototype 2.0
-    TODO: remove long method calls 
-    */
-    public String parseJSONNew(String json) {
-        StringBuilder str = new StringBuilder();
-        JSONObject response = new JSONObject(json);
-        
-        if (findResults(response) == null) {
-            return "Cannot find results.";
-        } else {
-            if (findLexicalEntries((findResults(response))) == null) {
-                return "Cannot find lexical entries.";
-            } else {
-                if (findEntries(findLexicalEntries((findResults(response)))) == null) {
-                    return "Cannot find entries.";
-                } else {
-                    if (findSenses(findEntries(findLexicalEntries((findResults(response))))) == null) {
-                        return "Cannot find senses.";
-                    } else {
-                        if (findSubSenses(findSenses(findEntries(findLexicalEntries((findResults(response)))))) == null) {
-                            return "Cannot find subsenses.";
-                        } else {
-                            if (findSynonyms(findSubSenses(findSenses(findEntries(findLexicalEntries((findResults(response))))))) == null) {
-                                return "Cannot find synonyms.";
-                            } else {
-                                if (findRegions(findSynonyms(findSubSenses(findSenses(findEntries(findLexicalEntries((findResults(response)))))))) == null) {
-                                    return "Cannot find regions.";
-                                } else {
-                                    if (findRegionalNames(findRegions(findSynonyms(findSubSenses(findSenses(findEntries(findLexicalEntries((findResults(response))))))))) == null) {
-                                        return "Cannot find regional words.";
-                                    } else {
-                                        return "Region: " + findRegionalNames(findRegions(findSynonyms(findSubSenses(findSenses(findEntries(findLexicalEntries((findResults(response)))))))));
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-
     public String fetchJSON(String word) {
 
-        //TODO: Raise exception
+        // TODO: Raise exception
         if (this.appID == null || this.appKey == null
                 || this.appID.isEmpty() || this.appKey.isEmpty()) {
             return "";
         }
         String wordID = convertWord(word);
 
-        //Example code from https://developer.oxforddictionaries.com/documentation#/
+        // Example code from https://developer.oxforddictionaries.com/documentation#/
         String language = "en";
         String link = "https://od-api.oxforddictionaries.com:443/api/v1/entries/" + language + "/" + wordID + "/synonyms;antonyms";
 
@@ -195,7 +90,7 @@ public class Fetcher {
             return stringBuilder.toString();
 
         } catch (Exception e) {
-            e.printStackTrace(); //TODO: remove stack trace
+            e.printStackTrace(); // TODO: remove stack trace
             return e.toString();
         }
     }
