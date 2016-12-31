@@ -5,6 +5,6 @@ Sanakirja, joka muuntaa amerikanenglannin sanat niiden brittivastineiksi.
 
 [Tuntikirjanpito](dokumentaatio/tuntikirjanpito.md)
 
-[Checkstyle-raportti](dokumentaatio/checkstyle-raportti/checkstyle.html)
+[Checkstyle-raportti](https://htmlpreview.github.io/?https://github.com/reykjaviks/britionary/blob/master/dokumentaatio/checkstyle-raportti/site/checkstyle.html)
 
-[Testausdokumentaatio](dokumentaatio/pit-raportti/201612272240/index.html)
+[Pit-raportti](https://htmlpreview.github.io/?https://github.com/reykjaviks/britionary/blob/master/dokumentaatio/pit-raportti/201612311316/index.html)
