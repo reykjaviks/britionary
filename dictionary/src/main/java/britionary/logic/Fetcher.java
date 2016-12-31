@@ -23,7 +23,12 @@ public class Fetcher {
         this.appKey = appKey;
     }
 
-    //TODO: Should be private, replace loops with String.replace() 
+    /*
+    TODO:
+    Should be a private method
+    Replace loops with String.replace()
+    Cut into smaller methods
+    */
     public String convertWord(String word) {
 
         StringBuilder str = new StringBuilder(word.toLowerCase());
@@ -53,6 +58,7 @@ public class Fetcher {
         return this.newWord;
     }
 
+    //TODO: implement further
     public JSONArray findResults(JSONObject response) {
         if (response.has("results")) {
             return response.getJSONArray("results");
@@ -119,7 +125,10 @@ public class Fetcher {
         return null;
     }
     
-    //TODO: fix method calls   
+    /*
+    Prototype 2.0
+    TODO: remove long method calls 
+    */
     public String parseJSONNew(String json) {
         StringBuilder str = new StringBuilder();
         JSONObject response = new JSONObject(json);
@@ -159,16 +168,15 @@ public class Fetcher {
         }
     }
 
-    //Prototype
+    //Prototype 1.2
     public String parseJSON(String json) {
-        StringBuilder str = new StringBuilder(); //TODO: change later
+        StringBuilder str = new StringBuilder();
         JSONObject response = new JSONObject(json);
         
         JSONArray results = response.getJSONArray("results");
         JSONObject result = results.getJSONObject(0);
 
         JSONArray lexicalEntries = result.getJSONArray("lexicalEntries");
-        //taulukossa on kolme entries-lohkoa, joista nyt haetaan järjestyksessä toinen.
         JSONObject lexicalEntry = lexicalEntries.getJSONObject(1); //175
 
         JSONArray entries = lexicalEntry.getJSONArray("entries");
@@ -203,21 +211,23 @@ public class Fetcher {
         return str.toString();
 
         /*
-         //TODO: make a method
-         for (int i = 0; i < regions.length(); i++) {
-         if (regions.getString(i).equals("British")
-         || regions.getString(i).equals("Scottish")
-         || regions.getString(i).equals("Irish")) {
-         str.append(regions.getString(i) + "\n");
-         }
-         }
+        //Prototype 1.1
+ 
+        for (int i = 0; i < regions.length(); i++) {
+            if (regions.getString(i).equals("British")
+                    || regions.getString(i).equals("Scottish")
+                    || regions.getString(i).equals("Irish")) {
+                str.append(regions.getString(i) + "\n");
+            }
+        }
+
+        for (int i = 0; i < lexicalEntries.length(); i++) {
+            lexicalEntries.getJSONObject(i);
+        }
+
+        //Prototype 1.0
         
-         for (int i = 0; i < lexicalEntries.length(); i++) {
-         lexicalEntries.getJSONObject(i);
-         }
-
-         JSONObject response = new JSONObject(json);
-
+        JSONObject response = new JSONObject(json);
         JSONObject metadata = response.getJSONObject("metadata");
         
         JSONArray results = response.getJSONArray("results");
