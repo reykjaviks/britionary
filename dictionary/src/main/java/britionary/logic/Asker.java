@@ -2,7 +2,7 @@ package britionary.logic;
 import java.io.InputStream;
 import java.util.Scanner;
 
-public class Asker { //Singleton?
+public class Asker {
 
     private Scanner scanner;
     private final InputStream systemIn; //Used for testing
@@ -16,7 +16,7 @@ public class Asker { //Singleton?
     }
 
     private String scan() {
-        
+
         try {
             scanner = new Scanner(systemIn);
             return scanner.nextLine();
