@@ -1,6 +1,8 @@
 package britionary.logic;
 
 import britionary.logic.Fetcher;
+import org.json.JSONArray;
+import org.json.JSONObject;
 import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
@@ -53,6 +55,24 @@ public class FetcherTest {
         fetcher = new Fetcher(null, null);
         assertEquals("", fetcher.fetchJSON("little"));
     }
+    
+    @Test
+    public void testFindResults() {
+        String json = "{\n"
+                + "    \"results\": []}\n";
+        JSONObject response = new JSONObject(json);
+        assertNotNull(fetcher.findResults(response));
+    }
+    
+    /*Prototype (doesn't work)
+    @Test
+    public void testFindLexicalEntries() {
+        String json = "[\n"
+                + "    \"lexicalEntries\": []]\n";
+        JSONArray results = new JSONArray(json);
+        assertNotNull(fetcher.findLexicalEntries(results));
+    }
+    */
 
     //Prototype
     @Test
@@ -1005,6 +1025,6 @@ public class FetcherTest {
                 + "}";
 
         //TODO: Change later
-        assertEquals("wee", fetcher.parseJSONNew(json));
+        assertEquals("Cannot find entries.", fetcher.parseJSONNew(json));
     }
 }
