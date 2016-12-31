@@ -9,6 +9,6 @@ public class Searcher {
     }
 
     public String search(String word) {
-        return fetcher.parseJSON(fetcher.fetchJSON(word));
+        return fetcher.parseJSONNew(fetcher.fetchJSON(word));
     }
 }
