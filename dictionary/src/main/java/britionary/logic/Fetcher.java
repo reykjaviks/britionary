@@ -22,6 +22,14 @@ public class Fetcher {
         this.appKey = appKey;
     }
     
+    public String getAppID() {
+        return this.appID;
+    }
+
+    public String getAppKey() {
+        return this.appKey;
+    }
+    
     public boolean testCredentials() {
         if (this.appID == null || this.appKey == null
                 || this.appID.isEmpty() || this.appKey.isEmpty()) {
