@@ -9,6 +9,7 @@ import static org.junit.Assert.*;
 public class ParserTest {
 
     Parser parser;
+    Finder finder;
 
     public ParserTest() {
     }
@@ -16,6 +17,7 @@ public class ParserTest {
     @Before
     public void setUp() {
         parser = new Parser();
+        finder = new Finder();
     }
 
     @Test
@@ -23,16 +25,16 @@ public class ParserTest {
         String json = "{\n"
                 + "    \"results\": []}\n";
         JSONObject response = new JSONObject(json);
-        assertNotNull(parser.findResults(response));
+        assertNotNull(finder.findJSONArray(response, "results"));
     }
 
     // Doesn't work
-    //@Test
+    // @Test
     public void testFindLexicalEntries() {
         String json = "[\n"
                 + "    \"lexicalEntries\": []]\n";
         JSONArray results = new JSONArray(json);
-        assertNotNull(parser.findLexicalEntries(results));
+        assertNotNull(finder.findFirstJSONObject(results, "lexicalEntries"));
     }
     
     // Prototype
@@ -986,7 +988,7 @@ public class ParserTest {
                 + "}";
 
         //TODO: Change later
-        assertEquals("Cannot find entries.", parser.parseJSON(json));
+        assertEquals("", parser.parseJSON(json));
     }
 }
 
