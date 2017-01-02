@@ -12,7 +12,7 @@ Päivä | Tunnit | Kuvaus
 30.12. | 5h | Logiikan kirjoittamista
 31.12. | 3h | Koodikatselmointia ja projektin siistimistä
 1.1.2017 |    |
-2.1. | 5.5h | Rakenteen hiomista ja logiikan kirjoittamista
+2.1. | 5.6h | Rakenteen hiomista ja logiikan kirjoittamista
 3.1. | ... |
 4.1. | ... |
 5.1. | ... |
