@@ -1,20 +1,38 @@
 package britionary.logic;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
 import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class FinderTest {
-    
+
+    Finder finder;
+
     public FinderTest() {
     }
-    
+
     @Before
     public void setUp() {
-    }
-
-    @Test
-    public void testSomeMethod() {
+        finder = new Finder();
     }
     
+    @Test
+    public void testFindJSONArrayResults() {
+        String json = "{\n"
+                + "    \"results\": []}\n";
+        JSONObject response = new JSONObject(json);
+        assertNotNull(finder.findJSONArray(response, "results"));
+    }
+    
+    // Doesn't work
+    // @Test
+    public void testFindFirstJSONObjectLexicalEntries() {
+        String json = "[\n"
+                + "    \"lexicalEntries\": []]\n";
+        JSONArray results = new JSONArray(json);
+        assertNotNull(finder.findFirstJSONObject(results, "lexicalEntries"));
+    }
+
 }

@@ -19,23 +19,6 @@ public class ParserTest {
         parser = new Parser();
         finder = new Finder();
     }
-
-    @Test
-    public void testFindResults() {
-        String json = "{\n"
-                + "    \"results\": []}\n";
-        JSONObject response = new JSONObject(json);
-        assertNotNull(finder.findJSONArray(response, "results"));
-    }
-
-    // Doesn't work
-    // @Test
-    public void testFindLexicalEntries() {
-        String json = "[\n"
-                + "    \"lexicalEntries\": []]\n";
-        JSONArray results = new JSONArray(json);
-        assertNotNull(finder.findFirstJSONObject(results, "lexicalEntries"));
-    }
     
     // Prototype
     @Test
