@@ -7,9 +7,10 @@ import org.json.JSONObject;
 
 public class Parser {
 
-    Finder finder;
-    JSONObject response;
+    private Finder finder;
+    private JSONObject response;
 
+    // What can I use this for?
     public enum Id {
 
         RESULTS, LEXICALENTRIES, ENTRIES, SENSES, SUBSENSES, SYNONYMS,
