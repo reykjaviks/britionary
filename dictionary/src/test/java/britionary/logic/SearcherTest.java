@@ -7,6 +7,8 @@ import static org.junit.Assert.*;
 //Initialization
 public class SearcherTest {
     
+    Searcher searcher;
+    
     public SearcherTest() {
     }
     
@@ -15,7 +17,15 @@ public class SearcherTest {
     }
 
     @Test
-    public void testSearch() {
+    public void testGetInstance() {
+        assertNotNull(Searcher.getInstance());
     }
+    
+    @Test
+    public void testSearch() {
+        searcher = Searcher.getInstance();
+        assertEquals("Success.", searcher.search("Ace"));
+    }
+    
     
 }
