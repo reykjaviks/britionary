@@ -1,0 +1,11 @@
+britionary\logic\Asker.class
+britionary\logic\Finder.class
+britionary\gui\Test.class
+britionary\logic\Parser.class
+britionary\prototypes\FinderPrototype.class
+britionary\prototypes\ParserPrototype.class
+britionary\logic\Converter.class
+britionary\logic\Main.class
+britionary\logic\Searcher.class
+britionary\logic\Fetcher.class
+britionary\logic\Parser$Id.class
