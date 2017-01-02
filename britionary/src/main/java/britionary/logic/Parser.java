@@ -1,5 +1,6 @@
 package britionary.logic;
 
+import java.util.ArrayList;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -15,57 +16,81 @@ public class Parser {
         REGIONS;
     }
     
-    private String handleResults(JSONArray results) {
+    private ArrayList<String> handleResults(JSONArray results) {
+        ArrayList<String> words = new ArrayList<>();
+        
         for (int i = 0; i < results.length(); i++) {
             JSONArray lexicalEntries = finder.findJSONArray(results.getJSONObject(i), "lexicalEntries");
             if (lexicalEntries != null) {
-                return handleLexicalEntries(lexicalEntries);
+                words.addAll(handleLexicalEntries(lexicalEntries));
             }
         }
-        return "";
+        return words;
     }
 
-    private String handleLexicalEntries(JSONArray lexicalEntries) {
+    private ArrayList<String> handleLexicalEntries(JSONArray lexicalEntries) {
+        ArrayList<String> words = new ArrayList<>();
+        
         for (int i = 0; i < lexicalEntries.length(); i++) {
             JSONArray entries = finder.findJSONArray(lexicalEntries.getJSONObject(i), "entries");
             if (entries != null) {
-                return handleEntries(entries);
+                words.addAll(handleEntries(entries));
             }
         }
-        return "";
+        return words;
     }
     
-    private String handleEntries(JSONArray entries) {
+    private ArrayList<String> handleEntries(JSONArray entries) {
+        ArrayList<String> words = new ArrayList<>();
+        
         for (int i = 0; i < entries.length(); i++) {
             JSONArray senses = finder.findJSONArray(entries.getJSONObject(i), "senses");
             if (senses != null) {
-                return handleSenses(senses);
+                words.addAll(handleSenses(senses));
             }
         }
-        return "";
+        return words;
     }
-    
-    private String handleSenses(JSONArray senses) {
+
+    private ArrayList<String> handleSenses(JSONArray senses) {
+        ArrayList<String> words = new ArrayList<>();
+
         for (int i = 0; i < senses.length(); i++) {
             JSONArray synonyms = finder.findJSONArray(senses.getJSONObject(i), "synonyms");
             if (synonyms != null) {
-                return handleSynonyms(synonyms);
+                words.addAll(handleSynonyms(synonyms));
+            }
+            JSONArray subsenses = finder.findJSONArray(senses.getJSONObject(i), "subsenses");
+            if (subsenses != null) {
+                words.addAll(handleSubsenses(subsenses));
             }
         }
-        return "";
+        return words;
+    }
+    
+    private ArrayList<String> handleSubsenses(JSONArray subsenses) {
+        ArrayList<String> words = new ArrayList<>();
+
+        for (int i = 0; i < subsenses.length(); i++) {
+            JSONArray synonyms = finder.findJSONArray(subsenses.getJSONObject(i), "synonyms");
+            if (synonyms != null) {
+                words.addAll(handleSynonyms(synonyms));
+            }
+        }
+        return words;
     }
 
-    private String handleSynonyms(JSONArray synonyms) {
+    private ArrayList<String> handleSynonyms(JSONArray synonyms) {
+        ArrayList<String> words = new ArrayList<>();
+
         for (int i = 0; i < synonyms.length(); i++) {
             JSONObject synonym = synonyms.getJSONObject(i);
             if (synonym.has("text")) {
-                return synonym.getString("text");
+                words.add(synonym.getString("text"));
             }
         }
-        return "";
+        return words;
     }
-
-
 
     public String parseJSON(String json) {
 
@@ -77,8 +102,7 @@ public class Parser {
             return "Cannot find results.";
         }
 
-        str = handleResults(results);
+        str = handleResults(results).get(0);
         return str;
-
     }
 }
