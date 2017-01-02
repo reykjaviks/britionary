@@ -11,7 +11,6 @@ public class Fetcher {
 
     private final String appID;
     private final String appKey;
-    private String wordID;
 
     public Fetcher() {
         this.appID = "19275027";
@@ -23,9 +22,7 @@ public class Fetcher {
         this.appKey = appKey;
     }
 
-    public String fetchJSON(String word) {
-
-        this.wordID = word;
+    public String fetchJSON(String cleanWord) {
         
         // TODO: Raise exception
         // TODO: Write as a method
@@ -36,7 +33,7 @@ public class Fetcher {
 
         // Example code from https://developer.oxforddictionaries.com/documentation#/
         String language = "en";
-        String link = "https://od-api.oxforddictionaries.com:443/api/v1/entries/" + language + "/" + this.wordID + "/synonyms;antonyms";
+        String link = "https://od-api.oxforddictionaries.com:443/api/v1/entries/" + language + "/" + cleanWord + "/synonyms;antonyms";
 
         try {
             URL url = new URL(link);
