@@ -20,14 +20,24 @@ public class FetcherTest {
     }
 
     @Test
-    public void testConstructor() {
-        fetcher = new Fetcher("", "");
-        assertEquals("", fetcher.fetchJSON("little"));
+    public void testConstructorID() {
+        fetcher = new Fetcher("003", "fbf690");
+        assertEquals("003", fetcher.getAppID());
+    }
+    @Test
+    public void testConstructorKey() {
+        fetcher = new Fetcher("003", "fbf690");
+        assertEquals("fbf690", fetcher.getAppKey());
     }
 
     @Test
-    public void testConstructorNull() {
+    public void testConstructorIDNull() {
         fetcher = new Fetcher(null, null);
-        assertEquals("", fetcher.fetchJSON("little"));
+        assertEquals(null, fetcher.getAppID());
+    }
+        @Test
+    public void testConstructorKeyNull() {
+        fetcher = new Fetcher(null, null);
+        assertEquals(null, fetcher.getAppKey());
     }
 }
