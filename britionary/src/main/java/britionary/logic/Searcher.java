@@ -2,9 +2,9 @@ package britionary.logic;
 
 public class Searcher {
 
-    private Parser parser;
-    private Fetcher fetcher;
-    private Converter converter;
+    private final Parser parser;
+    private final Fetcher fetcher;
+    private final Converter converter;
     private static Searcher instance = null;
 
     private Searcher() {
