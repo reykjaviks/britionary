@@ -6,7 +6,6 @@ public class Converter {
     
     /*
      TODO:
-     Should be a private method
      Replace loops with String.replace()
      */
     
