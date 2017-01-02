@@ -9,7 +9,6 @@ import org.json.JSONObject;
 
 public class Fetcher {
 
-
     private final String appID;
     private final String appKey;
     private String wordID;

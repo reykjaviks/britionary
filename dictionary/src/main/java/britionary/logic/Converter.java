@@ -9,6 +9,7 @@ public class Converter {
      Should be a private method
      Replace loops with String.replace()
      */
+    
     public String getWord() {
         return this.newWord;
     }
