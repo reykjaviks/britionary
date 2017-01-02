@@ -16,6 +16,10 @@ public class Asker {
         this.systemIn = in;
     }
 
+    public String getWord() {
+        return this.word;
+    }
+
     public void scan() {
         try {
             scanner = new Scanner(systemIn);
@@ -25,7 +29,4 @@ public class Asker {
         }
     }
 
-    public String getWord() {
-        return this.word;
-    }
 }
