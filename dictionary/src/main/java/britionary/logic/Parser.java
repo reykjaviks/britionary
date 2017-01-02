@@ -38,7 +38,7 @@ public class Parser {
         return null;
     }
 
-    public JSONArray findSubSenses(JSONObject senses) {
+    public JSONArray findSubenses(JSONObject senses) {
         if (senses.has("subsenses")) {
             return senses.getJSONArray("subsenses");
         }
@@ -89,19 +89,19 @@ public class Parser {
                     if (findSenses(findEntries(findLexicalEntries((findResults(response))))) == null) {
                         return "Cannot find senses.";
                     } else {
-                        if (findSubSenses(findSenses(findEntries(findLexicalEntries((findResults(response)))))) == null) {
+                        if (findSubenses(findSenses(findEntries(findLexicalEntries((findResults(response)))))) == null) {
                             return "Cannot find subsenses.";
                         } else {
-                            if (findSynonyms(findSubSenses(findSenses(findEntries(findLexicalEntries((findResults(response))))))) == null) {
+                            if (findSynonyms(findSubenses(findSenses(findEntries(findLexicalEntries((findResults(response))))))) == null) {
                                 return "Cannot find synonyms.";
                             } else {
-                                if (findRegions(findSynonyms(findSubSenses(findSenses(findEntries(findLexicalEntries((findResults(response)))))))) == null) {
+                                if (findRegions(findSynonyms(findSubenses(findSenses(findEntries(findLexicalEntries((findResults(response)))))))) == null) {
                                     return "Cannot find regions.";
                                 } else {
-                                    if (findRegionalNames(findRegions(findSynonyms(findSubSenses(findSenses(findEntries(findLexicalEntries((findResults(response))))))))) == null) {
+                                    if (findRegionalNames(findRegions(findSynonyms(findSubenses(findSenses(findEntries(findLexicalEntries((findResults(response))))))))) == null) {
                                         return "Cannot find regional words.";
                                     } else {
-                                        return "Region: " + findRegionalNames(findRegions(findSynonyms(findSubSenses(findSenses(findEntries(findLexicalEntries((findResults(response)))))))));
+                                        return "Region: " + findRegionalNames(findRegions(findSynonyms(findSubenses(findSenses(findEntries(findLexicalEntries((findResults(response)))))))));
                                     }
                                 }
                             }
