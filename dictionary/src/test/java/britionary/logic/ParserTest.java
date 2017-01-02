@@ -19,18 +19,18 @@ public class ParserTest {
     }
     
     @Test
-    public void testParseJSON() {
+    public void testParseJSONResults() {
         String json = "{\n"
                 + "    \"results\": []}\n";
         assertEquals("", parser.parseJSON(json));
     }
 
     @Test
-    public void testParseJSON2() {
+    public void testParseJSONEmpty() {
         String json = "{\n"
                 + "    \"\": []}\n";
         assertEquals("Cannot find results.", parser.parseJSON(json));
-    }    
+    }
     
     // Prototype
     @Test
