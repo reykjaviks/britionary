@@ -2,7 +2,7 @@ package britionary.logic;
 
 public class Converter {
 
-    private String newWord;
+    private String word;
     
     /*
      TODO:
@@ -11,7 +11,7 @@ public class Converter {
      */
     
     public String getWord() {
-        return this.newWord;
+        return this.word;
     }
 
     public void convert(String word) {
@@ -40,7 +40,7 @@ public class Converter {
             str.deleteCharAt(str.length() - 1);
         }
         
-        this.newWord = str.toString();
+        this.word = str.toString();
 
     }
 
