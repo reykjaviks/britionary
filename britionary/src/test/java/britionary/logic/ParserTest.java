@@ -22,7 +22,7 @@ public class ParserTest {
     public void testParseJSONResults() {
         String json = "{\n"
                 + "    \"results\": []}\n";
-        assertEquals("Success.", parser.parseJSON(json));
+        assertEquals("", parser.parseJSON(json));
     }
 
     @Test
@@ -983,7 +983,7 @@ public class ParserTest {
                 + "}";
 
         //TODO: Change later
-        assertEquals("Success.", parser.parseJSON(json));
+        assertEquals("hardly any", parser.parseJSON(json));
     }
 }
 

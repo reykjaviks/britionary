@@ -24,8 +24,7 @@ public class SearcherTest {
     @Test
     public void testSearch() {
         searcher = Searcher.getInstance();
-        assertEquals("Success.", searcher.search("Ace"));
+        assertEquals("expert", searcher.search("Ace"));
     }
-    
     
 }
