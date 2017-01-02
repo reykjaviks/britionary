@@ -15,8 +15,7 @@ public class Asker {
         this.systemIn = in;
     }
 
-    private String scan() {
-
+    public String scan() {
         try {
             scanner = new Scanner(systemIn);
             return scanner.nextLine();
