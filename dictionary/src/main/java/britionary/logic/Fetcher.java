@@ -30,17 +30,18 @@ public class Fetcher {
         return this.appKey;
     }
     
-    public boolean testCredentials() {
+    // Should this method call fetchJSON instead the other way around?
+    public boolean emptyCredentials() {
         if (this.appID == null || this.appKey == null
                 || this.appID.isEmpty() || this.appKey.isEmpty()) {
-            return false;
+            return true;
         }
-        return true;
+        return false;
     }
 
     public String fetchJSON(String cleanWord) {
 
-        if (testCredentials()) {
+        if (emptyCredentials() != true) {
 
             // Example code from https://developer.oxforddictionaries.com/documentation#/
             String language = "en";
@@ -69,6 +70,6 @@ public class Fetcher {
                 return e.toString();
             }
         }
-        return "";
+        return ""; // TODO: change later
     }
 }
