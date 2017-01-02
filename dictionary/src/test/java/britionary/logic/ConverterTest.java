@@ -21,31 +21,31 @@ public class ConverterTest {
     }
 
     @Test
-    public void testConvertWordLowerCase() {
+    public void testConvertLowerCase() {
         converter.convert("LITTLE");
         assertEquals("little", converter.getWord());
     }
 
     @Test
-    public void testConvertWordUnderscores() {
+    public void testConvertUnderscores() {
         converter.convert("a_great_deal_of");
         assertEquals("a great deal of", converter.getWord());
     }
 
     @Test
-    public void testConvertWordNumbers() {
+    public void testConvertNumbers() {
         converter.convert("littl3e4");
         assertEquals("little", converter.getWord());
     }
 
     @Test
-    public void testConvertWordLeadingSpace() {
+    public void testConvertLeadingSpace() {
         converter.convert(" wee");
         assertEquals("wee", converter.getWord());
     }
 
     @Test
-    public void testConvertWordTracingSpace() {
+    public void testConvertTracingSpace() {
         converter.convert("wee ");
         assertEquals("wee", converter.getWord());
     }
