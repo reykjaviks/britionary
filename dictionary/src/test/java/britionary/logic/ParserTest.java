@@ -9,7 +9,6 @@ import static org.junit.Assert.*;
 public class ParserTest {
 
     Parser parser;
-    Finder finder;
 
     public ParserTest() {
     }
@@ -17,8 +16,21 @@ public class ParserTest {
     @Before
     public void setUp() {
         parser = new Parser();
-        finder = new Finder();
     }
+    
+    @Test
+    public void testParseJSON() {
+        String json = "{\n"
+                + "    \"results\": []}\n";
+        assertEquals("", parser.parseJSON(json));
+    }
+
+    @Test
+    public void testParseJSON2() {
+        String json = "{\n"
+                + "    \"\": []}\n";
+        assertEquals("Cannot find results.", parser.parseJSON(json));
+    }    
     
     // Prototype
     @Test
