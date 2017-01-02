@@ -9,6 +9,7 @@ public class Parser {
 
     private Finder finder;
     private JSONObject response;
+    private String str;
 
     // What can I use this for?
     public enum Id {
@@ -16,7 +17,7 @@ public class Parser {
         RESULTS, LEXICALENTRIES, ENTRIES, SENSES, SUBSENSES, SYNONYMS,
         REGIONS;
     }
-
+    
     public String parseJSON(String json) {
 
         finder = new Finder();
@@ -25,8 +26,8 @@ public class Parser {
         if (finder.findJSONArray(response, "results") == null) {
             return "Cannot find results.";
         }
-
-        return "";
+        str = "Success.";
+        return str;
 
     }
 }
