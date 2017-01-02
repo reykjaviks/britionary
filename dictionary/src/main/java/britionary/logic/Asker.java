@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class Asker {
 
+    private String word;
     private Scanner scanner;
     private final InputStream systemIn; //Used for testing
 
@@ -15,17 +16,16 @@ public class Asker {
         this.systemIn = in;
     }
 
-    public String scan() {
+    public void scan() {
         try {
             scanner = new Scanner(systemIn);
-            return scanner.nextLine();
+            this.word = scanner.nextLine();
         } catch (Exception e) {
             System.out.println("Error: " + e);
         }
-        return "";  //TODO: change later
     }
 
     public String getWord() {
-        return scan();
+        return this.word;
     }
 }
