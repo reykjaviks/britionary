@@ -9,9 +9,10 @@ import org.json.JSONObject;
 
 public class Fetcher {
 
-    private String newWord;
+
     private final String appID;
     private final String appKey;
+    private String wordID;
 
     public Fetcher() {
         this.appID = "19275027";
@@ -23,53 +24,20 @@ public class Fetcher {
         this.appKey = appKey;
     }
 
-    /*
-    TODO:
-    Should be a private method
-    Replace loops with String.replace()
-    Cut into smaller methods(?)
-    */
-    public String convertWord(String word) {
-
-        StringBuilder str = new StringBuilder(word.toLowerCase());
-
-        // Replace underscores
-        for (int i = 0; i < word.length(); i++) {
-            if (word.charAt(i) == '_') {
-                str.setCharAt(i, ' ');
-            }
-        }
-        // Remove digits
-        for (int i = 0; i < str.length(); i++) {
-            if (Character.isDigit(str.charAt(i))) {
-                str.deleteCharAt(i);
-                i--;
-            }
-        }
-        // Remove leading space
-        if (Character.isSpaceChar(str.charAt(0))) {
-            str.deleteCharAt(0);
-        }
-        // Remove tracing space
-        if (Character.isSpaceChar(str.charAt(str.length() - 1))) {
-            str.deleteCharAt(str.length() - 1);
-        }
-        this.newWord = str.toString();
-        return this.newWord;
-    }
-
     public String fetchJSON(String word) {
 
+        this.wordID = word;
+        
         // TODO: Raise exception
+        // TODO: Write as a method
         if (this.appID == null || this.appKey == null
                 || this.appID.isEmpty() || this.appKey.isEmpty()) {
             return "";
         }
-        String wordID = convertWord(word);
 
         // Example code from https://developer.oxforddictionaries.com/documentation#/
         String language = "en";
-        String link = "https://od-api.oxforddictionaries.com:443/api/v1/entries/" + language + "/" + wordID + "/synonyms;antonyms";
+        String link = "https://od-api.oxforddictionaries.com:443/api/v1/entries/" + language + "/" + this.wordID + "/synonyms;antonyms";
 
         try {
             URL url = new URL(link);
