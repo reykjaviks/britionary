@@ -20,31 +20,6 @@ public class FetcherTest {
     }
 
     @Test
-    public void testConvertWordLowerCase() {
-        assertEquals("little", fetcher.convertWord("LITTLE"));
-    }
-    
-    @Test
-    public void testConvertWordUnderscores() {
-        assertEquals("a great deal of", fetcher.convertWord("a_great_deal_of"));
-    }
-
-    @Test
-    public void testConvertWordNumbers() {
-        assertEquals("little", fetcher.convertWord("littl3e4"));
-    }
-
-    @Test
-    public void testConvertWordLeadingSpace() {
-        assertEquals("wee", fetcher.convertWord(" wee"));
-    }
-
-    @Test
-    public void testConvertWordTracingSpace() {
-        assertEquals("wee", fetcher.convertWord("wee "));
-    }
-
-    @Test
     public void testConstructor() {
         fetcher = new Fetcher("", "");
         assertEquals("", fetcher.fetchJSON("little"));
