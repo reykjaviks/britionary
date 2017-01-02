@@ -21,41 +21,46 @@ public class Fetcher {
         this.appID = appID;
         this.appKey = appKey;
     }
-
-    public String fetchJSON(String cleanWord) {
-        
-        // TODO: Raise exception
-        // TODO: Write as a method
+    
+    public boolean testCredentials() {
         if (this.appID == null || this.appKey == null
                 || this.appID.isEmpty() || this.appKey.isEmpty()) {
-            return "";
+            return false;
         }
+        return true;
+    }
 
-        // Example code from https://developer.oxforddictionaries.com/documentation#/
-        String language = "en";
-        String link = "https://od-api.oxforddictionaries.com:443/api/v1/entries/" + language + "/" + cleanWord + "/synonyms;antonyms";
+    public String fetchJSON(String cleanWord) {
 
-        try {
-            URL url = new URL(link);
-            HttpsURLConnection urlConnection = (HttpsURLConnection) url.openConnection();
-            urlConnection.setRequestProperty("Accept", "application/json");
-            urlConnection.setRequestProperty("app_id", this.appID);
-            urlConnection.setRequestProperty("app_key", this.appKey);
+        if (testCredentials()) {
 
-            //Read output from the server
-            BufferedReader reader = new BufferedReader(new InputStreamReader(urlConnection.getInputStream()));
-            StringBuilder stringBuilder = new StringBuilder();
+            // Example code from https://developer.oxforddictionaries.com/documentation#/
+            String language = "en";
+            String link = "https://od-api.oxforddictionaries.com:443/api/v1/entries/" + language + "/" + cleanWord + "/synonyms;antonyms";
 
-            String line = null;
-            while ((line = reader.readLine()) != null) {
-                stringBuilder.append(line + "\n");
+            try {
+                URL url = new URL(link);
+                HttpsURLConnection urlConnection = (HttpsURLConnection) url.openConnection();
+                urlConnection.setRequestProperty("Accept", "application/json");
+                urlConnection.setRequestProperty("app_id", this.appID);
+                urlConnection.setRequestProperty("app_key", this.appKey);
+
+                //Read output from the server
+                BufferedReader reader = new BufferedReader(new InputStreamReader(urlConnection.getInputStream()));
+                StringBuilder stringBuilder = new StringBuilder();
+
+                String line = null;
+                while ((line = reader.readLine()) != null) {
+                    stringBuilder.append(line + "\n");
+                }
+
+                return stringBuilder.toString();
+
+            } catch (Exception e) {
+                e.printStackTrace(); // TODO: remove stack trace
+                return e.toString();
             }
-
-            return stringBuilder.toString();
-
-        } catch (Exception e) {
-            e.printStackTrace(); // TODO: remove stack trace
-            return e.toString();
         }
+        return "";
     }
 }
