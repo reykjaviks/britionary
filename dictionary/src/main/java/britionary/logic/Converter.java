@@ -8,9 +8,7 @@ public class Converter {
      TODO:
      Should be a private method
      Replace loops with String.replace()
-     Cut into smaller methods(?)
      */
-
     public String getWord() {
         return this.newWord;
     }
@@ -40,6 +38,7 @@ public class Converter {
         if (Character.isSpaceChar(str.charAt(str.length() - 1))) {
             str.deleteCharAt(str.length() - 1);
         }
+        
         this.newWord = str.toString();
 
     }
