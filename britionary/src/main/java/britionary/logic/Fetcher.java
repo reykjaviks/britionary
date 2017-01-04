@@ -53,7 +53,7 @@ public class Fetcher {
 
         if (emptyCredentials() != true) {
 
-            // Example code from https://developer.oxforddictionaries.com/documentation#/
+            // Esimerkkikoodi https://developer.oxforddictionaries.com/documentation#/
             String language = "en";
             String link = "https://od-api.oxforddictionaries.com:443/api/v1/entries/" + language + "/" + cleanWord + "/synonyms;antonyms";
 
@@ -76,10 +76,10 @@ public class Fetcher {
                 return stringBuilder.toString();
 
             } catch (Exception e) {
-                e.printStackTrace(); // TODO: Remove stack trace
+                e.printStackTrace(); // TODO: Poista stack trace
                 return e.toString();
             }
         }
-        return ""; // TODO: Change later
+        return ""; // TODO: Muuta myöhemmin
     }
 }

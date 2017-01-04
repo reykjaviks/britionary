@@ -18,7 +18,8 @@ public class Searcher {
     }
 
     /**
-     * Metodi pitää huolen, että luokasta voi tehdä vain yhden ilmentymän.
+     * Metodi pitää huolen, että luokasta voi tehdä vain yhden ilmentymän 
+     * kerrallaan.
      * 
      * @return          Ilmentymä
      */

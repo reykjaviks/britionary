@@ -1,5 +1,8 @@
 package britionary.logic;
 
+/**
+ * Luokka tarjoaa metodin käyttäjän syöttämien hakusanojen muuntamiseen.
+ */
 public class Converter {
     
     /**
@@ -13,24 +16,24 @@ public class Converter {
 
         StringBuilder str = new StringBuilder(word.toLowerCase());
 
-        // Replace underscores
+        // Korvaa alaviivat
         for (int i = 0; i < word.length(); i++) {
             if (word.charAt(i) == '_') {
                 str.setCharAt(i, ' ');
             }
         }
-        // Remove digits
+        // Poistaa numerot
         for (int i = 0; i < str.length(); i++) {
             if (Character.isDigit(str.charAt(i))) {
                 str.deleteCharAt(i);
                 i--;
             }
         }
-        // Remove leading space
+        // Poistaa alkuvälilyönnin
         if (Character.isSpaceChar(str.charAt(0))) {
             str.deleteCharAt(0);
         }
-        // Remove tracing space
+        // Poistaa loppuvälilyönnin
         if (Character.isSpaceChar(str.charAt(str.length() - 1))) {
             str.deleteCharAt(str.length() - 1);
         }

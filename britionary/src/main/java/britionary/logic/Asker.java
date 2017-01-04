@@ -12,7 +12,7 @@ public class Asker {
 
     private String word;
     private Scanner scanner;
-    private final InputStream systemIn; //Used for testing
+    private final InputStream systemIn; // Käytetään testaukseen
 
     public Asker() {
         this.systemIn = System.in;
