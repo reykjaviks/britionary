@@ -7,10 +7,7 @@ import org.json.JSONObject;
 /**
  * Luokka tarjoaa metodeita JSON-tiedoston parsimiseen.
  */
-
 public class Parser {
-
-    private String str = "";
 
     /**
      * Metodi parsii JSON-tiedoston käyttämällä apuna 
@@ -26,9 +23,10 @@ public class Parser {
             return "Cannot find results.";
         }
 
+        String str = "";
         ArrayList<String> wordList = handleResults(results);
         for (int i = 0; i < wordList.size(); i++) {
-            str = str + wordList.get(i) + "\n";
+            str += wordList.get(i) + "\n";
         }
         return str;
     }
