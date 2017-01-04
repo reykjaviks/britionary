@@ -17,7 +17,7 @@ public class Finder {
      * @param   arrayID Taulukon nimi
      * @return          Taulukko tai null, jos taulukkoa ei löydetty
      */
-    public JSONArray findJSONArray(JSONObject object, String arrayID) {
+    public static JSONArray findJSONArray(JSONObject object, String arrayID) {
         if (object.has(arrayID)) {
             return object.getJSONArray(arrayID);
         }

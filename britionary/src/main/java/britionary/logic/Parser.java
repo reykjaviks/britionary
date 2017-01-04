@@ -10,7 +10,6 @@ import org.json.JSONObject;
 
 public class Parser {
 
-    private Finder finder;
     private String str = "";
 
     /**
@@ -18,12 +17,11 @@ public class Parser {
      * luokan yksityisiä metodeita.
      * 
      * @param   json    Parsittava JSON-tiedosto
-     * @return          Löydetyt synonyymit
+     * @return          Lista löydetyistä synonyymeista
      */
     public String parseJSON(String json) {
-        finder = new Finder();
         JSONObject response = new JSONObject(json);
-        JSONArray results = finder.findJSONArray(response, "results");
+        JSONArray results = Finder.findJSONArray(response, "results");
         if (results == null) {
             return "Cannot find results.";
         }
@@ -39,7 +37,7 @@ public class Parser {
         ArrayList<String> words = new ArrayList<>();
 
         for (int i = 0; i < results.length(); i++) {
-            JSONArray lexicalEntries = finder.findJSONArray(results.getJSONObject(i), "lexicalEntries");
+            JSONArray lexicalEntries = Finder.findJSONArray(results.getJSONObject(i), "lexicalEntries");
             if (lexicalEntries != null) {
                 words.addAll(handleLexicalEntries(lexicalEntries));
             }
@@ -51,7 +49,7 @@ public class Parser {
         ArrayList<String> words = new ArrayList<>();
 
         for (int i = 0; i < lexicalEntries.length(); i++) {
-            JSONArray entries = finder.findJSONArray(lexicalEntries.getJSONObject(i), "entries");
+            JSONArray entries = Finder.findJSONArray(lexicalEntries.getJSONObject(i), "entries");
             if (entries != null) {
                 words.addAll(handleEntries(entries));
             }
@@ -63,7 +61,7 @@ public class Parser {
         ArrayList<String> words = new ArrayList<>();
 
         for (int i = 0; i < entries.length(); i++) {
-            JSONArray senses = finder.findJSONArray(entries.getJSONObject(i), "senses");
+            JSONArray senses = Finder.findJSONArray(entries.getJSONObject(i), "senses");
             if (senses != null) {
                 words.addAll(handleSenses(senses));
             }
@@ -75,11 +73,11 @@ public class Parser {
         ArrayList<String> words = new ArrayList<>();
 
         for (int i = 0; i < senses.length(); i++) {
-            JSONArray synonyms = finder.findJSONArray(senses.getJSONObject(i), "synonyms");
+            JSONArray synonyms = Finder.findJSONArray(senses.getJSONObject(i), "synonyms");
             if (synonyms != null) {
                 words.addAll(handleSynonyms(synonyms));
             }
-            JSONArray subsenses = finder.findJSONArray(senses.getJSONObject(i), "subsenses");
+            JSONArray subsenses = Finder.findJSONArray(senses.getJSONObject(i), "subsenses");
             if (subsenses != null) {
                 words.addAll(handleSubsenses(subsenses));
             }
@@ -91,7 +89,7 @@ public class Parser {
         ArrayList<String> words = new ArrayList<>();
 
         for (int i = 0; i < subsenses.length(); i++) {
-            JSONArray synonyms = finder.findJSONArray(subsenses.getJSONObject(i), "synonyms");
+            JSONArray synonyms = Finder.findJSONArray(subsenses.getJSONObject(i), "synonyms");
             if (synonyms != null) {
                 words.addAll(handleSynonyms(synonyms));
             }
