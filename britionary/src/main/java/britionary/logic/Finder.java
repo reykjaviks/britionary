@@ -1,5 +1,6 @@
 package britionary.logic;
 
+import java.util.ArrayList;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -11,14 +12,4 @@ public class Finder {
         }
         return null;
     }
-
-    public JSONObject findFirstJSONObject(JSONArray array, String objectID) {
-        for (int i = 0; i < array.length(); i++) {
-            if (array.getJSONObject(i).has(objectID)) {
-                return array.getJSONObject(i);
-            }
-        }
-        return null;
-    }
-
 }
