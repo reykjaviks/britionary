@@ -7,7 +7,6 @@ import java.awt.event.*;
 
 public class Window extends JFrame implements ActionListener {
 
-    private Container container;
     private JTextField sField;
     private JTextField pField;
     private JButton button;
