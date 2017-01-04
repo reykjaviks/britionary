@@ -4,8 +4,6 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.URL;
 import javax.net.ssl.HttpsURLConnection;
-import org.json.JSONArray;
-import org.json.JSONObject;
 
 public class Fetcher {
 
