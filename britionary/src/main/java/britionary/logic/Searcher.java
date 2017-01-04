@@ -7,12 +7,10 @@ package britionary.logic;
 public class Searcher {
 
     private final Fetcher fetcher;
-    private final Converter converter;
     private static Searcher instance = null;
 
     private Searcher() {
         fetcher = new Fetcher();
-        converter = new Converter();
     }
 
     /**
@@ -36,6 +34,6 @@ public class Searcher {
      * @return          Lista löydetyistä synonyymeista
      */
     public String search(String word) {
-        return Parser.parseJSON(fetcher.fetchJSON(converter.convert(word)));
+        return Parser.parseJSON(fetcher.fetchJSON(Converter.convert(word)));
     }
 }

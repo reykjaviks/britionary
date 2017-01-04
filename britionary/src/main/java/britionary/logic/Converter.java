@@ -12,7 +12,7 @@ public class Converter {
      * @param   word    Käyttäjän antama hakusana
      * @return          Siistitty hakusana
      */
-    public String convert(String word) {
+    public static String convert(String word) {
 
         StringBuilder str = new StringBuilder(word.toLowerCase());
 
