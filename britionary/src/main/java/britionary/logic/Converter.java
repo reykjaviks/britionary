@@ -1,19 +1,9 @@
 package britionary.logic;
 
 public class Converter {
-
-    private String word;
     
-    /*
-     TODO:
-     Replace loops with String.replace()
-     */
-    
-    public String getWord() {
-        return this.word;
-    }
-
-    public void convert(String word) {
+    //TODO: Replace loops with String.replace()(?)
+    public String convert(String word) {
 
         StringBuilder str = new StringBuilder(word.toLowerCase());
 
@@ -39,7 +29,7 @@ public class Converter {
             str.deleteCharAt(str.length() - 1);
         }
         
-        this.word = str.toString();
+        return str.toString();
 
     }
 

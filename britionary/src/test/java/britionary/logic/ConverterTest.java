@@ -22,32 +22,27 @@ public class ConverterTest {
 
     @Test
     public void testConvertLowerCase() {
-        converter.convert("LITTLE");
-        assertEquals("little", converter.getWord());
+        assertEquals("little", converter.convert("LITTLE"));
     }
 
     @Test
     public void testConvertUnderscores() {
-        converter.convert("a_great_deal_of");
-        assertEquals("a great deal of", converter.getWord());
+        assertEquals("a great deal of", converter.convert("a_great_deal_of"));
     }
 
     @Test
     public void testConvertNumbers() {
-        converter.convert("littl3e4");
-        assertEquals("little", converter.getWord());
+        assertEquals("little", converter.convert("littl3e4"));
     }
 
     @Test
     public void testConvertLeadingSpace() {
-        converter.convert(" wee");
-        assertEquals("wee", converter.getWord());
+        assertEquals("wee", converter.convert(" wee"));
     }
 
     @Test
     public void testConvertTracingSpace() {
-        converter.convert("wee ");
-        assertEquals("wee", converter.getWord());
+        assertEquals("wee", converter.convert("wee "));
     }
 
 }

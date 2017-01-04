@@ -21,7 +21,6 @@ public class Searcher {
     }
 
     public String search(String word) {
-        converter.convert(word);
-        return parser.parseJSON(fetcher.fetchJSON(converter.getWord()));
+        return parser.parseJSON(fetcher.fetchJSON(converter.convert(word)));
     }
 }
