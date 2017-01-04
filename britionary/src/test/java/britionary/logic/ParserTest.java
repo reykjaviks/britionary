@@ -33,7 +33,7 @@ public class ParserTest {
     }
     
     // Prototype
-    @Test
+    // @Test
     public void testJsonToObject() {
         String json = "{\n"
                 + "    \"metadata\": {\n"
