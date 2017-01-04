@@ -5,8 +5,7 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 /**
- * Luokka tarjoaa metodin JSON-tiedoston sisältämien taulukkojen 
- * etsimiseen.
+ * Luokka tarjoaa metodin JSON-tiedoston sisältämien taulukkojen etsimiseen.
  */
 public class Finder {
 

@@ -6,8 +6,7 @@ import java.net.URL;
 import javax.net.ssl.HttpsURLConnection;
 
 /**
- * Luokka toteuttaa Oxford Dictionary:n määrittelemän 
- * ohjelmointirajapinnan.
+ * Luokka toteuttaa Oxford Dictionary:n määrittelemän ohjelmointirajapinnan.
  */
 public class Fetcher {
 
@@ -43,8 +42,7 @@ public class Fetcher {
     
     
     /**
-     * Metodi hakee Oxford Dictionary:sta hakusanaa vastaavan
-     * JSON-tiedoston.
+     * Metodi hakee Oxford Dictionary:sta hakusanaa vastaavan JSON-tiedoston.
      * 
      * @param   cleanWord   Siistitty hakusana
      * @return              hakusanaa vastaava JSON-tiedosto

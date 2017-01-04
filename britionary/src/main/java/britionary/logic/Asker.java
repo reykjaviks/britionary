@@ -4,9 +4,8 @@ import java.io.InputStream;
 import java.util.Scanner;
 
 /**
- * Luokkaa käytetään käyttäjän syötteiden lukemiseen.
- * Tämä luokka on poistettu luokkakaaviosta, koska
- * sen tarpeellisuudesta ei ole vielä varmuutta.
+ * Luokkaa käytetään käyttäjän syötteiden lukemiseen. Tämä luokka on poistettu 
+ * luokkakaaviosta, koska sen tarpeellisuudesta ei ole vielä varmuutta.
 */
 public class Asker {
 

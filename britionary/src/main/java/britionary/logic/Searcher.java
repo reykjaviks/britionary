@@ -1,8 +1,8 @@
 package britionary.logic;
 
 /**
- * Luokka tarjoaa metodin sanojen hakemiseen ja erottaa kutsujan 
- * sovelluslogiikan alemmista metodeista.
+ * Luokka tarjoaa metodin sanojen hakemiseen ja erottaa kutsujan sovelluslogiikan 
+ * alemmista metodeista.
  */
 public class Searcher {
 
