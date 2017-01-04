@@ -18,3 +18,5 @@ Päivä | Tunnit | Kuvaus
 5.1. | ... |
 6.1. | ... |
 7.1. | ... |
+
+_Yhteensä 46 tuntia_
