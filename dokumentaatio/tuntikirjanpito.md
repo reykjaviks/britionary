@@ -13,8 +13,8 @@ Päivä | Tunnit | Kuvaus
 31.12. | 3h | Koodikatselmointia ja projektin siistimistä
 1.1.2017 |    |
 2.1. | 7h | Rakenteen hiomista ja logiikan kirjoittamista
-3.1. | ... |
-4.1. | ... |
+3.1. |     |
+4.1. | 6h | Käyttöliittymän ja JavaDocin kirjoittamista, sekä projektin siistimistä
 5.1. | ... |
 6.1. | ... |
 7.1. | ... |
