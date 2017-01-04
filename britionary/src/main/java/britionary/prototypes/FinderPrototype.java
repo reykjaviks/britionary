@@ -5,6 +5,15 @@ import org.json.JSONObject;
 
 public class FinderPrototype {
 
+    public JSONObject findFirstJSONObject(JSONArray array, String objectID) {
+        for (int i = 0; i < array.length(); i++) {
+            if (array.getJSONObject(i).has(objectID)) {
+                return array.getJSONObject(i);
+            }
+        }
+        return null;
+    }
+
     public JSONArray findResults(JSONObject response) {
         if (response.has("results")) {
             return response.getJSONArray("results");
