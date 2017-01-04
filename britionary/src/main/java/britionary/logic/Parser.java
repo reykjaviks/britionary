@@ -9,6 +9,10 @@ public class Parser {
     private Finder finder;
     private String str;
     
+    public String getString() {
+        return str;
+    }
+    
     private ArrayList<String> handleResults(JSONArray results) {
         ArrayList<String> words = new ArrayList<>();
         
@@ -85,6 +89,7 @@ public class Parser {
         return words;
     }
 
+    // TODO: remove return value & use getString instead.
     public String parseJSON(String json) {
 
         finder = new Finder();
