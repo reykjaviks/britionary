@@ -10,8 +10,7 @@ import org.json.JSONObject;
 public class Parser {
 
     /**
-     * Metodi parsii JSON-tiedoston käyttämällä apuna 
-     * luokan yksityisiä metodeita.
+     * Metodi parsii JSON-tiedoston käyttämällä apuna luokan yksityisiä metodeita.
      * 
      * @param   json    Parsittava JSON-tiedosto
      * @return          Lista löydetyistä synonyymeista
