@@ -18,7 +18,7 @@ public class ParserTest {
         parser = new Parser();
     }
     
-    // @Test
+    @Test
     public void testParseJSONResults() {
         String json = "{\n"
                 + "    \"results\": []}\n";
@@ -32,7 +32,7 @@ public class ParserTest {
         assertEquals("Cannot find results.", parser.parseJSON(json));
     }
     
-    // Prototype
+    // More parsing is required for passing this test.
     // @Test
     public void testJsonToObject() {
         String json = "{\n"
@@ -983,7 +983,7 @@ public class ParserTest {
                 + "}";
 
         //TODO: Change later
-        assertEquals("hardly any", parser.parseJSON(json));
+        assertEquals("wee", parser.parseJSON(json));
     }
 }
 

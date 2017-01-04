@@ -21,10 +21,11 @@ public class SearcherTest {
         assertNotNull(Searcher.getInstance());
     }
     
+    // More parsing is required for passing this test.
     // @Test
     public void testSearch() {
         searcher = Searcher.getInstance();
-        assertEquals("expert", searcher.search("Ace"));
+        assertEquals("wee", searcher.search("Little"));
     }
     
 }

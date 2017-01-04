@@ -9,11 +9,7 @@ public class Parser {
     private Finder finder;
     private String str = "";
 
-    public String getString() {
-        return str;
-    }
-
-    // TODO: remove return value & use getString and try-catch instead.
+    // TODO: Use try-catch instead(?)
     public String parseJSON(String json) {
         finder = new Finder();
         JSONObject response = new JSONObject(json);
