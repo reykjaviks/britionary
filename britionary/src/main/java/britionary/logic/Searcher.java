@@ -27,8 +27,7 @@ public class Searcher {
     }
     
     /**
-     * Metodi etsii synonyymeja kutsumalla Parser, Fetcher ja Converter 
-     * -luokkien metodeita.
+     * Metodi hakee syötettyä sanaa vastaavat synonyymit.
      * 
      * @param   word    Käyttäjän syöttämä hakusana
      * @return          Lista löydetyistä synonyymeista
