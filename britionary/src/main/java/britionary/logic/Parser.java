@@ -16,7 +16,7 @@ public class Parser {
      * @param   json    Parsittava JSON-tiedosto
      * @return          Lista löydetyistä synonyymeista
      */
-    public String parseJSON(String json) {
+    public static String parseJSON(String json) {
         JSONObject response = new JSONObject(json);
         JSONArray results = Finder.findJSONArray(response, "results");
         if (results == null) {
@@ -31,7 +31,7 @@ public class Parser {
         return str;
     }
 
-    private ArrayList<String> handleResults(JSONArray results) {
+    private static ArrayList<String> handleResults(JSONArray results) {
         ArrayList<String> words = new ArrayList<>();
 
         for (int i = 0; i < results.length(); i++) {
@@ -43,7 +43,7 @@ public class Parser {
         return words;
     }
 
-    private ArrayList<String> handleLexicalEntries(JSONArray lexicalEntries) {
+    private static ArrayList<String> handleLexicalEntries(JSONArray lexicalEntries) {
         ArrayList<String> words = new ArrayList<>();
 
         for (int i = 0; i < lexicalEntries.length(); i++) {
@@ -55,7 +55,7 @@ public class Parser {
         return words;
     }
 
-    private ArrayList<String> handleEntries(JSONArray entries) {
+    private static ArrayList<String> handleEntries(JSONArray entries) {
         ArrayList<String> words = new ArrayList<>();
 
         for (int i = 0; i < entries.length(); i++) {
@@ -67,7 +67,7 @@ public class Parser {
         return words;
     }
 
-    private ArrayList<String> handleSenses(JSONArray senses) {
+    private static ArrayList<String> handleSenses(JSONArray senses) {
         ArrayList<String> words = new ArrayList<>();
 
         for (int i = 0; i < senses.length(); i++) {
@@ -83,7 +83,7 @@ public class Parser {
         return words;
     }
 
-    private ArrayList<String> handleSubsenses(JSONArray subsenses) {
+    private static ArrayList<String> handleSubsenses(JSONArray subsenses) {
         ArrayList<String> words = new ArrayList<>();
 
         for (int i = 0; i < subsenses.length(); i++) {
@@ -95,7 +95,7 @@ public class Parser {
         return words;
     }
 
-    private ArrayList<String> handleSynonyms(JSONArray synonyms) {
+    private static ArrayList<String> handleSynonyms(JSONArray synonyms) {
         ArrayList<String> words = new ArrayList<>();
 
         for (int i = 0; i < synonyms.length(); i++) {
