@@ -8,14 +8,30 @@ public class Parser {
 
     private Finder finder;
     private String str;
-    
+
     public String getString() {
         return str;
     }
-    
+
+    // TODO: remove return value & use getString instead.
+    public String parseJSON(String json) {
+        finder = new Finder();
+        JSONObject response = new JSONObject(json);
+        JSONArray results = finder.findJSONArray(response, "results");
+        if (results == null) {
+            return "Cannot find results.";
+        }
+
+        ArrayList<String> wordList = handleResults(results);
+        for (int i = 0; i < wordList.size(); i++) {
+            str = str + "\n" + wordList.get(i);
+        }
+        return str;
+    }
+
     private ArrayList<String> handleResults(JSONArray results) {
         ArrayList<String> words = new ArrayList<>();
-        
+
         for (int i = 0; i < results.length(); i++) {
             JSONArray lexicalEntries = finder.findJSONArray(results.getJSONObject(i), "lexicalEntries");
             if (lexicalEntries != null) {
@@ -27,7 +43,7 @@ public class Parser {
 
     private ArrayList<String> handleLexicalEntries(JSONArray lexicalEntries) {
         ArrayList<String> words = new ArrayList<>();
-        
+
         for (int i = 0; i < lexicalEntries.length(); i++) {
             JSONArray entries = finder.findJSONArray(lexicalEntries.getJSONObject(i), "entries");
             if (entries != null) {
@@ -36,10 +52,10 @@ public class Parser {
         }
         return words;
     }
-    
+
     private ArrayList<String> handleEntries(JSONArray entries) {
         ArrayList<String> words = new ArrayList<>();
-        
+
         for (int i = 0; i < entries.length(); i++) {
             JSONArray senses = finder.findJSONArray(entries.getJSONObject(i), "senses");
             if (senses != null) {
@@ -64,7 +80,7 @@ public class Parser {
         }
         return words;
     }
-    
+
     private ArrayList<String> handleSubsenses(JSONArray subsenses) {
         ArrayList<String> words = new ArrayList<>();
 
@@ -87,23 +103,5 @@ public class Parser {
             }
         }
         return words;
-    }
-
-    // TODO: remove return value & use getString instead.
-    public String parseJSON(String json) {
-
-        finder = new Finder();
-        JSONObject response = new JSONObject(json);
-        ArrayList<String> wordList = new ArrayList<>();
-        JSONArray results = finder.findJSONArray(response, "results");
-        if (results == null) {
-            return "Cannot find results.";
-        }
-        
-        wordList = handleResults(results);
-        for (int i = 0; i < wordList.size(); i++) {
-            str = str + "\n" + wordList.get(i);
-        }
-        return str;
     }
 }
