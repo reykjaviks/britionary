@@ -23,9 +23,9 @@ under the License.
     <link>${project.url}</link>
     <description>britionary - Checkstyle report</description>
     <language>en-us</language>
-    <copyright>&#169;2016</copyright>
+    <copyright>&#169;2017</copyright>
     <item>
-      <title>File: 7,
+      <title>File: 10,
              Errors: 0,
              Warnings: 0,
              Infos: 0
@@ -44,6 +44,34 @@ under the License.
             </tr>
           </thead>
           <tbody>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#britionary.logic.Converter.java">britionary/logic/Converter.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#britionary.logic.Finder.java">britionary/logic/Finder.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
                           <tr>
                 <td>
                   <a href="${project.url}/checkstyle.html#britionary.logic.Searcher.java">britionary/logic/Searcher.java</a>
@@ -74,6 +102,20 @@ under the License.
               </tr>
                           <tr>
                 <td>
+                  <a href="${project.url}/checkstyle.html#britionary.prototypes.FinderPrototype.java">britionary/prototypes/FinderPrototype.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
                   <a href="${project.url}/checkstyle.html#britionary.logic.Parser.java">britionary/logic/Parser.java</a>
                 </td>
                 <td>
@@ -88,7 +130,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="${project.url}/checkstyle.html#britionary.gui.Test.java">britionary/gui/Test.java</a>
+                  <a href="${project.url}/checkstyle.html#britionary.gui.Window.java">britionary/gui/Window.java</a>
                 </td>
                 <td>
                   0
