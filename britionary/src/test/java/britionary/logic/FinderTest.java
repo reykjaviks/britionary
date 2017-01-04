@@ -25,14 +25,5 @@ public class FinderTest {
         JSONObject response = new JSONObject(json);
         assertNotNull(finder.findJSONArray(response, "results"));
     }
-    
-    // Doesn't work
-    // @Test
-    public void testFindFirstJSONObjectLexicalEntries() {
-        String json = "[\n"
-                + "    \"lexicalEntries\": []]\n";
-        JSONArray results = new JSONArray(json);
-        assertNotNull(finder.findFirstJSONObject(results, "lexicalEntries"));
-    }
 
 }
