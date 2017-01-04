@@ -4,12 +4,22 @@ import java.util.ArrayList;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+/**
+ * Luokka tarjoaa metodeita JSON-tiedoston parsimiseen.
+ */
+
 public class Parser {
 
     private Finder finder;
     private String str = "";
 
-    // TODO: Use try-catch instead(?)
+    /**
+     * Metodi parsii JSON-tiedoston käyttämällä apuna 
+     * luokan yksityisiä metodeita.
+     * 
+     * @param   json    Parsittava JSON-tiedosto
+     * @return          Löydetyt synonyymit
+     */
     public String parseJSON(String json) {
         finder = new Finder();
         JSONObject response = new JSONObject(json);

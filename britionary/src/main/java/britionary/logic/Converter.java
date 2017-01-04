@@ -2,7 +2,13 @@ package britionary.logic;
 
 public class Converter {
     
-    //TODO: Replace loops with String.replace()(?)
+    /**
+     * Metodi muuntaa hakusanan siihen muotoon, että sillä voidaan hakea tietoa
+     * Oxford Dictionary:n ohjelmointirajapinnasta.
+     * 
+     * @param   word    Käyttäjän antama hakusana
+     * @return          Siistitty hakusana
+     */
     public String convert(String word) {
 
         StringBuilder str = new StringBuilder(word.toLowerCase());

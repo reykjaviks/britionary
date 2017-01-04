@@ -5,6 +5,10 @@ import java.io.InputStreamReader;
 import java.net.URL;
 import javax.net.ssl.HttpsURLConnection;
 
+/**
+ * Luokka toteuttaa Oxford Dictionary:n määrittelemän 
+ * ohjelmointirajapinnan.
+ */
 public class Fetcher {
 
     private final String appID;
@@ -28,7 +32,7 @@ public class Fetcher {
         return this.appKey;
     }
     
-    // Should this method call fetchJSON instead the other way around?
+    // Pitäisikö tämän pätkän kutsua fetchJSON:ia eikä toisin päin?
     public boolean emptyCredentials() {
         if (this.appID == null || this.appKey == null
                 || this.appID.isEmpty() || this.appKey.isEmpty()) {
@@ -36,7 +40,15 @@ public class Fetcher {
         }
         return false;
     }
-
+    
+    
+    /**
+     * Metodi hakee Oxford Dictionary:sta hakusanaa vastaavan
+     * JSON-tiedoston.
+     * 
+     * @param   cleanWord   Siistitty hakusana
+     * @return              hakusanaa vastaava JSON-tiedosto
+     */
     public String fetchJSON(String cleanWord) {
 
         if (emptyCredentials() != true) {
@@ -64,10 +76,10 @@ public class Fetcher {
                 return stringBuilder.toString();
 
             } catch (Exception e) {
-                e.printStackTrace(); // TODO: remove stack trace
+                e.printStackTrace(); // TODO: Remove stack trace
                 return e.toString();
             }
         }
-        return ""; // TODO: change later
+        return ""; // TODO: Change later
     }
 }
