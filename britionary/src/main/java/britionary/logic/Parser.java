@@ -7,14 +7,7 @@ import org.json.JSONObject;
 public class Parser {
 
     private Finder finder;
-    private JSONObject response;
     private String str;
-
-    // What can I use this for?
-    public enum ID {
-        RESULTS, LEXICAL_ENTRIES, ENTRIES, SENSES, SUBSENSES, SYNONYMS,
-        REGIONS;
-    }
     
     private ArrayList<String> handleResults(JSONArray results) {
         ArrayList<String> words = new ArrayList<>();
@@ -95,14 +88,17 @@ public class Parser {
     public String parseJSON(String json) {
 
         finder = new Finder();
-        response = new JSONObject(json);
-
+        JSONObject response = new JSONObject(json);
+        ArrayList<String> wordList = new ArrayList<>();
         JSONArray results = finder.findJSONArray(response, "results");
         if (results == null) {
             return "Cannot find results.";
         }
-
-        str = handleResults(results).get(0);
+        
+        wordList = handleResults(results);
+        for (int i = 0; i < wordList.size(); i++) {
+            str = str + "\n" + wordList.get(i);
+        }
         return str;
     }
 }
