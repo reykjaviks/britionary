@@ -7,13 +7,13 @@ import org.json.JSONObject;
 public class Parser {
 
     private Finder finder;
-    private String str;
+    private String str = "";
 
     public String getString() {
         return str;
     }
 
-    // TODO: remove return value & use getString instead.
+    // TODO: remove return value & use getString and try-catch instead.
     public String parseJSON(String json) {
         finder = new Finder();
         JSONObject response = new JSONObject(json);
@@ -24,7 +24,7 @@ public class Parser {
 
         ArrayList<String> wordList = handleResults(results);
         for (int i = 0; i < wordList.size(); i++) {
-            str = str + "\n" + wordList.get(i);
+            str = str + wordList.get(i) + "\n";
         }
         return str;
     }
