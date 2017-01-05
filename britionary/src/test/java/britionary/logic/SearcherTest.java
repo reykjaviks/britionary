@@ -4,16 +4,11 @@ import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-//Initialization
 public class SearcherTest {
     
     Searcher searcher;
     
     public SearcherTest() {
-    }
-    
-    @Before
-    public void setUp() {
     }
 
     @Test
@@ -21,11 +16,34 @@ public class SearcherTest {
         assertNotNull(Searcher.getInstance());
     }
     
-    // More parsing is required for passing this test.
-    // @Test
-    public void testSearch() {
+    @Test
+    public void testSearchUnknownWord() {
         searcher = Searcher.getInstance();
-        assertEquals("wee", searcher.search("Little"));
+        assertEquals("No results for \"adjfk\"", searcher.search("Adjfk"));
     }
     
+    @Test
+    public void testSearchUmlauted() {
+        searcher = Searcher.getInstance();
+        assertEquals("No results for \"äfäfäö\"", searcher.search("Äfäfäö"));
+    }
+
+    //@Test (doesn't work)
+    public void testSearch() {
+        searcher = Searcher.getInstance();
+        assertEquals("feline\n"
+                + "tabby\n"
+                + "ginger tom\n"
+                + "tortoiseshell\n"
+                + "marmalade cat\n "
+                + "mouser\n"
+                + "wild cat\n"
+                + "alley cat\n"
+                + "pussy\n"
+                + "pussy cat\n"
+                + "puss\n"
+                + "moggie\n"
+                + "mog\n"
+                + "grimalkin\n", searcher.search("Cat"));
+    }
 }
