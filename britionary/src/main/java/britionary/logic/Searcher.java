@@ -1,5 +1,8 @@
 package britionary.logic;
 
+import java.io.IOException;
+import java.net.MalformedURLException;
+
 /**
  * Luokka tarjoaa metodin sanojen hakemiseen ja erottaa kutsujan sovelluslogiikan 
  * alemmasta tasosta.
@@ -33,6 +36,27 @@ public class Searcher {
      * @return          Lista löydetyistä synonyymeista
      */
     public String search(String word) {
-        return Parser.parseJSON(fetcher.fetchJSON(Converter.convert(word)));
+        String w;
+        try {
+            w = Converter.convert(word);
+        } catch(Exception e) {
+            return "Cannot convert word: " + e;
+        }
+        
+        try {
+            w = fetcher.fetchJSON(w);
+        } catch(MalformedURLException e) {
+            return "Invalid URL: " + e;
+        } catch (IOException e) {
+            return "No results for \"" + w + "\"";
+        } catch(Exception e) {
+            return "Cannot fetch JSON-file: " + e;
+        }
+        
+        try {
+            return Parser.parseJSON(w);
+        } catch(Exception e) {
+            return "Cannot parse JSON-file: " + e;
+        }
     }
 }

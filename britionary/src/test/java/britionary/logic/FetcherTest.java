@@ -30,64 +30,23 @@ public class FetcherTest {
         assertEquals("fbf690", fetcher.getAppKey());
     }
 
-    @Test
+    @Test(expected = Exception.class)
     public void testConstructorEmptyID() {
         fetcher = new Fetcher("", "fbf690");
-        assertEquals("", fetcher.getAppID());
     }
 
-    @Test
+    @Test(expected = Exception.class)
     public void testConstructorEmptyKey() {
         fetcher = new Fetcher("003", "");
-        assertEquals("", fetcher.getAppKey());
     }
 
-    @Test
+    @Test(expected = Exception.class)
     public void testConstructorNullID() {
         fetcher = new Fetcher(null, "fbf690");
-        assertEquals(null, fetcher.getAppID());
     }
 
-    @Test
+    @Test(expected = Exception.class)
     public void testConstructorNullKey() {
         fetcher = new Fetcher("003", null);
-        assertEquals(null, fetcher.getAppKey());
     }
-
-    @Test
-    public void testEmptyCredentialsTrue() {
-        fetcher = new Fetcher("", "");
-        assertTrue(fetcher.emptyCredentials());
-    }
-
-    @Test
-    public void testEmptyCredentialsFalse() {
-        fetcher = new Fetcher("003", "fbf690");
-        assertFalse(fetcher.emptyCredentials());
-    }
-
-    @Test
-    public void testEmptyCredentialsEmptyID() {
-        fetcher = new Fetcher("", "fbf690");
-        assertTrue(fetcher.emptyCredentials());
-    }
-
-    @Test
-    public void testEmptyCredentialsEmptyKey() {
-        fetcher = new Fetcher("003", "");
-        assertTrue(fetcher.emptyCredentials());
-    }
-
-    @Test
-    public void testEmptyCredentialsNullID() {
-        fetcher = new Fetcher("003", null);
-        assertTrue(fetcher.emptyCredentials());
-    }
-
-    @Test
-    public void testEmptyCredentialsNullKey() {
-        fetcher = new Fetcher(null, "fbf690");
-        assertTrue(fetcher.emptyCredentials());
-    }
-
 }
