@@ -39,6 +39,8 @@ public class Searcher {
         String w;
         try {
             w = Converter.convert(word);
+        } catch(StringIndexOutOfBoundsException e) {
+            return "Index out of bounds: " + e;
         } catch(Exception e) {
             return "Cannot convert word: " + e;
         }
