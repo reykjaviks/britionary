@@ -1,6 +1,6 @@
 package britionary.logic;
 
-import java.util.ArrayList;
+import java.util.HashSet;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -10,8 +10,8 @@ public class Handler {
         "senses", "synonyms", "subsenses" };
     
     // TODO: Korjaa rekursio
-    public ArrayList<String> handleJSON(JSONArray array) {
-        ArrayList<String> words = new ArrayList<>();
+    public HashSet<String> handleJSON(JSONArray array) {
+        HashSet<String> words = new HashSet<>();
         
         for (int i = 0; i < this.objectList.length; i++) {
             for (int j = 0; j < array.length(); j++) {
@@ -24,13 +24,13 @@ public class Handler {
         return words;
     }
     
-    public static ArrayList<WordResult> handleResults(JSONObject response) throws ParseException {
+    public static HashSet<WordResult> handleResults(JSONObject response) throws ParseException {
         JSONArray results = Finder.findJSONArray(response, "results");
         if (results == null) {
             throw new ParseException("Cannot find results.");
         }
         
-        ArrayList<WordResult> words = new ArrayList<>();
+        HashSet<WordResult> words = new HashSet<>();
 
         for (int i = 0; i < results.length(); i++) {
             JSONArray lexicalEntries = Finder.findJSONArray(results.getJSONObject(i), "lexicalEntries");
@@ -41,8 +41,8 @@ public class Handler {
         return words;
     }
 
-    private static ArrayList<WordResult> handleLexicalEntries(JSONArray lexicalEntries) {
-        ArrayList<WordResult> words = new ArrayList<>();
+    private static HashSet<WordResult> handleLexicalEntries(JSONArray lexicalEntries) {
+        HashSet<WordResult> words = new HashSet<>();
 
         for (int i = 0; i < lexicalEntries.length(); i++) {
             JSONArray entries = Finder.findJSONArray(lexicalEntries.getJSONObject(i), "entries");
@@ -53,8 +53,8 @@ public class Handler {
         return words;
     }
 
-    private static ArrayList<WordResult> handleEntries(JSONArray entries) {
-        ArrayList<WordResult> words = new ArrayList<>();
+    private static HashSet<WordResult> handleEntries(JSONArray entries) {
+        HashSet<WordResult> words = new HashSet<>();
 
         for (int i = 0; i < entries.length(); i++) {
             JSONArray senses = Finder.findJSONArray(entries.getJSONObject(i), "senses");
@@ -65,8 +65,8 @@ public class Handler {
         return words;
     }
 
-    private static ArrayList<WordResult> handleSenses(JSONArray senses) {
-        ArrayList<WordResult> words = new ArrayList<>();
+    private static HashSet<WordResult> handleSenses(JSONArray senses) {
+        HashSet<WordResult> words = new HashSet<>();
 
         for (int i = 0; i < senses.length(); i++) {
             JSONArray synonyms = Finder.findJSONArray(senses.getJSONObject(i), "synonyms");
@@ -81,8 +81,8 @@ public class Handler {
         return words;
     }
 
-    private static ArrayList<WordResult> handleSubsenses(JSONArray subsenses) {
-        ArrayList<WordResult> words = new ArrayList<>();
+    private static HashSet<WordResult> handleSubsenses(JSONArray subsenses) {
+        HashSet<WordResult> words = new HashSet<>();
 
         for (int i = 0; i < subsenses.length(); i++) {
             JSONArray synonyms = Finder.findJSONArray(subsenses.getJSONObject(i), "synonyms");
@@ -93,9 +93,8 @@ public class Handler {
         return words;
     }
 
-    // TODO: Poista duplikaatit
-    private static ArrayList<WordResult> handleSynonyms(JSONArray synonyms) {
-        ArrayList<WordResult> words = new ArrayList<>();
+    private static HashSet<WordResult> handleSynonyms(JSONArray synonyms) {
+        HashSet<WordResult> words = new HashSet<>();
 
         for (int i = 0; i < synonyms.length(); i++) {
             JSONArray regions = Finder.findJSONArray(synonyms.getJSONObject(i), "regions");
@@ -106,9 +105,9 @@ public class Handler {
         return words;
     }
     
-    // TODO: Poista duplikaatit, rajaa alue Iso-Britanniaan
-    private static ArrayList<WordResult> handleRegions(JSONArray regions, JSONArray synonyms) {
-        ArrayList<WordResult> words = new ArrayList<>();
+    // TODO: Rajaa alue Iso-Britanniaan
+    private static HashSet<WordResult> handleRegions(JSONArray regions, JSONArray synonyms) {
+        HashSet<WordResult> words = new HashSet<>();
 
         for (int i = 0; i < synonyms.length(); i++) {
             JSONObject synonym = synonyms.getJSONObject(i);

@@ -1,6 +1,6 @@
 package britionary.logic;
 
-import java.util.ArrayList;
+import java.util.HashSet;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -18,7 +18,7 @@ public class Parser {
      */
     public static String parseJSON(String json) throws ParseException {
         JSONObject response = new JSONObject(json);
-        ArrayList<WordResult> wordList = Handler.handleResults(response);
+        HashSet<WordResult> wordList = Handler.handleResults(response);
         
         String str = "";    
         for (WordResult word : wordList) {
