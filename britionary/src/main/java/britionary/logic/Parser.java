@@ -22,9 +22,9 @@ public class Parser {
             return "Cannot find results.";
         }
         
-        String str = "";
-        for (int i = 0; i < wordList.size(); i++) {
-            str += wordList.get(i) + "\n";
+        String str = "";    
+        for (String word : wordList) {
+            str += word + "\n";
         }
         return str;
     }
