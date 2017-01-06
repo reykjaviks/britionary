@@ -8,33 +8,25 @@ import static org.junit.Assert.*;
 
 public class ParserTest {
 
-    Parser parser;
-
     public ParserTest() {
     }
-
-    @Before
-    public void setUp() {
-        parser = new Parser();
-    }
     
     @Test
-    public void testParseJSONResults() {
+    public void testParseJSONResults() throws ParseException{
         String json = "{\n"
                 + "    \"results\": []}\n";
-        assertEquals("", parser.parseJSON(json));
+        assertEquals("", Parser.parseJSON(json));
     }
 
-    @Test
-    public void testParseJSONEmpty() {
+    @Test(expected = ParseException.class)
+    public void testParseJSONEmpty() throws ParseException {
         String json = "{\n"
                 + "    \"\": []}\n";
-        assertEquals("Cannot find results.", parser.parseJSON(json));
+        Parser.parseJSON(json);
     }
     
-    // More parsing is required for passing this test.
-    // @Test
-    public void testJsonToObject() {
+    @Test
+    public void testJsonToObject() throws ParseException {
         String json = "{\n"
                 + "    \"metadata\": {\n"
                 + "        \"provider\": \"Oxford University Press\"\n"
@@ -982,8 +974,15 @@ public class ParserTest {
                 + "    ]\n"
                 + "}";
 
-        //TODO: Change later
-        assertEquals("wee", parser.parseJSON(json));
+        assertEquals("teensy\n"
+                + "teeny-weeny\n"
+                + "teeny\n"
+                + "itsy-bitsy\n"
+                + "half-pint\n"
+                + "wee\n"
+                + "teensy-weensy\n"
+                + "dinky\n"
+                + "tiddly\n", Parser.parseJSON(json));
     }
 }
 
