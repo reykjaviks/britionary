@@ -18,11 +18,11 @@ public class Parser {
      */
     public static String parseJSON(String json) throws ParseException {
         JSONObject response = new JSONObject(json);
-        ArrayList<String> wordList = Handler.handleResults(response);
+        ArrayList<WordResult> wordList = Handler.handleResults(response);
         
         String str = "";    
-        for (String word : wordList) {
-            str += word + "\n";
+        for (WordResult word : wordList) {
+            str += word.getWord() + "\n";
         }
         return str;
     }
