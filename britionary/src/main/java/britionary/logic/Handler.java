@@ -24,13 +24,13 @@ public class Handler {
         return words;
     }
     
-    public static HashSet<WordResult> handleResults(JSONObject response) throws ParseException {
+    public static HashSet<RegionalWord> handleResults(JSONObject response) throws ParseException {
         JSONArray results = Finder.findJSONArray(response, "results");
         if (results == null) {
             throw new ParseException("Cannot find results.");
         }
         
-        HashSet<WordResult> words = new HashSet<>();
+        HashSet<RegionalWord> words = new HashSet<>();
 
         for (int i = 0; i < results.length(); i++) {
             JSONArray lexicalEntries = Finder.findJSONArray(results.getJSONObject(i), "lexicalEntries");
@@ -41,8 +41,8 @@ public class Handler {
         return words;
     }
 
-    private static HashSet<WordResult> handleLexicalEntries(JSONArray lexicalEntries) {
-        HashSet<WordResult> words = new HashSet<>();
+    private static HashSet<RegionalWord> handleLexicalEntries(JSONArray lexicalEntries) {
+        HashSet<RegionalWord> words = new HashSet<>();
 
         for (int i = 0; i < lexicalEntries.length(); i++) {
             JSONArray entries = Finder.findJSONArray(lexicalEntries.getJSONObject(i), "entries");
@@ -53,8 +53,8 @@ public class Handler {
         return words;
     }
 
-    private static HashSet<WordResult> handleEntries(JSONArray entries) {
-        HashSet<WordResult> words = new HashSet<>();
+    private static HashSet<RegionalWord> handleEntries(JSONArray entries) {
+        HashSet<RegionalWord> words = new HashSet<>();
 
         for (int i = 0; i < entries.length(); i++) {
             JSONArray senses = Finder.findJSONArray(entries.getJSONObject(i), "senses");
@@ -65,8 +65,8 @@ public class Handler {
         return words;
     }
 
-    private static HashSet<WordResult> handleSenses(JSONArray senses) {
-        HashSet<WordResult> words = new HashSet<>();
+    private static HashSet<RegionalWord> handleSenses(JSONArray senses) {
+        HashSet<RegionalWord> words = new HashSet<>();
 
         for (int i = 0; i < senses.length(); i++) {
             JSONArray synonyms = Finder.findJSONArray(senses.getJSONObject(i), "synonyms");
@@ -81,8 +81,8 @@ public class Handler {
         return words;
     }
 
-    private static HashSet<WordResult> handleSubsenses(JSONArray subsenses) {
-        HashSet<WordResult> words = new HashSet<>();
+    private static HashSet<RegionalWord> handleSubsenses(JSONArray subsenses) {
+        HashSet<RegionalWord> words = new HashSet<>();
 
         for (int i = 0; i < subsenses.length(); i++) {
             JSONArray synonyms = Finder.findJSONArray(subsenses.getJSONObject(i), "synonyms");
@@ -93,8 +93,8 @@ public class Handler {
         return words;
     }
 
-    private static HashSet<WordResult> handleSynonyms(JSONArray synonyms) {
-        HashSet<WordResult> words = new HashSet<>();
+    private static HashSet<RegionalWord> handleSynonyms(JSONArray synonyms) {
+        HashSet<RegionalWord> words = new HashSet<>();
 
         for (int i = 0; i < synonyms.length(); i++) {
             JSONArray regions = Finder.findJSONArray(synonyms.getJSONObject(i), "regions");
@@ -106,14 +106,14 @@ public class Handler {
     }
     
     // TODO: Rajaa alue Iso-Britanniaan
-    private static HashSet<WordResult> handleRegions(JSONArray regions, JSONArray synonyms) {
-        HashSet<WordResult> words = new HashSet<>();
+    private static HashSet<RegionalWord> handleRegions(JSONArray regions, JSONArray synonyms) {
+        HashSet<RegionalWord> words = new HashSet<>();
 
         for (int i = 0; i < synonyms.length(); i++) {
             JSONObject synonym = synonyms.getJSONObject(i);
             for (int j = 0; j < regions.length(); j++) {
                 if (synonym.has("text")) {
-                    WordResult wordResult = new WordResult(regions.getString(j),
+                    RegionalWord wordResult = new RegionalWord(regions.getString(j),
                             synonym.getString("text"));
                     words.add(wordResult);
                 }

@@ -1,11 +1,11 @@
 package britionary.logic;
 
-public class WordResult {
+public class RegionalWord {
     
     private final String region;
     private final String word;
     
-    public WordResult(String region, String word) {
+    public RegionalWord(String region, String word) {
         this.region = region;
         this.word = word;
     }
@@ -25,8 +25,8 @@ public class WordResult {
 
     @Override
     public boolean equals(Object object) {
-        if (object instanceof WordResult) {
-            if (((WordResult) object).getWord().equals(this.word)) {
+        if (object instanceof RegionalWord) {
+            if (((RegionalWord) object).getWord().equals(this.word)) {
                 return true;
             }
         }
