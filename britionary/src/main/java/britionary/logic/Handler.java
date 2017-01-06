@@ -9,6 +9,7 @@ public class Handler {
     private final String[] objectList = { "lexicalEntries", "entries", 
         "senses", "synonyms", "subsenses" };
     
+    // TODO: korjaa rekursio
     public ArrayList<String> handleJSON(JSONArray array) {
         ArrayList<String> words = new ArrayList<>();
         for (int i = 0; i < this.objectList.length; i++) {
@@ -86,7 +87,37 @@ public class Handler {
         return words;
     }
 
+    // TODO: poista duplikaatit
     private static ArrayList<String> handleSynonyms(JSONArray synonyms) {
+        ArrayList<String> words = new ArrayList<>();
+
+        for (int i = 0; i < synonyms.length(); i++) {
+            JSONArray regions = Finder.findJSONArray(synonyms.getJSONObject(i), "regions");
+            if (regions != null) {
+                words.addAll(handleRegions(regions, synonyms));
+            }
+        }
+        return words;
+    }
+    
+    // TODO: poista duplikaatit
+    private static ArrayList<String> handleRegions(JSONArray regions, JSONArray synonyms) {
+        ArrayList<String> words = new ArrayList<>();
+
+        for (int i = 0; i < synonyms.length(); i++) {
+            JSONObject synonym = synonyms.getJSONObject(i);
+            for (int j = 0; j < regions.length(); j++) {
+                words.add(regions.getString(j));
+            }
+            if (synonym.has("text")) {
+                words.add(synonym.getString("text"));
+            }
+        }
+        return words;
+    }
+    
+    // TODO: Siirrä prototyyppeihin
+    private static ArrayList<String> handleSynonyms2(JSONArray synonyms) {
         ArrayList<String> words = new ArrayList<>();
 
         for (int i = 0; i < synonyms.length(); i++) {
@@ -97,4 +128,5 @@ public class Handler {
         }
         return words;
     }
+
 }
