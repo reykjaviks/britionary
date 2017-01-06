@@ -14,13 +14,11 @@ public class Parser {
      * 
      * @param   json    Parsittava JSON-tiedosto
      * @return          Lista löydetyistä synonyymeista
+     * @throws britionary.logic.ParseException
      */
-    public static String parseJSON(String json) {
+    public static String parseJSON(String json) throws ParseException {
         JSONObject response = new JSONObject(json);
         ArrayList<String> wordList = Handler.handleResults(response);
-        if (wordList == null) {
-            return "Cannot find results.";
-        }
         
         String str = "";    
         for (String word : wordList) {

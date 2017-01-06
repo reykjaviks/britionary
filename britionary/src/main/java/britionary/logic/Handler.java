@@ -24,10 +24,10 @@ public class Handler {
         return words;
     }
     
-    public static ArrayList<String> handleResults(JSONObject response) {
+    public static ArrayList<String> handleResults(JSONObject response) throws ParseException {
         JSONArray results = Finder.findJSONArray(response, "results");
         if (results == null) {
-            return null;
+            throw new ParseException("Cannot find results.");
         }
         ArrayList<String> words = new ArrayList<>();
 

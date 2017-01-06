@@ -57,6 +57,8 @@ public class Searcher {
         
         try {
             return Parser.parseJSON(w);
+        } catch(ParseException e) {
+            return e.getMessage();
         } catch(Exception e) {
             return "Cannot parse JSON-file: " + e;
         }
