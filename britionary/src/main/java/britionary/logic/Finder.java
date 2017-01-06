@@ -23,6 +23,7 @@ public class Finder {
         return null;
     }
 
+    //TODO: Korjaa metodi
     public static String findRegions(JSONObject synonym, JSONArray regions) {
         StringBuilder str = new StringBuilder();
 
