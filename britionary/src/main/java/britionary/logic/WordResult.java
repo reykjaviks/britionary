@@ -17,4 +17,20 @@ public class WordResult {
     public String getWord() {
         return this.word;
     }
+
+    @Override
+    public int hashCode() {
+        return 17 + this.word.hashCode();
+    }
+
+    @Override
+    public boolean equals(Object object) {
+        if (object instanceof WordResult) {
+            if (((WordResult) object).getWord().equals(this.word)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
 }
