@@ -6,9 +6,16 @@ import org.json.JSONObject;
 
 public class HandlerPrototype {
 
+    /**
+     * Hakee JSON-tiedoston kaikki synonyymit maantieteellisestä alueesta
+     * riippumatta.
+     * 
+     * @param   synonyms
+     * @return  Lista löydetyistä synonyymeista
+     */
     private static ArrayList<String> handleSynonyms(JSONArray synonyms) {
         ArrayList<String> words = new ArrayList<>();
-        
+
         for (int i = 0; i < synonyms.length(); i++) {
             JSONObject synonym = synonyms.getJSONObject(i);
             if (synonym.has("text")) {
