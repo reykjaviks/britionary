@@ -22,19 +22,4 @@ public class Finder {
         }
         return null;
     }
-
-    //TODO: Korjaa metodi
-    public static String findRegions(JSONObject synonym, JSONArray regions) {
-        StringBuilder str = new StringBuilder();
-
-        for (int i = 0; i < regions.length(); i++) {
-            if (regions.getString(i).equals("British")
-                    || regions.getString(i).equals("Scottish")
-                    || regions.getString(i).equals("Irish")) {
-                str.append(regions.getString(i)
-                        + ": " + synonym.getString("text") + "\n");
-            }
-        }
-        return str.toString();
-    }
 }

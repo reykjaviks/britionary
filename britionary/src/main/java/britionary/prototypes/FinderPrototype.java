@@ -5,6 +5,21 @@ import org.json.JSONObject;
 
 public class FinderPrototype {
 
+    //TODO: Korjaa metodi
+    public static String findRegions(JSONObject synonym, JSONArray regions) {
+        StringBuilder str = new StringBuilder();
+
+        for (int i = 0; i < regions.length(); i++) {
+            if (regions.getString(i).equals("British")
+                    || regions.getString(i).equals("Scottish")
+                    || regions.getString(i).equals("Irish")) {
+                str.append(regions.getString(i)
+                        + ": " + synonym.getString("text") + "\n");
+            }
+        }
+        return str.toString();
+    }
+
     public JSONObject findFirstJSONObject(JSONArray array, String objectID) {
         for (int i = 0; i < array.length(); i++) {
             if (array.getJSONObject(i).has(objectID)) {
