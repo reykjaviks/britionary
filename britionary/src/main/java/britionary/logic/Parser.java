@@ -23,86 +23,10 @@ public class Parser {
         }
 
         String str = "";
-        ArrayList<String> wordList = handleResults(results);
+        ArrayList<String> wordList = Handler.handleResults(results);
         for (int i = 0; i < wordList.size(); i++) {
             str += wordList.get(i) + "\n";
         }
         return str;
-    }
-
-    private static ArrayList<String> handleResults(JSONArray results) {
-        ArrayList<String> words = new ArrayList<>();
-
-        for (int i = 0; i < results.length(); i++) {
-            JSONArray lexicalEntries = Finder.findJSONArray(results.getJSONObject(i), "lexicalEntries");
-            if (lexicalEntries != null) {
-                words.addAll(handleLexicalEntries(lexicalEntries));
-            }
-        }
-        return words;
-    }
-
-    private static ArrayList<String> handleLexicalEntries(JSONArray lexicalEntries) {
-        ArrayList<String> words = new ArrayList<>();
-
-        for (int i = 0; i < lexicalEntries.length(); i++) {
-            JSONArray entries = Finder.findJSONArray(lexicalEntries.getJSONObject(i), "entries");
-            if (entries != null) {
-                words.addAll(handleEntries(entries));
-            }
-        }
-        return words;
-    }
-
-    private static ArrayList<String> handleEntries(JSONArray entries) {
-        ArrayList<String> words = new ArrayList<>();
-
-        for (int i = 0; i < entries.length(); i++) {
-            JSONArray senses = Finder.findJSONArray(entries.getJSONObject(i), "senses");
-            if (senses != null) {
-                words.addAll(handleSenses(senses));
-            }
-        }
-        return words;
-    }
-
-    private static ArrayList<String> handleSenses(JSONArray senses) {
-        ArrayList<String> words = new ArrayList<>();
-
-        for (int i = 0; i < senses.length(); i++) {
-            JSONArray synonyms = Finder.findJSONArray(senses.getJSONObject(i), "synonyms");
-            if (synonyms != null) {
-                words.addAll(handleSynonyms(synonyms));
-            }
-            JSONArray subsenses = Finder.findJSONArray(senses.getJSONObject(i), "subsenses");
-            if (subsenses != null) {
-                words.addAll(handleSubsenses(subsenses));
-            }
-        }
-        return words;
-    }
-
-    private static ArrayList<String> handleSubsenses(JSONArray subsenses) {
-        ArrayList<String> words = new ArrayList<>();
-
-        for (int i = 0; i < subsenses.length(); i++) {
-            JSONArray synonyms = Finder.findJSONArray(subsenses.getJSONObject(i), "synonyms");
-            if (synonyms != null) {
-                words.addAll(handleSynonyms(synonyms));
-            }
-        }
-        return words;
-    }
-
-    private static ArrayList<String> handleSynonyms(JSONArray synonyms) {
-        ArrayList<String> words = new ArrayList<>();
-
-        for (int i = 0; i < synonyms.length(); i++) {
-            JSONObject synonym = synonyms.getJSONObject(i);
-            if (synonym.has("text")) {
-                words.add(synonym.getString("text"));
-            }
-        }
-        return words;
     }
 }
