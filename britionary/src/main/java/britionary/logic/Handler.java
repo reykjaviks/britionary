@@ -6,24 +6,6 @@ import org.json.JSONObject;
 
 public class Handler {
     
-    private final String[] objectList = { "lexicalEntries", "entries", 
-        "senses", "synonyms", "subsenses" };
-    
-    // TODO: Korjaa rekursio
-    public HashSet<String> handleJSON(JSONArray array) {
-        HashSet<String> words = new HashSet<>();
-        
-        for (int i = 0; i < this.objectList.length; i++) {
-            for (int j = 0; j < array.length(); j++) {
-                JSONArray foundArray = Finder.findJSONArray(array.getJSONObject(j), objectList[i]);
-                if (foundArray != null) {
-                    words.addAll(handleJSON(foundArray));
-                }
-            }
-        }
-        return words;
-    }
-    
     public static HashSet<RegionalWord> handleResults(JSONObject response) throws ParseException {
         JSONArray results = Finder.findJSONArray(response, "results");
         if (results == null) {
