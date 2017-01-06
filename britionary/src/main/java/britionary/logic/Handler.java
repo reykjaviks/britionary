@@ -9,7 +9,7 @@ public class Handler {
     private final String[] objectList = { "lexicalEntries", "entries", 
         "senses", "synonyms", "subsenses" };
     
-    // TODO: korjaa rekursio
+    // TODO: Korjaa rekursio
     public ArrayList<String> handleJSON(JSONArray array) {
         ArrayList<String> words = new ArrayList<>();
         
@@ -88,7 +88,7 @@ public class Handler {
         return words;
     }
 
-    // TODO: poista duplikaatit
+    // TODO: Poista duplikaatit
     private static ArrayList<String> handleSynonyms(JSONArray synonyms) {
         ArrayList<String> words = new ArrayList<>();
 
@@ -101,7 +101,7 @@ public class Handler {
         return words;
     }
     
-    // TODO: poista duplikaatit
+    // TODO: Poista duplikaatit, rajaa alue Iso-Britanniaan
     private static ArrayList<String> handleRegions(JSONArray regions, JSONArray synonyms) {
         ArrayList<String> words = new ArrayList<>();
 
