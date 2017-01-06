@@ -6,6 +6,22 @@ import org.json.JSONObject;
 
 public class Handler {
     
+    private final String[] objectList = { "lexicalEntries", "entries", 
+        "senses", "synonyms", "subsenses" };
+    
+    public ArrayList<String> handleJSON(JSONArray array) {
+        ArrayList<String> words = new ArrayList<>();
+        for (int i = 0; i < this.objectList.length; i++) {
+            for (int j = 0; j < array.length(); j++) {
+                JSONArray foundArray = Finder.findJSONArray(array.getJSONObject(j), objectList[i]);
+                if (foundArray != null) {
+                    words.addAll(handleJSON(foundArray));
+                }
+            }
+        }
+        return words;
+    }
+    
     public static ArrayList<String> handleResults(JSONArray results) {
         ArrayList<String> words = new ArrayList<>();
 
