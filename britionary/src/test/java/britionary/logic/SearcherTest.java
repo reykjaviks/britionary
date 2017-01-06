@@ -28,22 +28,17 @@ public class SearcherTest {
         assertEquals("No results for \"äfäfäö\"", searcher.search("Äfäfäö"));
     }
 
-    //@Test (doesn't work)
+    @Test
     public void testSearch() {
         searcher = Searcher.getInstance();
-        assertEquals("feline\n"
-                + "tabby\n"
-                + "ginger tom\n"
-                + "tortoiseshell\n"
-                + "marmalade cat\n "
-                + "mouser\n"
-                + "wild cat\n"
-                + "alley cat\n"
-                + "pussy\n"
-                + "pussy cat\n"
-                + "puss\n"
-                + "moggie\n"
-                + "mog\n"
-                + "grimalkin\n", searcher.search("Cat"));
+        assertEquals("teensy\n"
+                + "teeny-weeny\n"
+                + "teeny\n"
+                + "itsy-bitsy\n"
+                + "half-pint\n"
+                + "wee\n"
+                + "teensy-weensy\n"
+                + "dinky\n"
+                + "tiddly\n", searcher.search("Little"));
     }
 }
