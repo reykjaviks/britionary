@@ -24,7 +24,11 @@ public class Handler {
         return words;
     }
     
-    public static ArrayList<String> handleResults(JSONArray results) {
+    public static ArrayList<String> handleResults(JSONObject response) {
+        JSONArray results = Finder.findJSONArray(response, "results");
+        if (results == null) {
+            return null;
+        }
         ArrayList<String> words = new ArrayList<>();
 
         for (int i = 0; i < results.length(); i++) {

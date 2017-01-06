@@ -17,13 +17,12 @@ public class Parser {
      */
     public static String parseJSON(String json) {
         JSONObject response = new JSONObject(json);
-        JSONArray results = Finder.findJSONArray(response, "results");
-        if (results == null) {
+        ArrayList<String> wordList = Handler.handleResults(response);
+        if (wordList == null) {
             return "Cannot find results.";
         }
-
+        
         String str = "";
-        ArrayList<String> wordList = Handler.handleResults(results);
         for (int i = 0; i < wordList.size(); i++) {
             str += wordList.get(i) + "\n";
         }
