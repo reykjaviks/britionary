@@ -1,7 +1,7 @@
 package britionary.logic;
 
 /**
- * Luokka tarjoaa metodin käyttäjän syöttämien hakusanojen muuntamiseen.
+ * Luokka tarjoaa metodeita käyttäjän syöttämien hakusanojen muuntamiseen.
  */
 public class Converter {
     /**

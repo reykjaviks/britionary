@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.net.MalformedURLException;
 
 /**
- * Luokka tarjoaa metodin sanojen hakemiseen ja erottaa kutsujan sovelluslogiikan 
+ * Luokka tarjoaa metodeita sanojen hakemiseen ja erottaa kutsujan sovelluslogiikan 
  * alemmasta tasosta.
  */
 public class Searcher {
