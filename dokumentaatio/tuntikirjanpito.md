@@ -17,6 +17,6 @@ Päivä | Tunnit | Kuvaus
 4.1. | 6h | Käyttöliittymän ja JavaDocin kirjoittamista, sekä projektin siistimistä
 5.1. | 2.5h | Poikkeusten kirjoittamista
 6.1. | 6.5h | Logiikan ja testien korjaamista, sekä käyttöliittymän kirjoittamista
-7.1. | ... |
+7.1. | 2h | Käyttöliittymän kirjoittamista
 
-_Yhteensä 55 tuntia_
+_Yhteensä 57 tuntia_
