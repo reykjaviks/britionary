@@ -1,4 +1,4 @@
-package britionary.gui;
+package britionary.prototypes;
 
 import britionary.logic.*;
 import javax.swing.*;
