@@ -5,7 +5,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public class Window extends JFrame implements ActionListener {
+public class GUIBuilderPrototype extends JFrame implements ActionListener {
 
     private JTextField sField;
     private JTextField pField;
@@ -34,7 +34,7 @@ public class Window extends JFrame implements ActionListener {
         javax.swing.SwingUtilities.invokeLater(new Runnable() { //Miksei tässä ole sulkua?
 
             public void run() {
-                Window window = new Window();
+                GUIBuilderPrototype window = new GUIBuilderPrototype();
                 window.buildGUI();
                 window.setTitle("Britionary");
                 window.pack();
