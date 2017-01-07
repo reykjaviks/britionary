@@ -7,55 +7,27 @@ import java.awt.event.*;
 
 public class Window extends JFrame implements ActionListener {
 
-    private JPanel searchPanel;
-    private JTextField searchField;
-    private JButton searchButton;
-    
-    private JPanel resultPanel;
-    private JTextField resultField;
-    
-    private GroupLayout layout;
-
+    private JTextField sField;
+    private JTextField pField;
+    private JButton button;
     private Searcher searcher = Searcher.getInstance();
 
     public void buildGUI() {
 
-        // this.setLayout(new FlowLayout());
-        searchPanel = new JPanel();
-        searchField = new JTextField("", 20);
-        searchButton = new JButton("Search");
-
-        resultPanel = new JPanel();
-        resultField = new JTextField("", 20);
-
-        layout = new GroupLayout(this);
-        
-        layout.setAutoCreateGaps(true);
-        layout.setAutoCreateContainerGaps(true);
-
-        layout.setHorizontalGroup(
-                layout.createSequentialGroup()
-                .addComponent(searchField)
-                .addComponent(searchButton)
-                .addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-                        //.addGroup()
-                        .addComponent(resultField))
-        );
-        layout.setVerticalGroup(
-                layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                        .addComponent(searchField)
-                        .addComponent(searchButton))
-                .addComponent(resultField)
-        );
-
-        searchField.addActionListener(this);
-        searchButton.addActionListener(this);
+        this.setLayout(new FlowLayout());
+        sField = new JTextField("", 20);
+        pField = new JTextField("", 20);
+        button = new JButton("Search");
+        this.add(sField);
+        this.add(pField);
+        this.add(button);
+        button.addActionListener(this);
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        resultField.setText(searcher.search(searchField.getText()));
+        String word = sField.getText();
+        pField.setText(searcher.search(word));
     }
 
     public static void main(String[] args) {
