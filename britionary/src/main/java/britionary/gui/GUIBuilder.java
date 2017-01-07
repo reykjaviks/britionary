@@ -53,7 +53,6 @@ public class GUIBuilder extends JFrame implements ActionListener {
     }
 
     public void addComponentsToPane(final Container pane) {
-
         search = new JPanel();
         search.setLayout(new GridLayout(1, 2));
 
@@ -69,7 +68,6 @@ public class GUIBuilder extends JFrame implements ActionListener {
         search.add(searchField);
         search.add(searchButton);
         
-
         setEditorPane();
         results.add(textPane);
 
