@@ -5,7 +5,6 @@ import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.GridLayout;
 import javax.swing.JButton;
-import javax.swing.JTextPane;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
@@ -40,7 +39,7 @@ public class GUIBuilder extends JFrame {
         textScrollPane.setPreferredSize(new Dimension(250, 145));
         textScrollPane.setMinimumSize(new Dimension(10, 10));
     }
-    
+
     public void setButtonSize() {
         Dimension buttonSize = searchButton.getPreferredSize();
         search.setPreferredSize(new Dimension((int) (buttonSize.getWidth() * 5.0),
@@ -53,10 +52,10 @@ public class GUIBuilder extends JFrame {
 
         search = new JPanel();
         search.setLayout(new GridLayout(1, 2));
-        
+
         results = new JPanel();
         results.setLayout(new GridLayout(1, 1));
-        
+
         searchField = new JTextField();
         searchButton = new JButton("Search");
 
