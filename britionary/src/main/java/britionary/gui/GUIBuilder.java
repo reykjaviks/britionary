@@ -1,9 +1,12 @@
 package britionary.gui;
 
+import britionary.logic.*;
 import java.awt.BorderLayout;
 import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -12,7 +15,7 @@ import javax.swing.JSeparator;
 import javax.swing.JTextField;
 import javax.swing.JTextPane;
 
-public class GUIBuilder extends JFrame {
+public class GUIBuilder extends JFrame implements ActionListener {
 
     private JPanel search;
     private JPanel results;
@@ -32,6 +35,7 @@ public class GUIBuilder extends JFrame {
         setEditorScrollPane(textPane);
     }
 
+    //TODO: set visible(?)
     private void setEditorScrollPane(JTextPane editorPane) {
         textScrollPane = new JScrollPane(editorPane);
         textScrollPane.setVerticalScrollBarPolicy(
@@ -57,11 +61,14 @@ public class GUIBuilder extends JFrame {
         results.setLayout(new GridLayout(1, 1));
 
         searchField = new JTextField();
+        searchField.addActionListener(this);
         searchButton = new JButton("Search");
+        searchButton.addActionListener(this);
 
         setButtonSize();
         search.add(searchField);
         search.add(searchButton);
+        
 
         setEditorPane();
         results.add(textPane);
@@ -69,6 +76,13 @@ public class GUIBuilder extends JFrame {
         pane.add(search, BorderLayout.NORTH);
         pane.add(new JSeparator(), BorderLayout.CENTER);
         pane.add(results, BorderLayout.SOUTH);
+    }
+    
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        String word = searchField.getText();
+        Searcher searcher = Searcher.getInstance();
+        textPane.setText(searcher.search(word));
     }
 
     public static void createAndShowGUI() {
