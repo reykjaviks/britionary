@@ -76,7 +76,7 @@ public class GUIBuilder extends JFrame implements ActionListener {
         textScrollPane.setMinimumSize(new Dimension(10, 10));
     }
 
-    public void setButtonSize() {
+    private void setButtonSize() {
         Dimension buttonSize = searchButton.getPreferredSize();
         search.setPreferredSize(new Dimension((int) (buttonSize.getWidth() * 5.0),
                 (int) (buttonSize.getHeight() * 2.0)));
