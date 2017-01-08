@@ -20,4 +20,4 @@ Kaikki, jotka haluavat kehittää brittiläistä aksenttiaan.
 ### **Sekvenssikaavio**
 Sanojen hakeminen
 
-![Sekvenssikaavio])
+![Sekvenssikaavio](Sekvenssikaavio.jpg)
