@@ -1,21 +1,18 @@
 package britionary.logic;
 
-import org.json.JSONArray;
-import org.json.JSONObject;
-import org.junit.Before;
+import static org.junit.Assert.assertEquals;
 import org.junit.Test;
-import static org.junit.Assert.*;
 
 public class ParserTest {
 
     public ParserTest() {
     }
     
-    @Test
+    @Test(expected = ParseException.class)
     public void testParseJSONResults() throws ParseException{
         String json = "{\n"
                 + "    \"results\": []}\n";
-        assertEquals("", Parser.parseJSON(json));
+        assertEquals("No British synonyms found.", Parser.parseJSON(json));
     }
 
     @Test(expected = ParseException.class)
