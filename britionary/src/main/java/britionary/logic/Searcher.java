@@ -39,27 +39,27 @@ public class Searcher {
         String w;
         try {
             w = Converter.convert(word);
-        } catch(StringIndexOutOfBoundsException e) {
+        } catch (StringIndexOutOfBoundsException e) {
             return "Index out of bounds: " + e;
-        } catch(Exception e) {
+        } catch (Exception e) {
             return "Cannot convert word: " + e;
         }
-        
+
         try {
             w = fetcher.fetchJSON(w);
-        } catch(MalformedURLException e) {
+        } catch (MalformedURLException e) {
             return "Invalid URL: " + e;
         } catch (IOException e) {
             return "No results for \"" + w + "\"";
-        } catch(Exception e) {
+        } catch (Exception e) {
             return "Cannot fetch JSON-file: " + e;
         }
-        
+
         try {
             return Parser.parseJSON(w);
-        } catch(ParseException e) {
+        } catch (ParseException e) {
             return e.getMessage();
-        } catch(Exception e) {
+        } catch (Exception e) {
             return "Cannot parse JSON-file: " + e;
         }
     }
