@@ -11,9 +11,8 @@ public class Converter {
      * 
      * @param   word    Käyttäjän antama hakusana
      * @return          Siistitty hakusana
-     * @throws          StringIndexOutOfBoundsException
      */
-    public static String convert(String word) throws StringIndexOutOfBoundsException {
+    public static String convert(String word) {
         StringBuilder str = new StringBuilder(word.toLowerCase());
         // Korvaa alaviivat
         for (int i = 0; i < word.length(); i++) {

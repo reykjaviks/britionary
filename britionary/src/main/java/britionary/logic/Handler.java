@@ -14,14 +14,14 @@ public class Handler {
      * Metodi hakee JSON-tiedoston juuren ja siellä sijaitsevat sanat käyttämällä
      * apuna luokan yksityisiä metodeita.
      *
-     * @param   response    JSON-tiedostosta tehty JSON-objekti
-     * @return              Lista löydetyistä sanoista
-     * @throws              ParseException
+     * @param   response        JSON-tiedostosta tehty JSON-objekti
+     * @return                  Lista löydetyistä sanoista
+     * @throws  ParseException  jos response-objektista ei löydy taulukkoa "results"
      */
     public static HashSet<RegionalWord> handleResults(JSONObject response) throws ParseException {
         JSONArray results = Finder.findJSONArray(response, "results");
         if (results == null) {
-            throw new ParseException("Cannot find results.");
+            throw new ParseException("Cannot find JSON-array \"results.\"");
         }
         
         HashSet<RegionalWord> words = new HashSet<>();

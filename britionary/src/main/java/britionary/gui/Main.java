@@ -5,7 +5,7 @@ public class Main {
     /**
      * Pääohjelma käynnistää Britionaryn käyttöliittymän.
      *
-     * @param args
+     * @param   args    Ei käytössä
      */
     public static void main(String[] args) {
         GUIBuilder.createAndShowGUI();

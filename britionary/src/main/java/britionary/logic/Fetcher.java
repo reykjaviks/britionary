@@ -50,10 +50,10 @@ public class Fetcher {
     /**
      * Metodi hakee Oxford Dictionary:sta hakusanaa vastaavan JSON-tiedoston.
      *
-     * @param   cWord   Siistitty hakusana
-     * @return          hakusanaa vastaava JSON-tiedosto
-     * @throws          MalformedURLException
-     * @throws          IOException
+     * @param   cWord                   Siistitty hakusana
+     * @return                          hakusanaa vastaava JSON-tiedosto
+     * @throws  MalformedURLException   Jos linkki ei toimi
+     * @throws  IOException             Jos haetusta sanasta ei löydy JSON-tiedostoa
      */
     public String fetchJSON(String cWord) throws MalformedURLException, IOException {
         // Esimerkkikoodi: https://developer.oxforddictionaries.com/documentation#/

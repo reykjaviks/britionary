@@ -5,7 +5,7 @@ public class Main {
     /**
      * Pääohjelma hakee ja tulostaa hakusanaa vastaavat synonyymit.
      * 
-     * @param   args
+     * @param   args    Ei käytössä
      */
     public static void main(String[] args) {
         
