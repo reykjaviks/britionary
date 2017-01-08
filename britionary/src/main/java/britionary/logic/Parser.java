@@ -24,7 +24,7 @@ public class Parser {
             str += word.getWord() + "\n";
         }
 
-        if(str == "") {
+        if (str == "") {
             throw new ParseException("No British synonyms found.");
         }
         return str;
