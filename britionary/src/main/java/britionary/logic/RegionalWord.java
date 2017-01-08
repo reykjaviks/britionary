@@ -1,10 +1,19 @@
 package britionary.logic;
 
+/**
+ * Luokka tarjoaa metodeita maantieteellisten sanojen tallentamiseen.
+ */
 public class RegionalWord {
     
     private final String region;
     private final String word;
-    
+
+    /**
+     * Konstruktori luo uuden alueellisen sanan.
+     *
+     * @param   region  Maantieteellinen alue
+     * @param   word    Sana
+     */
     public RegionalWord(String region, String word) {
         this.region = region;
         this.word = word;

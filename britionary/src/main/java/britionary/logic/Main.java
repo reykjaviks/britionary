@@ -2,6 +2,11 @@ package britionary.logic;
 
 public class Main {
 
+    /**
+     * Pääohjelma hakee ja tulostaa hakusanaa vastaavat synonyymit.
+     * 
+     * @param   args
+     */
     public static void main(String[] args) {
         
         String word = "Little";
