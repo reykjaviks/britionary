@@ -106,9 +106,9 @@ public class Handler {
             JSONObject synonym = synonyms.getJSONObject(i);
             for (int j = 0; j < regions.length(); j++) {
                 if (synonym.has("text")) {
-                    RegionalWord wordResult = new RegionalWord(regions.getString(j),
+                    RegionalWord regionalWord = new RegionalWord(regions.getString(j),
                             synonym.getString("text"));
-                    synonymSet.add(wordResult);
+                    synonymSet.add(regionalWord);
                 }
             }
         }
