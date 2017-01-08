@@ -16,7 +16,7 @@ public class Fetcher {
     private final String appKey;
 
     /**
-     * Konstruktori asettaa rajapintaan vakiona käytetyn tunnuksen ja salasanan.
+     * Konstruktori asettaa rajapintaan oman käyttäjätunnuksen ja salasanan.
      */
     public Fetcher() {
         this.appID = "19275027";

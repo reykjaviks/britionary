@@ -5,8 +5,7 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 /**
- * Luokka tarjoaa metodeita JSON-tiedoston sisältämien objektien ja taulukoiden
- * läpikäymiseen.
+ * Luokka tarjoaa metodeita JSON-taulukoiden läpikäymiseen.
  */
 public class Handler {
 
