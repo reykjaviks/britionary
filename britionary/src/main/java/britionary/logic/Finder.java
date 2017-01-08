@@ -1,11 +1,10 @@
 package britionary.logic;
 
-import java.util.ArrayList;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
 /**
- * Luokka tarjoaa metodeita JSON-tiedoston sisältämien taulukkojen etsimiseen.
+ * Luokka tarjoaa metodeita JSON-tiedoston sisältämien taulukoiden etsimiseen.
  */
 public class Finder {
     

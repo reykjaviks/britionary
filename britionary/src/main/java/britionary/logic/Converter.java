@@ -4,12 +4,14 @@ package britionary.logic;
  * Luokka tarjoaa metodeita käyttäjän syöttämien hakusanojen muuntamiseen.
  */
 public class Converter {
+
     /**
      * Metodi muuntaa hakusanan siihen muotoon, että sillä voidaan hakea tietoa
      * Oxford Dictionary:n ohjelmointirajapinnasta.
      * 
      * @param   word    Käyttäjän antama hakusana
      * @return          Siistitty hakusana
+     * @throws          StringIndexOutOfBoundsException
      */
     public static String convert(String word) throws StringIndexOutOfBoundsException {
         StringBuilder str = new StringBuilder(word.toLowerCase());
