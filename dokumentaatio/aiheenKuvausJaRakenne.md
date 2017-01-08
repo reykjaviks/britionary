@@ -20,7 +20,7 @@ Kaikki, jotka haluavat kehittää brittiläistä aksenttiaan.
 ### **Sekvenssikaaviot**
 _Synonyymien onnistunut hakeminen:_
 
-![Sekvenssikaavio](sekvenssikaavio_search.jpg)
+![Sekvenssikaavio](sekvenssikaavio.jpg)
 
 _Sanasta ei pystytä hakemaan JSON:ia Oxford Dictionary:n rajapinnasta:_
 
