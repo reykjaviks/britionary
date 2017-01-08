@@ -24,83 +24,83 @@ public class Handler {
             throw new ParseException("Cannot find JSON-array \"results.\"");
         }
         
-        HashSet<RegionalWord> words = new HashSet<>();
+        HashSet<RegionalWord> synonymSet = new HashSet<>();
         for (int i = 0; i < results.length(); i++) {
             JSONArray lexicalEntries = Finder.findJSONArray(results.getJSONObject(i), "lexicalEntries");
             if (lexicalEntries != null) {
-                words.addAll(handleLexicalEntries(lexicalEntries));
+                synonymSet.addAll(handleLexicalEntries(lexicalEntries));
             }
         }
-        return words;
+        return synonymSet;
     }
 
     private static HashSet<RegionalWord> handleLexicalEntries(JSONArray lexicalEntries) {
-        HashSet<RegionalWord> words = new HashSet<>();
+        HashSet<RegionalWord> synonymSet = new HashSet<>();
 
         for (int i = 0; i < lexicalEntries.length(); i++) {
             JSONArray entries = Finder.findJSONArray(lexicalEntries.getJSONObject(i), "entries");
             if (entries != null) {
-                words.addAll(handleEntries(entries));
+                synonymSet.addAll(handleEntries(entries));
             }
         }
-        return words;
+        return synonymSet;
     }
 
     private static HashSet<RegionalWord> handleEntries(JSONArray entries) {
-        HashSet<RegionalWord> words = new HashSet<>();
+        HashSet<RegionalWord> synonymSet = new HashSet<>();
 
         for (int i = 0; i < entries.length(); i++) {
             JSONArray senses = Finder.findJSONArray(entries.getJSONObject(i), "senses");
             if (senses != null) {
-                words.addAll(handleSenses(senses));
+                synonymSet.addAll(handleSenses(senses));
             }
         }
-        return words;
+        return synonymSet;
     }
 
     private static HashSet<RegionalWord> handleSenses(JSONArray senses) {
-        HashSet<RegionalWord> words = new HashSet<>();
+        HashSet<RegionalWord> synonymSet = new HashSet<>();
 
         for (int i = 0; i < senses.length(); i++) {
             JSONArray synonyms = Finder.findJSONArray(senses.getJSONObject(i), "synonyms");
             if (synonyms != null) {
-                words.addAll(handleSynonyms(synonyms));
+                synonymSet.addAll(handleSynonyms(synonyms));
             }
             JSONArray subsenses = Finder.findJSONArray(senses.getJSONObject(i), "subsenses");
             if (subsenses != null) {
-                words.addAll(handleSubsenses(subsenses));
+                synonymSet.addAll(handleSubsenses(subsenses));
             }
         }
-        return words;
+        return synonymSet;
     }
 
     private static HashSet<RegionalWord> handleSubsenses(JSONArray subsenses) {
-        HashSet<RegionalWord> words = new HashSet<>();
+        HashSet<RegionalWord> synonymSet = new HashSet<>();
 
         for (int i = 0; i < subsenses.length(); i++) {
             JSONArray synonyms = Finder.findJSONArray(subsenses.getJSONObject(i), "synonyms");
             if (synonyms != null) {
-                words.addAll(handleSynonyms(synonyms));
+                synonymSet.addAll(handleSynonyms(synonyms));
             }
         }
-        return words;
+        return synonymSet;
     }
 
     private static HashSet<RegionalWord> handleSynonyms(JSONArray synonyms) {
-        HashSet<RegionalWord> words = new HashSet<>();
+        HashSet<RegionalWord> synonymSet = new HashSet<>();
 
         for (int i = 0; i < synonyms.length(); i++) {
             JSONArray regions = Finder.findJSONArray(synonyms.getJSONObject(i), "regions");
             if (regions != null) {
-                words.addAll(handleRegions(regions, synonyms));
+                synonymSet.addAll(handleRegions(regions, synonyms));
             }
         }
-        return words;
+        return synonymSet;
     }
     
     // TODO: Rajaa alue Iso-Britanniaan
     private static HashSet<RegionalWord> handleRegions(JSONArray regions, JSONArray synonyms) {
-        HashSet<RegionalWord> words = new HashSet<>();
+        HashSet<RegionalWord> synonymSet = new HashSet<>();
 
         for (int i = 0; i < synonyms.length(); i++) {
             JSONObject synonym = synonyms.getJSONObject(i);
@@ -108,10 +108,10 @@ public class Handler {
                 if (synonym.has("text")) {
                     RegionalWord wordResult = new RegionalWord(regions.getString(j),
                             synonym.getString("text"));
-                    words.add(wordResult);
+                    synonymSet.add(wordResult);
                 }
             }
         }
-        return words;
+        return synonymSet;
     }
 }
