@@ -1,7 +1,6 @@
 package britionary.logic;
 
 import java.util.HashSet;
-import org.json.JSONArray;
 import org.json.JSONObject;
 
 /**
@@ -10,7 +9,7 @@ import org.json.JSONObject;
 public class Parser {
 
     /**
-     * Metodi parsii JSON-tiedoston käyttämällä apuna luokan yksityisiä metodeita.
+     * Metodi parsii JSON-tiedoston.
      * 
      * @param   json    Parsittava JSON-tiedosto
      * @return          Lista löydetyistä synonyymeista
@@ -23,6 +22,10 @@ public class Parser {
         String str = "";    
         for (RegionalWord word : wordList) {
             str += word.getWord() + "\n";
+        }
+
+        if(str == "") {
+            throw new ParseException("No British synonyms found.");
         }
         return str;
     }
