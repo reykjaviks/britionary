@@ -1,9 +1,12 @@
 package britionary.prototypes;
 
-import britionary.logic.*;
-import javax.swing.*;
-import java.awt.*;
-import java.awt.event.*;
+import britionary.logic.Searcher;
+import java.awt.FlowLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JTextField;
 
 public class GUIBuilderPrototype extends JFrame implements ActionListener {
 
