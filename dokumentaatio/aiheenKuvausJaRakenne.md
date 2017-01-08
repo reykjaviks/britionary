@@ -17,11 +17,11 @@ Kaikki, jotka haluavat kehittää brittiläistä aksenttiaan.
 ### **Luokkakaavio**
 ![Luokkakaavio](luokkakaavio.png)
 
-### **Sekvenssikaavio**
-_Synonyymien onnistunut hakeminen_
+### **Sekvenssikaaviot**
+_Synonyymien onnistunut hakeminen:_
 
 ![Sekvenssikaavio](sekvenssikaavio_search.jpg)
 
-_Sanasta ei pystytä hakemaan JSON:ia Oxford Dictionary:n rajapinnasta_
+_Sanasta ei pystytä hakemaan JSON:ia Oxford Dictionary:n rajapinnasta:_
 
 ![Sekvenssikaavio](sekvenssikaavio_fail.jpg)
