@@ -7,4 +7,4 @@ Sanakirja, joka muuntaa amerikanenglannin sanat niiden brittivastineiksi.
 
 [Checkstyle-raportti](https://htmlpreview.github.io/?https://github.com/reykjaviks/britionary/blob/master/dokumentaatio/checkstyle-raportti/checkstyle.html)
 
-[Pit-raportti](https://htmlpreview.github.io/?https://github.com/reykjaviks/britionary/blob/master/dokumentaatio/pit-raportti/201701061655/index.html)
+[Pit-raportti](https://htmlpreview.github.io/?https://github.com/reykjaviks/britionary/blob/master/dokumentaatio/pit-raportti/201701081322/index.html)
