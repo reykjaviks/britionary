@@ -15,6 +15,9 @@ import javax.swing.JSeparator;
 import javax.swing.JTextField;
 import javax.swing.JTextPane;
 
+/**
+ * Luokka tarjoaa metodeita käyttöliittymän rakentamiseen.
+ */
 public class GUIBuilder extends JFrame implements ActionListener {
 
     private JPanel search;
@@ -29,6 +32,10 @@ public class GUIBuilder extends JFrame implements ActionListener {
         setResizable(false);
     }
 
+    /**
+     * Metodi rakentaa käyttöliittymän luokan yksityisiä metodeita apuna
+     * käyttäen.
+     */
     public static void createAndShowGUI() {
         GUIBuilder frame = new GUIBuilder("Britionary");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -67,7 +74,7 @@ public class GUIBuilder extends JFrame implements ActionListener {
         setEditorScrollPane(textPane);
     }
 
-    //TODO: fix visibility
+    //TODO: korjaa näkyvyys
     private void setEditorScrollPane(JTextPane editorPane) {
         textScrollPane = new JScrollPane(editorPane);
         textScrollPane.setVerticalScrollBarPolicy(
