@@ -17,14 +17,14 @@ public class Parser {
      */
     public static String parseJSON(String json) throws ParseException {
         JSONObject response = new JSONObject(json);
-        HashSet<RegionalWord> wordList = Handler.handleResults(response);
-        String str = "";    
-        for (RegionalWord word : wordList) {
-            str += word.getWord() + "\n";
+        HashSet<RegionalWord> wordSet = Handler.handleResults(response);
+        String synonyms = "";    
+        for (RegionalWord word : wordSet) {
+            synonyms += word.getWord() + "\n";
         }
-        if (str == "") {
+        if (synonyms == "") {
             throw new ParseException("No British synonyms found.");
         }
-        return str;
+        return synonyms;
     }
 }
