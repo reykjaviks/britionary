@@ -16,3 +16,8 @@ Kaikki, jotka haluavat kehittää brittiläistä aksenttiaan.
 
 ### **Luokkakaavio**
 ![Luokkakaavio](luokkakaavio.png)
+
+### **Sekvenssikaavio**
+Sanan hakeminen
+
+![Sekvenssikaavio](sekvenssikaavio.jpg)
