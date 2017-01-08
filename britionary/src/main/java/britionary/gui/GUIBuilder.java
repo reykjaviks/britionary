@@ -27,7 +27,7 @@ public class GUIBuilder extends JFrame implements ActionListener {
     private JButton searchButton;
     private JTextField searchField;
 
-    public GUIBuilder(String name) {
+    private GUIBuilder(String name) {
         super(name);
         setResizable(false);
     }
