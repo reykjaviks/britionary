@@ -18,6 +18,10 @@ Kaikki, jotka haluavat kehittää brittiläistä aksenttiaan.
 ![Luokkakaavio](luokkakaavio.png)
 
 ### **Sekvenssikaavio**
-Sanojen hakeminen
+_Synonyymien onnistunut hakeminen_
 
-![Sekvenssikaavio](sekvenssikaavio.jpg)
+![Sekvenssikaavio](sekvenssikaavio_search.jpg)
+
+_Sanasta ei pystytä hakemaan JSON:ia Oxford Dictionary:n rajapinnasta_
+
+![Sekvenssikaavio](sekvenssikaavio_fail.jpg)
