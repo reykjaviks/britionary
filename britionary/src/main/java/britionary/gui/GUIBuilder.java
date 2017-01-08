@@ -1,6 +1,6 @@
 package britionary.gui;
 
-import britionary.logic.*;
+import britionary.logic.Searcher;
 import java.awt.BorderLayout;
 import java.awt.Container;
 import java.awt.Dimension;
@@ -29,13 +29,45 @@ public class GUIBuilder extends JFrame implements ActionListener {
         setResizable(false);
     }
 
-    public void setEditorPane() {
+    public static void createAndShowGUI() {
+        GUIBuilder frame = new GUIBuilder("Britionary");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.addComponentsToPane(frame.getContentPane());
+        frame.pack();
+        frame.setVisible(true);
+    }
+
+    private void addComponentsToPane(final Container pane) {
+        search = new JPanel();
+        search.setLayout(new GridLayout(1, 2));
+
+        results = new JPanel();
+        results.setLayout(new GridLayout(1, 1));
+
+        searchField = new JTextField();
+        searchField.addActionListener(this);
+        searchButton = new JButton("Search");
+        searchButton.addActionListener(this);
+
+        setButtonSize();
+        search.add(searchField);
+        search.add(searchButton);
+
+        setEditorPane();
+        results.add(textPane);
+
+        pane.add(search, BorderLayout.NORTH);
+        pane.add(new JSeparator(), BorderLayout.CENTER);
+        pane.add(results, BorderLayout.SOUTH);
+    }
+
+    private void setEditorPane() {
         textPane = new JTextPane();
         textPane.setEditable(false);
         setEditorScrollPane(textPane);
     }
 
-    //TODO: set visible(?)
+    //TODO: fix visibility
     private void setEditorScrollPane(JTextPane editorPane) {
         textScrollPane = new JScrollPane(editorPane);
         textScrollPane.setVerticalScrollBarPolicy(
@@ -51,44 +83,12 @@ public class GUIBuilder extends JFrame implements ActionListener {
         results.setPreferredSize(new Dimension((int) (buttonSize.getWidth() * 2.5),
                 (int) (buttonSize.getHeight() * 10.0)));
     }
-
-    public void addComponentsToPane(final Container pane) {
-        search = new JPanel();
-        search.setLayout(new GridLayout(1, 2));
-
-        results = new JPanel();
-        results.setLayout(new GridLayout(1, 1));
-
-        searchField = new JTextField();
-        searchField.addActionListener(this);
-        searchButton = new JButton("Search");
-        searchButton.addActionListener(this);
-
-        setButtonSize();
-        search.add(searchField);
-        search.add(searchButton);
-        
-        setEditorPane();
-        results.add(textPane);
-
-        pane.add(search, BorderLayout.NORTH);
-        pane.add(new JSeparator(), BorderLayout.CENTER);
-        pane.add(results, BorderLayout.SOUTH);
-    }
     
     @Override
     public void actionPerformed(ActionEvent e) {
         String word = searchField.getText();
         Searcher searcher = Searcher.getInstance();
         textPane.setText(searcher.search(word));
-    }
-
-    public static void createAndShowGUI() {
-        GUIBuilder frame = new GUIBuilder("Britionary");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.addComponentsToPane(frame.getContentPane());
-        frame.pack();
-        frame.setVisible(true);
     }
 
 }
