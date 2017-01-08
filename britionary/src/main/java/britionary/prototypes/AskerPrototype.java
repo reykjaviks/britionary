@@ -7,17 +7,17 @@ import java.util.Scanner;
  * Luokka tarjoaa metodeita käyttäjän syötteiden lukemiseen. Tämä luokka on 
  * poistettu luokkakaaviosta, koska sen tarpeellisuudesta ei ole vielä varmuutta.
 */
-public class Asker {
+public class AskerPrototype {
 
     private String word;
     private Scanner scanner;
     private final InputStream systemIn; // Käytetään testaukseen
 
-    public Asker() {
+    public AskerPrototype() {
         this.systemIn = System.in;
     }
 
-    public Asker(InputStream in) {
+    public AskerPrototype(InputStream in) {
         this.systemIn = in;
     }
 
