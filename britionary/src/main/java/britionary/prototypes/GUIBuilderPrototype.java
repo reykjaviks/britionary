@@ -30,7 +30,7 @@ public class GUIBuilderPrototype extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         String word = sField.getText();
-        pField.setText(searcher.search(word));
+        pField.setText(searcher.searchBrits(word));
     }
 
     public static void main(String[] args) {
