@@ -79,36 +79,20 @@ public class Handler {
         for (int i = 0; i < subsenses.length(); i++) {
             JSONArray synonyms = Finder.findJSONArray(subsenses.getJSONObject(i), "synonyms");
             if (synonyms != null) {
-                synonymSet.addAll(handleSynonyms(synonyms));
+                synonymSet.addAll(handleSynonyms(synonyms)); //TÄSSÄ
             }
         }
         return synonymSet;
     }
 
-    private static HashSet<RegionalWord> handleSynonyms(JSONArray synonyms) {
-        HashSet<RegionalWord> synonymSet = new HashSet<>();
-
-        for (int i = 0; i < synonyms.length(); i++) {
-            JSONArray regions = Finder.findJSONArray(synonyms.getJSONObject(i), "regions");
-            if (regions != null) {
-                synonymSet.addAll(handleRegions(regions, synonyms));
-            }
-        }
-        return synonymSet;
-    }
-    
-    // TODO: Rajaa alue Iso-Britanniaan
-    private static HashSet<RegionalWord> handleRegions(JSONArray regions, JSONArray synonyms) {
+        private static HashSet<RegionalWord> handleSynonyms(JSONArray synonyms) {
         HashSet<RegionalWord> synonymSet = new HashSet<>();
 
         for (int i = 0; i < synonyms.length(); i++) {
             JSONObject synonym = synonyms.getJSONObject(i);
-            for (int j = 0; j < regions.length(); j++) {
-                if (synonym.has("text")) {
-                    RegionalWord regionalWord = new RegionalWord(regions.getString(j),
-                            synonym.getString("text"));
-                    synonymSet.add(regionalWord);
-                }
+            if (synonym.has("text")) {
+                RegionalWord regionalWord = new RegionalWord("none", synonym.getString("text"));
+                synonymSet.add(regionalWord);
             }
         }
         return synonymSet;
