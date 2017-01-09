@@ -7,6 +7,7 @@ import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.AbstractAction;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -24,7 +25,8 @@ public class GUIBuilder extends JFrame implements ActionListener {
     private JPanel results;
     private JTextPane textPane;
     private JScrollPane textScrollPane;
-    private JButton searchButton;
+    private JButton britButton;
+    private JButton allButton;
     private JTextField searchField;
 
     private GUIBuilder(String name) {
@@ -52,13 +54,29 @@ public class GUIBuilder extends JFrame implements ActionListener {
         results.setLayout(new GridLayout(1, 1));
 
         searchField = new JTextField();
-        searchField.addActionListener(this);
-        searchButton = new JButton("Search");
-        searchButton.addActionListener(this);
+
+        britButton = new JButton(new AbstractAction("Brits") {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String word = searchField.getText();
+                Searcher searcher = Searcher.getInstance();
+                textPane.setText(searcher.searchBrits(word));
+            }
+        });
+
+        allButton = new JButton(new AbstractAction("All") {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String word = searchField.getText();
+                Searcher searcher = Searcher.getInstance();
+                textPane.setText(searcher.searchAll(word));
+            }
+        });
 
         setButtonSize();
         search.add(searchField);
-        search.add(searchButton);
+        search.add(britButton);
+        search.add(allButton);
 
         setEditorPane();
         results.add(textPane);
@@ -84,7 +102,7 @@ public class GUIBuilder extends JFrame implements ActionListener {
     }
 
     private void setButtonSize() {
-        Dimension buttonSize = searchButton.getPreferredSize();
+        Dimension buttonSize = britButton.getPreferredSize();
         search.setPreferredSize(new Dimension((int) (buttonSize.getWidth() * 5.0),
                 (int) (buttonSize.getHeight() * 2.0)));
         results.setPreferredSize(new Dimension((int) (buttonSize.getWidth() * 2.5),
@@ -95,7 +113,7 @@ public class GUIBuilder extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         String word = searchField.getText();
         Searcher searcher = Searcher.getInstance();
-        textPane.setText(searcher.search(word));
+        textPane.setText(searcher.searchBrits(word));
     }
 
 }
