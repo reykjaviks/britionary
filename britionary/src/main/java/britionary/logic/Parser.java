@@ -20,7 +20,7 @@ public class Parser {
         HashSet<RegionalWord> wordSet = BritishHandler.handleResults(response);
 
         if (wordSet.isEmpty()) {
-            throw new ParseException("No British synonyms forcat ");
+            throw new ParseException("No British synonyms for ");
         }
         String synonyms = "";
         for (RegionalWord word : wordSet) {
