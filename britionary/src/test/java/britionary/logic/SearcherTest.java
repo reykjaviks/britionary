@@ -19,13 +19,13 @@ public class SearcherTest {
     @Test
     public void testSearchUnknownWord() {
         searcher = Searcher.getInstance();
-        assertEquals("No results for \"adjfk\"", searcher.search("Adjfk"));
+        assertEquals("No results for \"adjfk\"", searcher.searchBrits("Adjfk"));
     }
     
     @Test
     public void testSearchUmlauted() {
         searcher = Searcher.getInstance();
-        assertEquals("No results for \"äfäfäö\"", searcher.search("Äfäfäö"));
+        assertEquals("No results for \"äfäfäö\"", searcher.searchBrits("Äfäfäö"));
     }
 
     @Test
@@ -39,6 +39,6 @@ public class SearcherTest {
                 + "wee\n"
                 + "teensy-weensy\n"
                 + "dinky\n"
-                + "tiddly\n", searcher.search("Little"));
+                + "tiddly\n", searcher.searchBrits("Little"));
     }
 }

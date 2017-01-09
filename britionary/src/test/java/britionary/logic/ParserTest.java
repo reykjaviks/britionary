@@ -12,14 +12,14 @@ public class ParserTest {
     public void testParseJSONResults() throws ParseException{
         String json = "{\n"
                 + "    \"results\": []}\n";
-        assertEquals("No British synonyms found.", Parser.parseJSON(json));
+        assertEquals("No British synonyms found.", Parser.parseJSONBrits(json));
     }
 
     @Test(expected = ParseException.class)
     public void testParseJSONEmpty() throws ParseException {
         String json = "{\n"
                 + "    \"\": []}\n";
-        Parser.parseJSON(json);
+        Parser.parseJSONBrits(json);
     }
     
     @Test
@@ -979,7 +979,7 @@ public class ParserTest {
                 + "wee\n"
                 + "teensy-weensy\n"
                 + "dinky\n"
-                + "tiddly\n", Parser.parseJSON(json));
+                + "tiddly\n", Parser.parseJSONBrits(json));
     }
 }
 

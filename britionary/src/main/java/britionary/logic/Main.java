@@ -11,7 +11,7 @@ public class Main {
         
         String word = "Little";
         Searcher searcher = Searcher.getInstance();
-        System.out.println(searcher.search(word));
+        System.out.println(searcher.searchBrits(word));
 
     }
 }
