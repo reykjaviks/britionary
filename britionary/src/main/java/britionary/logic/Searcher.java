@@ -35,32 +35,72 @@ public class Searcher {
      * @param   word    Käyttäjän syöttämä hakusana
      * @return          Lista löydetyistä synonyymeista
      */
-    public String search(String word) {
-        String str;
+    public String searchBrits(String word) {
+        String cleanWord;
         try {
-            str = Converter.convert(word);
+            cleanWord = Converter.convert(word);
         } catch (StringIndexOutOfBoundsException e) {
             return "Index out of bounds: " + e;
         } catch (Exception e) {
             return "Cannot convert word: " + e;
         }
 
+        String str;
         try {
-            str = fetcher.fetchJSON(str);
+            str = fetcher.fetchJSON(cleanWord);
         } catch (MalformedURLException e) {
             return "Invalid URL: " + e;
         } catch (IOException e) {
-            return "No results for \"" + str + "\"";
+            return "No results for \"" + cleanWord + "\"";
         } catch (Exception e) {
             return "Cannot fetch JSON-file: " + e;
         }
 
+        return parseBrits(str, cleanWord);
+    }
+
+    public String searchAll(String word) {
+        String cleanWord;
         try {
-            return Parser.parseJSON(str);
+            cleanWord = Converter.convert(word);
+        } catch (StringIndexOutOfBoundsException e) {
+            return "Index out of bounds: " + e;
+        } catch (Exception e) {
+            return "Cannot convert word: " + e;
+        }
+
+        String str;
+        try {
+            str = fetcher.fetchJSON(cleanWord);
+        } catch (MalformedURLException e) {
+            return "Invalid URL: " + e;
+        } catch (IOException e) {
+            return "No results for \"" + word + "\"";
+        } catch (Exception e) {
+            return "Cannot fetch JSON-file: " + e;
+        }
+
+        return parseAll(str, cleanWord);
+    }
+
+    private String parseBrits(String json, String cleanWord) {
+        try {
+            return Parser.parseJSONBrits(json);
         } catch (ParseException e) {
-            return e.getMessage();
+            return e.getMessage() + "\"" + cleanWord + "\"";
         } catch (Exception e) {
             return "Cannot parse JSON-file: " + e;
         }
     }
+
+    private String parseAll(String json, String cleanWord) {
+        try {
+            return Parser.parseJSONAll(json);
+        } catch (ParseException e) {
+            return e.getMessage() + "\"" + cleanWord + "\"";
+        } catch (Exception e) {
+            return "Cannot parse JSON-file: " + e;
+        }
+    }
+
 }
