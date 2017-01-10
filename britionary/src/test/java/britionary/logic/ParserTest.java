@@ -3,11 +3,37 @@ package britionary.logic;
 import static britionary.logic.Target.ALL;
 import static britionary.logic.Target.BRITS;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 import org.junit.Test;
 
 public class ParserTest {
 
     public ParserTest() {
+    }
+
+    @Test
+    public void testBritish() {
+        RegionalWord word = new RegionalWord("British", "teeny-weeny");
+        assertTrue(Parser.british(word));
+    }
+
+    @Test
+    public void testScottish() {
+        RegionalWord word = new RegionalWord("Scottish", "wee");
+        assertTrue(Parser.british(word));
+    }
+
+    @Test
+    public void testIrish() {
+        RegionalWord word = new RegionalWord("Irish", "stook");
+        assertTrue(Parser.british(word));
+    }
+
+    @Test
+    public void testFinnish() {
+        RegionalWord word = new RegionalWord("Finnish", "pikkuruinen");
+        assertFalse(Parser.british(word));
     }
     
     @Test(expected = ParseException.class)

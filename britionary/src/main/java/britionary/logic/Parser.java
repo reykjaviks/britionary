@@ -46,8 +46,7 @@ public class Parser {
         }
     }
 
-    // TODO: kirjoita testit
-    private static boolean british(RegionalWord word) {
+    public static boolean british(RegionalWord word) {
         if (word.getRegion().equals("British")
                 || word.getRegion().equals("Scottish")
                 || word.getRegion().equals("Irish")) {
