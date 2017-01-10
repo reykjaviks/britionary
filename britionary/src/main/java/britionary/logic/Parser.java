@@ -27,7 +27,7 @@ public class Parser {
         JSONObject response = new JSONObject(json);
         HashSet<RegionalWord> wordSet = handler.handleResults(response);
         if (wordSet.isEmpty())
-            throw new ParseException("No synonyms for ");
+            throw new ParseException("No regional synonyms for ");
 
         String synonyms = "";
         if (target.equals(BRITS)) {
@@ -42,8 +42,6 @@ public class Parser {
         } else {
             for (RegionalWord word : wordSet)
                 synonyms += word.getWord() + "\n";
-            if (synonyms == "")
-                throw new ParseException("No synonyms for ");
             return synonyms;
         }
     }
