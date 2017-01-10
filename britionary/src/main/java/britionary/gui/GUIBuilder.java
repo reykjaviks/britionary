@@ -2,65 +2,81 @@ package britionary.gui;
 
 import britionary.logic.Searcher;
 import java.awt.BorderLayout;
-import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import javax.swing.AbstractAction;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
-import javax.swing.JSeparator;
 import javax.swing.JTextField;
 import javax.swing.JTextPane;
 
-/**
- * Luokka tarjoaa metodeita käyttöliittymän rakentamiseen.
- */
-public class GUIBuilder extends JFrame implements ActionListener {
+public class GUIBuilder extends JFrame {
 
-    private JPanel search;
-    private JPanel results;
-    private JTextPane textPane;
-    private JScrollPane textScrollPane;
-    private JButton britButton;
-    private JButton allButton;
+    private JPanel searchPanel;
+    private JPanel resultsPanel;
     private JTextField searchField;
+    private JButton britsButton;
+    private JButton allButton;
+    private JTextPane resultsPane;
+    private JScrollPane scrollPane;
+    private GridLayout searchLayout;
+    private GridLayout resultsLayout;
 
     private GUIBuilder(String name) {
         super(name);
-        setResizable(false);
+        setResizable(true);
     }
 
-    /**
-     * Metodi rakentaa käyttöliittymän luokan yksityisiä metodeita apuna
-     * käyttäen.
-     */
     public static void createAndShowGUI() {
         GUIBuilder frame = new GUIBuilder("Britionary");
+        frame.createComponents();
+        frame.setComponents();
+        frame.addComponents();
+        frame.getRootPane().setDefaultButton(frame.britsButton); // Mieti myöhemmin
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.addComponentsToPane(frame.getContentPane());
         frame.pack();
         frame.setVisible(true);
     }
 
-    private void addComponentsToPane(final Container pane) {
-        search = new JPanel();
-        search.setLayout(new GridLayout(1, 2));
-
-        results = new JPanel();
-        results.setLayout(new GridLayout(1, 1));
-
+    private void createComponents() {
+        searchPanel = new JPanel();
+        resultsPanel = new JPanel();
         searchField = new JTextField();
+        createButtons();
+        resultsPane = new JTextPane();
+        scrollPane = new JScrollPane(resultsPane);
+        searchLayout = new GridLayout(1, 3);
+        resultsLayout = new GridLayout(1, 1);
+    }
 
-        britButton = new JButton(new AbstractAction("Brits") {
+    private void setComponents() {
+        searchPanel.setLayout(searchLayout);
+        resultsPanel.setLayout(resultsLayout);
+        setPanelSize();
+        resultsPane.setEditable(false);
+        scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+        this.setLayout(new BorderLayout());
+    }
+
+    private void addComponents() {
+        searchPanel.add(searchField);
+        searchPanel.add(britsButton);
+        searchPanel.add(allButton);
+        resultsPanel.add(scrollPane);
+        this.add(searchPanel, BorderLayout.NORTH);
+        this.add(resultsPanel, BorderLayout.CENTER);
+    }
+
+    private void createButtons() {
+        britsButton = new JButton(new AbstractAction("Brits") {
             @Override
             public void actionPerformed(ActionEvent e) {
                 String word = searchField.getText();
                 Searcher searcher = Searcher.getInstance();
-                textPane.setText(searcher.searchBrits(word));
+                resultsPane.setText(searcher.searchBrits(word));
             }
         });
 
@@ -69,51 +85,20 @@ public class GUIBuilder extends JFrame implements ActionListener {
             public void actionPerformed(ActionEvent e) {
                 String word = searchField.getText();
                 Searcher searcher = Searcher.getInstance();
-                textPane.setText(searcher.searchAll(word));
+                resultsPane.setText(searcher.searchAll(word));
             }
         });
-
-        setButtonSize();
-        search.add(searchField);
-        search.add(britButton);
-        search.add(allButton);
-
-        setEditorPane();
-        results.add(textPane);
-
-        pane.add(search, BorderLayout.NORTH);
-        pane.add(new JSeparator(), BorderLayout.CENTER);
-        pane.add(results, BorderLayout.SOUTH);
     }
 
-    private void setEditorPane() {
-        textPane = new JTextPane();
-        textPane.setEditable(false);
-        setEditorScrollPane(textPane);
-    }
+    private void setPanelSize() {
+        Dimension buttonDimensions = britsButton.getPreferredSize();
+        Dimension searchPanelDimensions = new Dimension((int) (buttonDimensions.getWidth() * 8.0),
+                (int) (buttonDimensions.getHeight() * 2.0));
+        Dimension resultsPanelDimensions = new Dimension((int) (buttonDimensions.getWidth() * 8.0),
+                (int) (buttonDimensions.getHeight() * 20.0));
 
-    //TODO: korjaa näkyvyys
-    private void setEditorScrollPane(JTextPane editorPane) {
-        textScrollPane = new JScrollPane(editorPane);
-        textScrollPane.setVerticalScrollBarPolicy(
-                JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
-        textScrollPane.setPreferredSize(new Dimension(250, 145));
-        textScrollPane.setMinimumSize(new Dimension(10, 10));
-    }
-
-    private void setButtonSize() {
-        Dimension buttonSize = britButton.getPreferredSize();
-        search.setPreferredSize(new Dimension((int) (buttonSize.getWidth() * 5.0),
-                (int) (buttonSize.getHeight() * 2.0)));
-        results.setPreferredSize(new Dimension((int) (buttonSize.getWidth() * 2.5),
-                (int) (buttonSize.getHeight() * 10.0)));
-    }
-    
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        String word = searchField.getText();
-        Searcher searcher = Searcher.getInstance();
-        textPane.setText(searcher.searchBrits(word));
+        searchPanel.setPreferredSize(searchPanelDimensions);
+        resultsPanel.setPreferredSize(resultsPanelDimensions);
     }
 
 }
