@@ -1,5 +1,7 @@
 package britionary.logic;
 
+import static britionary.logic.Target.ALL;
+import static britionary.logic.Target.BRITS;
 import java.util.HashSet;
 import org.json.JSONObject;
 
@@ -15,34 +17,35 @@ public class Parser {
      * @return                  Lista löydetyistä synonyymeista
      * @throws  ParseException  Heittää poikkeuksen jos merkkijono on tyhjä
      */
-    public static String parseJSONBrits(String json) throws ParseException {
-        JSONObject response = new JSONObject(json);
-        HashSet<RegionalWord> wordSet = BritishHandler.handleResults(response);
+    public static String parseJSON(String json, Target target) throws ParseException {
+        Handler2 handler;
+        if (target.equals(BRITS))
+            handler = new Handler2(BRITS);
+        else
+            handler = new Handler2(ALL);
 
-        if (wordSet.isEmpty()) {
-            throw new ParseException("No regional synonyms for ");
-        }
-        String synonyms = "";
-        for (RegionalWord word : wordSet) {
-            if (british(word)) {
-                synonyms += word.getWord() + "\n";
-            }
-        }
-        return synonyms;
-    }
-    // TODO: kirjoita testit
-    public static String parseJSONAll(String json) throws ParseException {
         JSONObject response = new JSONObject(json);
-        HashSet<RegionalWord> wordSet = Handler.handleResults(response);
-
-        if (wordSet.isEmpty()) {
+        HashSet<RegionalWord> wordSet = handler.handleResults(response);
+        if (wordSet.isEmpty())
             throw new ParseException("No synonyms for ");
-        }
+
         String synonyms = "";
-        for (RegionalWord word : wordSet) {
-            synonyms += word.getWord() + "\n";
+        if (target.equals(BRITS)) {
+            for (RegionalWord word : wordSet) {
+                if (british(word))
+                    synonyms += word.getWord() + "\n";
+            }
+            if (synonyms == "") {
+                throw new ParseException("No British synonyms for ");
+            }
+            return synonyms;
+        } else {
+            for (RegionalWord word : wordSet)
+                synonyms += word.getWord() + "\n";
+            if (synonyms == "")
+                throw new ParseException("No synonyms for ");
+            return synonyms;
         }
-        return synonyms;
     }
 
     // TODO: kirjoita testit
