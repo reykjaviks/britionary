@@ -26,6 +26,7 @@ public class Parser {
 
         JSONObject response = new JSONObject(json);
         HashSet<RegionalWord> wordSet = handler.handleResults(response);
+        // TODO: lisää tämä brittihakuun
         if (wordSet.isEmpty())
             throw new ParseException("No regional synonyms for ");
 
