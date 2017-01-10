@@ -1,5 +1,7 @@
 package britionary.logic;
 
+import static britionary.logic.Target.ALL;
+import static britionary.logic.Target.BRITS;
 import java.io.IOException;
 import java.net.MalformedURLException;
 
@@ -45,9 +47,9 @@ public class Searcher {
             return "Cannot convert word: " + e;
         }
 
-        String str;
+        String json;
         try {
-            str = fetcher.fetchJSON(cleanWord);
+            json = fetcher.fetchJSON(cleanWord);
         } catch (MalformedURLException e) {
             return "Invalid URL: " + e;
         } catch (IOException e) {
@@ -56,7 +58,13 @@ public class Searcher {
             return "Cannot fetch JSON-file: " + e;
         }
 
-        return parseBrits(str, cleanWord);
+        try {
+            return Parser.parseJSON(json, BRITS);
+        } catch (ParseException e) {
+            return e.getMessage() + "\"" + cleanWord + "\"";
+        } catch (Exception e) {
+            return "Cannot parse JSON-file: " + e;
+        }
     }
 
     public String searchAll(String word) {
@@ -69,33 +77,19 @@ public class Searcher {
             return "Cannot convert word: " + e;
         }
 
-        String str;
+        String json;
         try {
-            str = fetcher.fetchJSON(cleanWord);
+            json = fetcher.fetchJSON(cleanWord);
         } catch (MalformedURLException e) {
             return "Invalid URL: " + e;
         } catch (IOException e) {
-            return "No results for \"" + word + "\"";
+            return "No results for \"" + cleanWord + "\"";
         } catch (Exception e) {
             return "Cannot fetch JSON-file: " + e;
         }
 
-        return parseAll(str, cleanWord);
-    }
-
-    private String parseBrits(String json, String cleanWord) {
         try {
-            return Parser.parseJSONBrits(json);
-        } catch (ParseException e) {
-            return e.getMessage() + "\"" + cleanWord + "\"";
-        } catch (Exception e) {
-            return "Cannot parse JSON-file: " + e;
-        }
-    }
-
-    private String parseAll(String json, String cleanWord) {
-        try {
-            return Parser.parseJSONAll(json);
+            return Parser.parseJSON(json, ALL);
         } catch (ParseException e) {
             return e.getMessage() + "\"" + cleanWord + "\"";
         } catch (Exception e) {
