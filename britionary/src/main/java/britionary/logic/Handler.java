@@ -65,10 +65,12 @@ public class Handler {
             if (synonyms != null) {
                 synonymSet.addAll(handleSynonyms(synonyms));
             }
+            /*
             JSONArray subsenses = Finder.findJSONArray(senses.getJSONObject(i), "subsenses");
             if (subsenses != null) {
                 synonymSet.addAll(handleSubsenses(subsenses));
             }
+            */
         }
         return synonymSet;
     }
