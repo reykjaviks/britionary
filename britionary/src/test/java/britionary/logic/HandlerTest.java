@@ -1,6 +1,7 @@
 package britionary.logic;
 
 import static britionary.logic.Target.ALL;
+import static britionary.logic.Target.BRITS;
 import java.util.HashSet;
 import org.json.JSONObject;
 import static org.junit.Assert.assertEquals;
@@ -17,6 +18,29 @@ public class HandlerTest {
     @Before
     public void setUp() {
         handler = new Handler(ALL);
+    }
+
+    @Test
+    public void testConstructorALL() {
+        assertEquals(ALL, handler.getTarget());
+    }
+
+    @Test
+    public void testConstructorBRITS() {
+        Handler handler = new Handler(BRITS);
+        assertEquals(BRITS, handler.getTarget());
+    }
+
+    @Test
+    public void testSetTargetALL() {
+        handler.setTarget(ALL);
+        assertEquals(ALL, handler.getTarget());
+    }
+
+    @Test
+    public void testSetTargetBRITS() {
+        handler.setTarget(BRITS);
+        assertEquals(BRITS, handler.getTarget());
     }
 
     @Test
