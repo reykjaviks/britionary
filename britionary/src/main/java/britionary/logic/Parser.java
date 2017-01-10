@@ -1,6 +1,5 @@
 package britionary.logic;
 
-import static britionary.logic.Target.ALL;
 import static britionary.logic.Target.BRITS;
 import java.util.HashSet;
 import org.json.JSONObject;
@@ -18,12 +17,7 @@ public class Parser {
      * @throws  ParseException  Heittää poikkeuksen jos merkkijono on tyhjä
      */
     public static String parseJSON(String json, Target target) throws ParseException {
-        Handler handler;
-        if (target.equals(BRITS))
-            handler = new Handler(BRITS);
-        else
-            handler = new Handler(ALL);
-
+        Handler handler = new Handler(target);
         JSONObject response = new JSONObject(json);
         HashSet<RegionalWord> wordSet = handler.handleResults(response);
         // TODO: lisää tämä brittihakuun
@@ -36,9 +30,8 @@ public class Parser {
                 if (british(word))
                     synonyms += word.getWord() + "\n";
             }
-            if (synonyms == "") {
+            if (synonyms.equals(""))
                 throw new ParseException("No British synonyms");
-            }
             return synonyms;
         } else {
             for (RegionalWord word : wordSet)
