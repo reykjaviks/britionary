@@ -28,7 +28,7 @@ public class Parser {
         HashSet<RegionalWord> wordSet = handler.handleResults(response);
         // TODO: lisää tämä brittihakuun
         if (wordSet.isEmpty())
-            throw new ParseException("No regional synonyms for ");
+            throw new ParseException("No regional synonyms");
 
         String synonyms = "";
         if (target.equals(BRITS)) {
@@ -37,7 +37,7 @@ public class Parser {
                     synonyms += word.getWord() + "\n";
             }
             if (synonyms == "") {
-                throw new ParseException("No British synonyms for ");
+                throw new ParseException("No British synonyms");
             }
             return synonyms;
         } else {
@@ -48,11 +48,8 @@ public class Parser {
     }
 
     public static boolean british(RegionalWord word) {
-        if (word.getRegion().equals("British")
+        return word.getRegion().equals("British")
                 || word.getRegion().equals("Scottish")
-                || word.getRegion().equals("Irish")) {
-            return true;
-        }
-        return false;
+                || word.getRegion().equals("Irish");
     }
 }
