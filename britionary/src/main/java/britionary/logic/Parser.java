@@ -18,11 +18,11 @@ public class Parser {
      * @throws  ParseException  Heittää poikkeuksen jos merkkijono on tyhjä
      */
     public static String parseJSON(String json, Target target) throws ParseException {
-        Handler2 handler;
+        Handler handler;
         if (target.equals(BRITS))
-            handler = new Handler2(BRITS);
+            handler = new Handler(BRITS);
         else
-            handler = new Handler2(ALL);
+            handler = new Handler(ALL);
 
         JSONObject response = new JSONObject(json);
         HashSet<RegionalWord> wordSet = handler.handleResults(response);
