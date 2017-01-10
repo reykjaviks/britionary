@@ -35,39 +35,17 @@ public class Searcher {
      * Metodi hakee syötettyä sanaa vastaavat synonyymit.
      * 
      * @param   word    Käyttäjän syöttämä hakusana
-     * @return          Lista löydetyistä synonyymeista
+     * @return          Lista löydetyistä synonyymeistä
      */
     public String searchBrits(String word) {
-        String cleanWord;
-        try {
-            cleanWord = Converter.convert(word);
-        } catch (StringIndexOutOfBoundsException e) {
-            return "Index out of bounds: " + e;
-        } catch (Exception e) {
-            return "Cannot convert word: " + e;
-        }
-
-        String json;
-        try {
-            json = fetcher.fetchJSON(cleanWord);
-        } catch (MalformedURLException e) {
-            return "Invalid URL: " + e;
-        } catch (IOException e) {
-            return "No results for \"" + cleanWord + "\"";
-        } catch (Exception e) {
-            return "Cannot fetch JSON-file: " + e;
-        }
-
-        try {
-            return Parser.parseJSON(json, BRITS);
-        } catch (ParseException e) {
-            return e.getMessage() + "\"" + cleanWord + "\"";
-        } catch (Exception e) {
-            return "Cannot parse JSON-file: " + e;
-        }
+        return search(word, BRITS);
     }
 
     public String searchAll(String word) {
+        return search(word, ALL);
+    }
+
+    private String search(String word, Target target) {
         String cleanWord;
         try {
             cleanWord = Converter.convert(word);
@@ -89,9 +67,9 @@ public class Searcher {
         }
 
         try {
-            return Parser.parseJSON(json, ALL);
+            return Parser.parseJSON(json, target);
         } catch (ParseException e) {
-            return e.getMessage() + "\"" + cleanWord + "\"";
+            return e.getMessage() + " for \"" + cleanWord + "\"";
         } catch (Exception e) {
             return "Cannot parse JSON-file: " + e;
         }
