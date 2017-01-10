@@ -24,7 +24,9 @@ public class Parser {
         }
         String synonyms = "";
         for (RegionalWord word : wordSet) {
-            synonyms += word.getWord() + "\n";
+            if (british(word)) {
+                synonyms += word.getRegion() + ": " + word.getWord() + "\n";
+            }
         }
         return synonyms;
     }
@@ -41,5 +43,14 @@ public class Parser {
             synonyms += word.getWord() + "\n";
         }
         return synonyms;
+    }
+
+    private static boolean british(RegionalWord word) {
+        if (word.getRegion().equals("British")
+                || word.getRegion().equals("Scottish")
+                || word.getRegion().equals("Irish")) {
+            return true;
+        }
+        return false;
     }
 }
