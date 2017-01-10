@@ -20,6 +20,6 @@ Päivä | Tunnit | Kuvaus
 7.1. | 2h | Käyttöliittymän kirjoittamista
 8.1. | 7h | JavaDocin kirjoittamista ja kaavioiden piirtämistä
 9.1. | 2.5h | Toiminnallisuuden laajentamista
-10.1. | ... |
+10.1. | 5.5h | Toiminnallisuuden laajentamista ja käyttöliittymän korjaamista
 11.1. | ... |
 12.1. | ... |
