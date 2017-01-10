@@ -1,8 +1,8 @@
 package britionary.logic;
 
-import org.junit.Before;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 import org.junit.Test;
-import static org.junit.Assert.*;
 
 public class SearcherTest {
     
@@ -17,19 +17,37 @@ public class SearcherTest {
     }
     
     @Test
-    public void testSearchUnknownWord() {
+    public void testSearchBritsUnknownWord() {
         searcher = Searcher.getInstance();
         assertEquals("No results for \"adjfk\"", searcher.searchBrits("Adjfk"));
     }
+
+    @Test
+    public void testSearchBritsNoSynonyms() {
+        searcher = Searcher.getInstance();
+        assertEquals("No regional synonyms for \"reason\"", searcher.searchBrits("reason"));
+    }
     
     @Test
-    public void testSearchUmlauted() {
+    public void testSearchBritsUmlauted() {
         searcher = Searcher.getInstance();
         assertEquals("No results for \"äfäfäö\"", searcher.searchBrits("Äfäfäö"));
     }
 
     @Test
-    public void testSearch() {
+    public void testSearchAllUnknownWord() {
+        searcher = Searcher.getInstance();
+        assertEquals("No results for \"adjfk\"", searcher.searchAll("Adjfk"));
+    }
+
+    @Test
+    public void testSearchAllUmlauted() {
+        searcher = Searcher.getInstance();
+        assertEquals("No results for \"äfäfäö\"", searcher.searchAll("Äfäfäö"));
+    }
+
+    @Test
+    public void testSearchBrits() {
         searcher = Searcher.getInstance();
         assertEquals("teensy\n"
                 + "teeny-weeny\n"
@@ -40,5 +58,13 @@ public class SearcherTest {
                 + "teensy-weensy\n"
                 + "dinky\n"
                 + "tiddly\n", searcher.searchBrits("Little"));
+    }
+
+    @Test
+    public void testSearchAll() {
+        searcher = Searcher.getInstance();
+        assertEquals("measured\n"
+                + "steady\n"
+                + "laid-back\n", searcher.searchAll("Leisurely"));
     }
 }
