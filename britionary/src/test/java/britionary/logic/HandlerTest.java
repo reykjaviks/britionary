@@ -1,18 +1,22 @@
 package britionary.logic;
 
+import static britionary.logic.Target.ALL;
 import java.util.HashSet;
 import org.json.JSONObject;
+import static org.junit.Assert.assertEquals;
 import org.junit.Before;
 import org.junit.Test;
-import static org.junit.Assert.*;
 
 public class HandlerTest {
-    
+
+    Handler handler;
+
     public HandlerTest() {
     }
     
     @Before
     public void setUp() {
+        handler = new Handler(ALL);
     }
 
     @Test
@@ -23,7 +27,7 @@ public class HandlerTest {
         String json = "{\n"
                 + "    \"results\": []}\n";
         JSONObject response = new JSONObject(json);
-        words = Handler.handleResults(response);
+        words = handler.handleResults(response);
         
         for (RegionalWord word : words) {
             str += word.getWord() + "\n";
@@ -36,7 +40,7 @@ public class HandlerTest {
         String json = "{\n"
                 + "    \"nothing here\": []}\n";
         JSONObject response = new JSONObject(json);
-        Handler.handleResults(response);
+        handler.handleResults(response);
     }
 
 }

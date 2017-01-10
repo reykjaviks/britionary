@@ -1,5 +1,7 @@
 package britionary.logic;
 
+import static britionary.logic.Target.ALL;
+import static britionary.logic.Target.BRITS;
 import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
@@ -12,14 +14,14 @@ public class ParserTest {
     public void testParseJSONResults() throws ParseException{
         String json = "{\n"
                 + "    \"results\": []}\n";
-        assertEquals("No British synonyms found.", Parser.parseJSONBrits(json));
+        assertEquals("No synonyms for: ", Parser.parseJSON(json, ALL));
     }
 
     @Test(expected = ParseException.class)
     public void testParseJSONEmpty() throws ParseException {
         String json = "{\n"
                 + "    \"\": []}\n";
-        Parser.parseJSONBrits(json);
+        Parser.parseJSON(json, ALL);
     }
     
     @Test
@@ -979,7 +981,7 @@ public class ParserTest {
                 + "wee\n"
                 + "teensy-weensy\n"
                 + "dinky\n"
-                + "tiddly\n", Parser.parseJSONBrits(json));
+                + "tiddly\n", Parser.parseJSON(json, BRITS));
     }
 }
 
