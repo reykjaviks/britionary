@@ -1,16 +1,16 @@
 package britionary.logic;
 
 /**
- * Luokka tarjoaa metodeita käyttäjän syöttämien hakusanojen muuntamiseen.
+ * Luokka tarjoaa metodeita käyttäjän syöttämien hakusanojen siistimiseen.
  */
 public class Converter {
 
     /**
-     * Metodi muuntaa hakusanan siihen muotoon, että sillä voidaan hakea tietoa
+     * Metodi siistii hakusanaa niin, että sillä voidaan hakea tietoa
      * Oxford Dictionary:n ohjelmointirajapinnasta.
      * 
-     * @param   word    Käyttäjän antama hakusana
-     * @return          Siistitty hakusana
+     * @param   word    käyttäjän antama hakusana
+     * @return          siistitty hakusana
      */
     public static String convert(String word) {
         StringBuilder str = new StringBuilder(word.toLowerCase());
@@ -37,4 +37,5 @@ public class Converter {
         }
         return str.toString();
     }
+
 }

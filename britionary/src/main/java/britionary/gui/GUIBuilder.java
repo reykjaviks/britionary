@@ -16,6 +16,9 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextField;
 import javax.swing.JTextPane;
 
+/**
+ * Luokka tarjoaa metodeita graafisen käyttöliittymään luontiin.
+ */
 public class GUIBuilder extends JFrame {
 
     private JPanel searchPanel;
@@ -33,6 +36,10 @@ public class GUIBuilder extends JFrame {
         setResizable(true);
     }
 
+    /**
+     * Metodi rakentaa uuden käyttöliittymän käyttämällä apuna luokan yksityisiä
+     * metodeita.
+     */
     public static void createAndShowGUI() {
         GUIBuilder frame = new GUIBuilder("Britionary");
         frame.createComponents();

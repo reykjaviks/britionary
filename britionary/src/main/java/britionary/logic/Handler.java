@@ -5,13 +5,18 @@ import java.util.HashSet;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+/**
+ * Luokka tarjoaa metodeita JSON-taulukoiden läpikäymiseen.
+ */
 public class Handler {
 
     private Target target;
 
-    public Handler() {
-    }
-
+    /**
+     * Konstruktori luo uuden Handler-olion.
+     *
+     * @param   target  kohdesynonyymit: BRITS tai ALL
+     */
     public Handler(Target target) {
         this.target = target;
     }
@@ -24,15 +29,25 @@ public class Handler {
         return this.target;
     }
 
+    /**
+     * Metodi hakee JSON-objektin juuren ja siellä sijaitsevat sanat käyttämällä
+     * apuna luokan yksityisiä metodeita.
+     *
+     * @param   response        käsiteltävä JSON-objekti
+     * @return                  HashSet löydetyistä sanoista
+     * @throws  ParseException  jos JSON-objektin sisältä ei löydy results-taulukkoa
+     */
     public HashSet<RegionalWord> handleResults(JSONObject response) throws ParseException {
         JSONArray results = Finder.findJSONArray(response, "results");
-        if (results == null)
+        if (results == null) {
             throw new ParseException("Cannot find JSON-array \"results.\"");
+        }
         HashSet<RegionalWord> synonymSet = new HashSet<>();
         for (int i = 0; i < results.length(); i++) {
             JSONArray lexicalEntries = Finder.findJSONArray(results.getJSONObject(i), "lexicalEntries");
-            if (lexicalEntries != null)
+            if (lexicalEntries != null) {
                 synonymSet.addAll(handleLexicalEntries(lexicalEntries));
+            }
         }
         return synonymSet;
     }
@@ -42,8 +57,9 @@ public class Handler {
 
         for (int i = 0; i < lexicalEntries.length(); i++) {
             JSONArray entries = Finder.findJSONArray(lexicalEntries.getJSONObject(i), "entries");
-            if (entries != null)
+            if (entries != null) {
                 synonymSet.addAll(handleEntries(entries));
+            }
         }
         return synonymSet;
     }
@@ -53,8 +69,9 @@ public class Handler {
 
         for (int i = 0; i < entries.length(); i++) {
             JSONArray senses = Finder.findJSONArray(entries.getJSONObject(i), "senses");
-            if (senses != null)
+            if (senses != null) {
                 synonymSet.addAll(handleSenses(senses));
+            }
         }
         return synonymSet;
     }
@@ -64,11 +81,13 @@ public class Handler {
 
         for (int i = 0; i < senses.length(); i++) {
             JSONArray synonyms = Finder.findJSONArray(senses.getJSONObject(i), "synonyms");
-            if (synonyms != null)
+            if (synonyms != null) {
                 synonymSet.addAll(handleRegionalSynonyms(synonyms));
+            }
             JSONArray subsenses = Finder.findJSONArray(senses.getJSONObject(i), "subsenses");
-            if (subsenses != null)
+            if (subsenses != null) {
                 synonymSet.addAll(handleSubsenses(subsenses));
+            }
         }
         return synonymSet;
     }
@@ -79,10 +98,11 @@ public class Handler {
         for (int i = 0; i < subsenses.length(); i++) {
             JSONArray synonyms = Finder.findJSONArray(subsenses.getJSONObject(i), "synonyms");
             if (synonyms != null) {
-                if (this.target.equals(BRITS))
+                if (this.target.equals(BRITS)) {
                     synonymSet.addAll(handleRegionalSynonyms(synonyms));
-                else
+                } else {
                     synonymSet.addAll(handleSynonyms(synonyms));
+                }
             }
         }
         return synonymSet;
@@ -106,8 +126,9 @@ public class Handler {
 
         for (int i = 0; i < synonyms.length(); i++) {
             JSONArray regions = Finder.findJSONArray(synonyms.getJSONObject(i), "regions");
-            if (regions != null)
+            if (regions != null) {
                 synonymSet.addAll(handleRegions(regions, synonyms));
+            }
         }
         return synonymSet;
     }
@@ -127,4 +148,5 @@ public class Handler {
         }
         return synonymSet;
     }
+
 }

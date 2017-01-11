@@ -4,8 +4,8 @@ import java.io.IOException;
 import java.net.MalformedURLException;
 
 /**
- * Luokka tarjoaa metodeita sanojen hakemiseen ja erottaa kutsujan sovelluslogiikan 
- * alemmasta tasosta.
+ * Luokka tarjoaa metodeita sanojen hakemiseen, sekä erottaa kutsujan
+ * sovelluslogiikan alemmasta tasosta.
  */
 public class Searcher {
 
@@ -20,7 +20,7 @@ public class Searcher {
      * Metodi pitää huolen, että luokasta voi tehdä vain yhden ilmentymän 
      * kerrallaan.
      * 
-     * @return          Ilmentymä
+     * @return          ilmentymä
      */
     public static Searcher getInstance() {
         if (instance == null) {
@@ -32,8 +32,9 @@ public class Searcher {
     /**
      * Metodi hakee syötettyä sanaa vastaavat synonyymit.
      * 
-     * @param   word    Käyttäjän syöttämä hakusana
-     * @return          Lista löydetyistä synonyymeistä
+     * @param   word    käyttäjän syöttämä hakusana
+     * @param   target  kohdesynonyymit: BRITS tai ALL
+     * @return          lista löydetyistä synonyymeistä
      */
     public String search(String word, Target target) {
         String cleanWord;

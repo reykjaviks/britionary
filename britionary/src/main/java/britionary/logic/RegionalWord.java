@@ -11,8 +11,8 @@ public class RegionalWord {
     /**
      * Konstruktori luo uuden alueellisen sanan.
      *
-     * @param   region  Maantieteellinen alue
-     * @param   word    Sana
+     * @param   region  maantieteellinen alue
+     * @param   word    sana
      */
     public RegionalWord(String region, String word) {
         this.region = region;

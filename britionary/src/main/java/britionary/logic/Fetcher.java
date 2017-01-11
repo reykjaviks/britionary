@@ -16,7 +16,8 @@ public class Fetcher {
     private final String appKey;
 
     /**
-     * Konstruktori asettaa rajapintaan oman käyttäjätunnuksen ja salasanan.
+     * Konstruktori asettaa rajapintaan ennalta määritellyn käyttäjätunnuksen
+     * ja salasanan.
      */
     public Fetcher() {
         this.appID = "19275027";
@@ -27,8 +28,8 @@ public class Fetcher {
      * Konstruktori asettaa rajapintaan kutsujan määrittelemän käyttäjätunnuksen
      * ja salasanan.
      *
-     * @param   appID   Käyttäjätunnus
-     * @param   appKey  Salasana
+     * @param   appID   käyttäjätunnus
+     * @param   appKey  salasana
      */
     public Fetcher(String appID, String appKey) {
         if (appID == null || appKey == null || appID.isEmpty() || appKey.isEmpty()) {
@@ -50,10 +51,10 @@ public class Fetcher {
     /**
      * Metodi hakee Oxford Dictionary:sta hakusanaa vastaavan JSON-tiedoston.
      *
-     * @param   cWord                   Siistitty hakusana
+     * @param   cWord                   siistitty hakusana
      * @return                          hakusanaa vastaava JSON-tiedosto
-     * @throws  MalformedURLException   Jos linkki ei toimi
-     * @throws  IOException             Jos haetusta sanasta ei löydy JSON-tiedostoa
+     * @throws  MalformedURLException   jos linkki ei toimi
+     * @throws  IOException             jos haetusta sanasta ei löydy JSON-tiedostoa
      */
     public String fetchJSON(String cWord) throws MalformedURLException, IOException {
         // Esimerkkikoodi: https://developer.oxforddictionaries.com/documentation#/
@@ -76,4 +77,5 @@ public class Fetcher {
         }
         return stringBuilder.toString();
     }
+
 }

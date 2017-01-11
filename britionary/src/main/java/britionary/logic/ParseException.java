@@ -1,11 +1,14 @@
 package britionary.logic;
 
+/**
+ * Luokka tarjoaa metodeita erillisten parsimispoikkeusten heittämiseen.
+*/
 public class ParseException extends Exception {
 
     /**
-     * Metodi mahdollistaa erillistern parsimispoikkeusten heittämisen.
+     * Konstruktori luo uuden parsimispoikkeuksen ja asettaa sille viestin.
      *
-     * @param   message Virhetapahtumaa kuvaava viesti
+     * @param   message virhetapahtumaa kuvaava viesti
      */
     public ParseException(String message) {
         super(message);
