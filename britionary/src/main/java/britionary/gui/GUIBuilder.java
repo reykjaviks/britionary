@@ -74,7 +74,7 @@ public class GUIBuilder extends JFrame {
         this.add(resultsPanel, BorderLayout.CENTER);
     }
 
-    public JButton newActionButton(String name, Target target) {
+    private JButton newActionButton(String name, Target target) {
         JButton button = new JButton(new AbstractAction(name) {
             @Override
             public void actionPerformed(ActionEvent e) {
