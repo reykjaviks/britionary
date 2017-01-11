@@ -88,6 +88,20 @@ under the License.
               </tr>
                           <tr>
                 <td>
+                  <a href="${project.url}/checkstyle.html#britionary.logic.Target.java">britionary/logic/Target.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
                   <a href="${project.url}/checkstyle.html#britionary.prototypes.ParserPrototype.java">britionary/prototypes/ParserPrototype.java</a>
                 </td>
                 <td>
@@ -103,20 +117,6 @@ under the License.
                           <tr>
                 <td>
                   <a href="${project.url}/checkstyle.html#britionary.prototypes.FinderPrototype.java">britionary/prototypes/FinderPrototype.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="${project.url}/checkstyle.html#britionary.prototypes.GUIBuilderPrototype.java">britionary/prototypes/GUIBuilderPrototype.java</a>
                 </td>
                 <td>
                   0
