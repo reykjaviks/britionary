@@ -1,5 +1,7 @@
 package britionary.logic;
 
+import static britionary.logic.Target.BRITS;
+
 public class Main {
 
     /**
@@ -11,7 +13,7 @@ public class Main {
         
         String word = "Little";
         Searcher searcher = Searcher.getInstance();
-        System.out.println(searcher.searchBrits(word));
+        System.out.println(searcher.search(word, BRITS));
 
     }
 }

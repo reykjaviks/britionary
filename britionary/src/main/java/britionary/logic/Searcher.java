@@ -1,7 +1,5 @@
 package britionary.logic;
 
-import static britionary.logic.Target.ALL;
-import static britionary.logic.Target.BRITS;
 import java.io.IOException;
 import java.net.MalformedURLException;
 
@@ -37,15 +35,7 @@ public class Searcher {
      * @param   word    Käyttäjän syöttämä hakusana
      * @return          Lista löydetyistä synonyymeistä
      */
-    public String searchBrits(String word) {
-        return search(word, BRITS);
-    }
-
-    public String searchAll(String word) {
-        return search(word, ALL);
-    }
-
-    private String search(String word, Target target) {
+    public String search(String word, Target target) {
         String cleanWord;
         try {
             cleanWord = Converter.convert(word);

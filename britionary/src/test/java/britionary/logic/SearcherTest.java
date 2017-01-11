@@ -1,5 +1,7 @@
 package britionary.logic;
 
+import static britionary.logic.Target.ALL;
+import static britionary.logic.Target.BRITS;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import org.junit.Test;
@@ -19,31 +21,31 @@ public class SearcherTest {
     @Test
     public void testSearchBritsUnknownWord() {
         searcher = Searcher.getInstance();
-        assertEquals("No results for \"adjfk\"", searcher.searchBrits("Adjfk"));
+        assertEquals("No results for \"adjfk\"", searcher.search("Adjfk", BRITS));
     }
 
     @Test
     public void testSearchBritsNoSynonyms() {
         searcher = Searcher.getInstance();
-        assertEquals("No regional synonyms for \"reason\"", searcher.searchBrits("reason"));
+        assertEquals("No regional synonyms for \"reason\"", searcher.search("reason", BRITS));
     }
     
     @Test
     public void testSearchBritsUmlauted() {
         searcher = Searcher.getInstance();
-        assertEquals("No results for \"äfäfäö\"", searcher.searchBrits("Äfäfäö"));
+        assertEquals("No results for \"äfäfäö\"", searcher.search("Äfäfäö", BRITS));
     }
 
     @Test
     public void testSearchAllUnknownWord() {
         searcher = Searcher.getInstance();
-        assertEquals("No results for \"adjfk\"", searcher.searchAll("Adjfk"));
+        assertEquals("No results for \"adjfk\"", searcher.search("Adjfk", ALL));
     }
 
     @Test
     public void testSearchAllUmlauted() {
         searcher = Searcher.getInstance();
-        assertEquals("No results for \"äfäfäö\"", searcher.searchAll("Äfäfäö"));
+        assertEquals("No results for \"äfäfäö\"", searcher.search("Äfäfäö", ALL));
     }
 
     @Test
@@ -57,7 +59,7 @@ public class SearcherTest {
                 + "wee\n"
                 + "teensy-weensy\n"
                 + "dinky\n"
-                + "tiddly\n", searcher.searchBrits("Little"));
+                + "tiddly\n", searcher.search("Little", BRITS));
     }
 
     @Test
@@ -65,6 +67,6 @@ public class SearcherTest {
         searcher = Searcher.getInstance();
         assertEquals("measured\n"
                 + "steady\n"
-                + "laid-back\n", searcher.searchAll("Leisurely"));
+                + "laid-back\n", searcher.search("Leisurely", ALL));
     }
 }
