@@ -40,6 +40,7 @@ public class ParserTest {
     public void testParseJSONEmptySynonyms() throws ParseException{
         String json = "{\n"
                 + "    \"results\": []}\n";
+        Parser.parseJSON(json, ALL);
     }
 
     @Test(expected = ParseException.class)
