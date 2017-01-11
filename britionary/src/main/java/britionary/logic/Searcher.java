@@ -52,6 +52,8 @@ public class Searcher {
             return "Invalid URL: " + e;
         } catch (IOException e) {
             return "No results for \"" + cleanWord + "\"";
+        } catch (IllegalArgumentException e) {
+            return e.getMessage();
         } catch (Exception e) {
             return "Cannot fetch JSON-file: " + e;
         }
