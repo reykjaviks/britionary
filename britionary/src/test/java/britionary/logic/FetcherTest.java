@@ -1,11 +1,9 @@
 package britionary.logic;
 
-import britionary.logic.Fetcher;
-import org.json.JSONArray;
-import org.json.JSONObject;
+import java.io.IOException;
+import static org.junit.Assert.assertEquals;
 import org.junit.Before;
 import org.junit.Test;
-import static org.junit.Assert.*;
 
 public class FetcherTest {
 
@@ -48,5 +46,10 @@ public class FetcherTest {
     @Test(expected = Exception.class)
     public void testConstructorNullKey() {
         fetcher = new Fetcher("003", null);
+    }
+
+    @Test(expected = Exception.class)
+    public void testFetchJSON() throws IOException {
+        assertEquals("No results for \"hulking\"", fetcher.fetchJSON("hulking"));
     }
 }
