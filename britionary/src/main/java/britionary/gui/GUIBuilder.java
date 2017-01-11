@@ -1,6 +1,9 @@
 package britionary.gui;
 
 import britionary.logic.Searcher;
+import britionary.logic.Target;
+import static britionary.logic.Target.ALL;
+import static britionary.logic.Target.BRITS;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.GridLayout;
@@ -45,7 +48,8 @@ public class GUIBuilder extends JFrame {
         searchPanel = new JPanel();
         resultsPanel = new JPanel();
         searchField = new JTextField();
-        createButtons();
+        britsButton = newActionButton("Brits", BRITS);
+        allButton = newActionButton("All", ALL);
         resultsPane = new JTextPane();
         scrollPane = new JScrollPane(resultsPane);
         searchLayout = new GridLayout(1, 3);
@@ -70,24 +74,16 @@ public class GUIBuilder extends JFrame {
         this.add(resultsPanel, BorderLayout.CENTER);
     }
 
-    private void createButtons() {
-        britsButton = new JButton(new AbstractAction("Brits") {
+    public JButton newActionButton(String name, Target target) {
+        JButton button = new JButton(new AbstractAction(name) {
             @Override
             public void actionPerformed(ActionEvent e) {
                 String word = searchField.getText();
                 Searcher searcher = Searcher.getInstance();
-                resultsPane.setText(searcher.searchBrits(word));
+                resultsPane.setText(searcher.search(word, target));
             }
         });
-
-        allButton = new JButton(new AbstractAction("All") {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                String word = searchField.getText();
-                Searcher searcher = Searcher.getInstance();
-                resultsPane.setText(searcher.searchAll(word));
-            }
-        });
+        return button;
     }
 
     private void setPanelSize() {
