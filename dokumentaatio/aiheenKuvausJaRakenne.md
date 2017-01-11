@@ -14,6 +14,14 @@ Kaikki, jotka haluavat kehittää brittiläistä aksenttiaan.
 * Synonyymien listaus
 * Äänitiedoston soittaminen
 
+### **Rakennekuvaus**
+Ohjelman sovelluslogiikka on jaettu kolmen pääluokan välille: Fetcher noutaa JSON-merkkijonoja, Parser nimensä mukaisesti parsii ne ja Converter muuntaa hakusanat ohjelman toiminnan kannalta oikeaan hakumuotoon. Searcher hakee sanoja kutsumalla näiden luokkien julkisia metodeita.
+
+Parser käyttää lisäksi Handleria, joka käy läpi JSON-objektin sisällä olevat JSON-objektit ja palauttaa niiden sisältämiä sanoja. Handler puolestaan käyttää apuna Finderia JSON-taulukoiden löytämiseen. ParseExceptionia käytetään parsimispoikkeuksien luomiseen.
+
+### **Käyttöohjeet**
+Sanoja voi hakea kirjoittamalla ne hakupalkkiin ja painamalla enter-näppäintä tai vastaavasti klikkaamalla jompaa kumpaa käyttöliittymän hakunäppäintä. Enter-pikanäppäin toimii ainoastaa brittisynonyymien hakemiseen, All-synonyymit voi valita näppäilemällä tab + space.
+
 ### **Luokkakaavio**
 ![Luokkakaavio](luokkakaavio.png)
 
