@@ -53,6 +53,7 @@ public class Parser {
     public static boolean british(RegionalWord word) {
         return word.getRegion().equals("British")
                 || word.getRegion().equals("Scottish")
-                || word.getRegion().equals("Irish");
+                || word.getRegion().equals("Irish")
+                || word.getRegion().equals("Northern English");
     }
 }
