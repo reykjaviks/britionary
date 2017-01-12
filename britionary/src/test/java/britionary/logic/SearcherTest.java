@@ -46,16 +46,16 @@ public class SearcherTest {
 
     @Test
     public void testSearchBritsNoSynonyms() {
-        assertEquals("No regional synonyms for \"biscuit\"", searcher.search("Biscuit", BRITS));
+        assertEquals("No British synonyms for \"biscuit\"", searcher.search("Biscuit", BRITS));
     }
 
     @Test
     public void testSearchBrits() {
-        assertEquals("teensy\n"
+        assertEquals("half-pint\n"
                 + "teeny-weeny\n"
-                + "teeny\n"
                 + "itsy-bitsy\n"
-                + "half-pint\n"
+                + "teensy\n"
+                + "teeny\n"
                 + "wee\n"
                 + "teensy-weensy\n"
                 + "dinky\n"
@@ -64,8 +64,25 @@ public class SearcherTest {
 
     @Test
     public void testSearchAll() {
-        assertEquals("measured\n"
+        assertEquals("unhurried\n"
+                + "unrushed\n"
+                + "comfortable\n"
+                + "slow\n"
+                + "gentle\n"
+                + "easy-going\n"
+                + "sedate\n"
                 + "steady\n"
-                + "laid-back\n", searcher.search("Leisurely", ALL));
+                + "lackadaisical\n"
+                + "measured\n"
+                + "restful\n"
+                + "effortless\n"
+                + "languorous\n"
+                + "languid\n"
+                + "lazy\n"
+                + "easy\n"
+                + "laid-back\n"
+                + "relaxed\n"
+                + "undemanding\n"
+                + "lingering\n", searcher.search("Leisurely", ALL));
     }
 }
