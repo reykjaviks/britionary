@@ -80,12 +80,6 @@ public class Handler {
         HashSet<RegionalWord> synonymSet = new HashSet<>();
 
         for (int i = 0; i < senses.length(); i++) {
-            /*
-            JSONArray synonyms = Finder.findJSONArray(senses.getJSONObject(i), "synonyms");
-            if (synonyms != null) {
-                synonymSet.addAll(handleRegionalSynonyms(synonyms));
-            }
-            */
             JSONArray subsenses = Finder.findJSONArray(senses.getJSONObject(i), "subsenses");
             if (subsenses != null) {
                 synonymSet.addAll(handleSubsenses(subsenses));
@@ -134,13 +128,6 @@ public class Handler {
         return subsenseSynonymSet;
     }
 
-    private boolean isBritish(String region) {
-        return region.equals("British")
-                || region.equals("Scottish")
-                || region.equals("Irish")
-                || region.equals("Northern English");
-    }
-
     private HashSet<RegionalWord> handleSynonyms(JSONArray synonyms) {
         HashSet<RegionalWord> synonymSet = new HashSet<>();
 
@@ -168,4 +155,10 @@ public class Handler {
         return synonymSet;
     }
 
+    private boolean isBritish(String region) {
+        return region.equals("British")
+                || region.equals("Scottish")
+                || region.equals("Irish")
+                || region.equals("Northern English");
+    }
 }
