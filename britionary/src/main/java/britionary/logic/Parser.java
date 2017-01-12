@@ -28,7 +28,7 @@ public class Parser {
         String synonyms = "";
         if (target.equals(BRITS)) {
             for (RegionalWord word : wordSet) {
-                if (british(word)) {
+                if (isBritish(word)) {
                     synonyms += word.getWord() + "\n";
                 }
             }
@@ -50,7 +50,7 @@ public class Parser {
      * @param   word    tarkistettava sana
      * @return          true jos sana on brittiläinen
      */
-    public static boolean british(RegionalWord word) {
+    public static boolean isBritish(RegionalWord word) {
         return word.getRegion().equals("British")
                 || word.getRegion().equals("Scottish")
                 || word.getRegion().equals("Irish")

@@ -15,25 +15,25 @@ public class ParserTest {
     @Test
     public void testBritishBritish() {
         RegionalWord word = new RegionalWord("British", "teeny-weeny");
-        assertTrue(Parser.british(word));
+        assertTrue(Parser.isBritish(word));
     }
 
     @Test
     public void testBritishScottish() {
         RegionalWord word = new RegionalWord("Scottish", "wee");
-        assertTrue(Parser.british(word));
+        assertTrue(Parser.isBritish(word));
     }
 
     @Test
     public void testBritishIrish() {
         RegionalWord word = new RegionalWord("Irish", "stook");
-        assertTrue(Parser.british(word));
+        assertTrue(Parser.isBritish(word));
     }
 
     @Test
     public void testBritishFinnish() {
         RegionalWord word = new RegionalWord("Finnish", "pikkuruinen");
-        assertFalse(Parser.british(word));
+        assertFalse(Parser.isBritish(word));
     }
     
     @Test(expected = ParseException.class)
@@ -999,15 +999,10 @@ public class ParserTest {
                 + "    ]\n"
                 + "}";
 
-        assertEquals("half-pint\n"
-                + "teeny-weeny\n"
-                + "itsy-bitsy\n"
-                + "teensy\n"
-                + "teeny\n"
+        assertEquals("titchy\n"
                 + "wee\n"
-                + "teensy-weensy\n"
                 + "dinky\n"
-                + "tiddly\n", Parser.parseJSON(json, BRITS));
+                + "ickle\n", Parser.parseJSON(json, BRITS));
     }
 
     @Test
