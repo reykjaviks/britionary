@@ -80,10 +80,12 @@ public class Handler {
         HashSet<RegionalWord> synonymSet = new HashSet<>();
 
         for (int i = 0; i < senses.length(); i++) {
+            /*
             JSONArray synonyms = Finder.findJSONArray(senses.getJSONObject(i), "synonyms");
             if (synonyms != null) {
                 synonymSet.addAll(handleRegionalSynonyms(synonyms));
             }
+            */
             JSONArray subsenses = Finder.findJSONArray(senses.getJSONObject(i), "subsenses");
             if (subsenses != null) {
                 synonymSet.addAll(handleSubsenses(subsenses));
@@ -100,13 +102,9 @@ public class Handler {
         HashSet<RegionalWord> synonymSet = new HashSet<>();
 
         for (int i = 0; i < subsenses.length(); i++) {
-            JSONArray synonyms = Finder.findJSONArray(subsenses.getJSONObject(i), "synonyms");
-            if (synonyms != null) {
-                if (this.target.equals(BRITS)) {
-                    synonymSet.addAll(handleRegionalSynonyms(synonyms));
-                } else {
-                    synonymSet.addAll(handleSynonyms(synonyms));
-                }
+            JSONArray subsenseSynonyms = Finder.findJSONArray(subsenses.getJSONObject(i), "synonyms");
+            if (subsenseSynonyms != null) {
+                    synonymSet.addAll(handleSynonyms(subsenseSynonyms));
             }
         }
         return synonymSet;
@@ -116,10 +114,24 @@ public class Handler {
         HashSet<RegionalWord> synonymSet = new HashSet<>();
 
         for (int i = 0; i < synonyms.length(); i++) {
-            JSONObject synonym = synonyms.getJSONObject(i);
-            if (synonym.has("text")) {
-                RegionalWord regionalWord = new RegionalWord("none", synonym.getString("text"));
-                synonymSet.add(regionalWord);
+            if (this.target.equals(BRITS)) {
+
+                JSONObject synonym = synonyms.getJSONObject(i);
+                JSONArray regions = Finder.findJSONArray(synonym, "regions");
+
+                if (synonym.has("text") && regions != null) {
+                    for (int j = 0; j < regions.length(); j++) {
+                    RegionalWord regionalWord = new RegionalWord(regions.getString(j), synonym.getString("text"));
+                    synonymSet.add(regionalWord);
+                    }
+                }
+
+            } else {
+                JSONObject synonym = synonyms.getJSONObject(i);
+                if (synonym.has("text")) {
+                    RegionalWord regionalWord = new RegionalWord("none", synonym.getString("text"));
+                    synonymSet.add(regionalWord);
+                }
             }
         }
         return synonymSet;
