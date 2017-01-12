@@ -46,20 +46,16 @@ public class SearcherTest {
 
     @Test
     public void testSearchBritsNoSynonyms() {
-        assertEquals("No British synonyms for \"biscuit\"", searcher.search("Biscuit", BRITS));
+        assertEquals("cookie\n"
+                + "bicky\n", searcher.search("Biscuit", BRITS));
     }
 
     @Test
     public void testSearchBrits() {
-        assertEquals("half-pint\n"
-                + "teeny-weeny\n"
-                + "itsy-bitsy\n"
-                + "teensy\n"
-                + "teeny\n"
+        assertEquals("titchy\n"
                 + "wee\n"
-                + "teensy-weensy\n"
                 + "dinky\n"
-                + "tiddly\n", searcher.search("Little", BRITS));
+                + "ickle\n", searcher.search("Little", BRITS));
     }
 
     @Test
