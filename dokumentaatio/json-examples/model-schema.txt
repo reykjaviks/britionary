@@ -1,0 +1,165 @@
+{
+  "metadata": {},
+  "results": [
+    {
+      "id": "string",
+      "language": "string",
+      "lexicalEntries": [
+        {
+          "entries": [
+            {
+              "editorialNotes": [
+                "string"
+              ],
+              "etymologies": [
+                "string"
+              ],
+              "grammaticalFeatures": [
+                {
+                  "text": "string",
+                  "type": "string"
+                }
+              ],
+              "homographNumber": "string",
+              "pronunciations": [
+                {
+                  "audioFile": "string",
+                  "phoneticsNotation": "string",
+                  "phoneticsSpelling": "string",
+                  "regions": [
+                    "string"
+                  ]
+                }
+              ],
+              "senses": [
+                {
+                  "closeMatches": [
+                    "string"
+                  ],
+                  "crossReferences": [
+                    {
+                      "id": "string",
+                      "sense_id": "string",
+                      "text": "string",
+                      "type": "string"
+                    }
+                  ],
+                  "definitions": [
+                    "string"
+                  ],
+                  "domains": [
+                    "string"
+                  ],
+                  "examples": [
+                    {
+                      "text": "string"
+                    }
+                  ],
+                  "grammaticalNotes": [
+                    "string"
+                  ],
+                  "id": "string",
+                  "markers": [
+                    "string"
+                  ],
+                  "parentSense": "string",
+                  "pronunciations": [
+                    {
+                      "audioFile": "string",
+                      "phoneticsNotation": "string",
+                      "phoneticsSpelling": "string",
+                      "regions": [
+                        "string"
+                      ]
+                    }
+                  ],
+                  "regions": [
+                    "string"
+                  ],
+                  "registers": [
+                    "string"
+                  ],
+                  "relatedTo": [
+                    "string"
+                  ],
+                  "seeAlso": [
+                    "string"
+                  ],
+                  "variantForms": [
+                    {
+                      "regions": [
+                        "string"
+                      ],
+                      "text": "string"
+                    }
+                  ]
+                }
+              ],
+              "variantForms": [
+                {
+                  "regions": [
+                    "string"
+                  ],
+                  "text": "string"
+                }
+              ]
+            }
+          ],
+          "grammaticalFeatures": [
+            {
+              "text": "string",
+              "type": "string"
+            }
+          ],
+          "grammaticalNotes": [
+            "string"
+          ],
+          "inflectionOf": [
+            {
+              "id": "string",
+              "text": "string"
+            }
+          ],
+          "inflections": [
+            {
+              "id": "string",
+              "text": "string"
+            }
+          ],
+          "language": "string",
+          "lexicalCategory": "string",
+          "pronunciations": [
+            {
+              "audioFile": "string",
+              "phoneticsNotation": "string",
+              "phoneticsSpelling": "string",
+              "regions": [
+                "string"
+              ]
+            }
+          ],
+          "text": "string",
+          "variantForms": [
+            {
+              "regions": [
+                "string"
+              ],
+              "text": "string"
+            }
+          ]
+        }
+      ],
+      "pronunciations": [
+        {
+          "audioFile": "string",
+          "phoneticsNotation": "string",
+          "phoneticsSpelling": "string",
+          "regions": [
+            "string"
+          ]
+        }
+      ],
+      "word": "string"
+    }
+  ]
+}

@@ -1,0 +1,946 @@
+{
+    "metadata": {
+        "provider": "Oxford University Press"
+    },
+    "results": [
+        {
+            "id": "little",
+            "language": "en",
+            "lexicalEntries": [
+                {
+                    "entries": [
+                        {
+                            "homographNumber": "001",
+                            "senses": [
+                                {
+                                    "antonyms": [
+                                        {
+                                            "id": "considerable",
+                                            "language": "en",
+                                            "text": "considerable"
+                                        },
+                                        {
+                                            "id": "a_great_deal_of",
+                                            "language": "en",
+                                            "text": "a great deal of"
+                                        }
+                                    ],
+                                    "examples": [
+                                        {
+                                            "text": "they have low status and little political influence"
+                                        }
+                                    ],
+                                    "id": "t_en_gb0008837.006-se1-2",
+                                    "subsenses": [
+                                        {
+                                            "id": "genID_d82564e1404512",
+                                            "synonyms": [
+                                                {
+                                                    "id": "insufficient",
+                                                    "language": "en",
+                                                    "text": "insufficient"
+                                                },
+                                                {
+                                                    "id": "inadequate",
+                                                    "language": "en",
+                                                    "text": "inadequate"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "synonyms": [
+                                        {
+                                            "id": "hardly_any",
+                                            "language": "en",
+                                            "text": "hardly any"
+                                        },
+                                        {
+                                            "id": "not_much",
+                                            "language": "en",
+                                            "text": "not much"
+                                        },
+                                        {
+                                            "id": "slight",
+                                            "language": "en",
+                                            "text": "slight"
+                                        },
+                                        {
+                                            "id": "small",
+                                            "language": "en",
+                                            "text": "small"
+                                        },
+                                        {
+                                            "id": "scant",
+                                            "language": "en",
+                                            "text": "scant"
+                                        },
+                                        {
+                                            "id": "limited",
+                                            "language": "en",
+                                            "text": "limited"
+                                        },
+                                        {
+                                            "id": "restricted",
+                                            "language": "en",
+                                            "text": "restricted"
+                                        },
+                                        {
+                                            "id": "modest",
+                                            "language": "en",
+                                            "text": "modest"
+                                        },
+                                        {
+                                            "id": "little_or_no",
+                                            "language": "en",
+                                            "text": "little or no"
+                                        },
+                                        {
+                                            "id": "minimal",
+                                            "language": "en",
+                                            "text": "minimal"
+                                        },
+                                        {
+                                            "id": "negligible",
+                                            "language": "en",
+                                            "text": "negligible"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "language": "en",
+                    "lexicalCategory": "Determiner",
+                    "text": "little"
+                },
+                {
+                    "entries": [
+                        {
+                            "homographNumber": "000",
+                            "senses": [
+                                {
+                                    "antonyms": [
+                                        {
+                                            "id": "big",
+                                            "language": "en",
+                                            "text": "big"
+                                        },
+                                        {
+                                            "id": "large",
+                                            "language": "en",
+                                            "text": "large"
+                                        }
+                                    ],
+                                    "examples": [
+                                        {
+                                            "text": "a little writing desk"
+                                        }
+                                    ],
+                                    "id": "t_en_gb0008837.001",
+                                    "subsenses": [
+                                        {
+                                            "id": "genID_d82564e1404096",
+                                            "synonyms": [
+                                                {
+                                                    "id": "mini",
+                                                    "language": "en",
+                                                    "text": "mini"
+                                                },
+                                                {
+                                                    "id": "miniature",
+                                                    "language": "en",
+                                                    "text": "miniature"
+                                                },
+                                                {
+                                                    "id": "tiny",
+                                                    "language": "en",
+                                                    "text": "tiny"
+                                                },
+                                                {
+                                                    "id": "minute",
+                                                    "language": "en",
+                                                    "text": "minute"
+                                                },
+                                                {
+                                                    "id": "minuscule",
+                                                    "language": "en",
+                                                    "text": "minuscule"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "id": "genID_d82564e1404107",
+                                            "synonyms": [
+                                                {
+                                                    "id": "toy",
+                                                    "language": "en",
+                                                    "text": "toy"
+                                                },
+                                                {
+                                                    "id": "baby",
+                                                    "language": "en",
+                                                    "text": "baby"
+                                                },
+                                                {
+                                                    "id": "pocket",
+                                                    "language": "en",
+                                                    "text": "pocket"
+                                                },
+                                                {
+                                                    "id": "undersized",
+                                                    "language": "en",
+                                                    "text": "undersized"
+                                                },
+                                                {
+                                                    "id": "dwarf",
+                                                    "language": "en",
+                                                    "text": "dwarf"
+                                                },
+                                                {
+                                                    "id": "midget",
+                                                    "language": "en",
+                                                    "text": "midget"
+                                                },
+                                                {
+                                                    "id": "fun-size",
+                                                    "language": "en",
+                                                    "text": "fun-size"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "id": "genID_d82564e1404122",
+                                            "synonyms": [
+                                                {
+                                                    "id": "bijou",
+                                                    "language": "en",
+                                                    "text": "bijou"
+                                                },
+                                                {
+                                                    "id": "dainty",
+                                                    "language": "en",
+                                                    "text": "dainty"
+                                                },
+                                                {
+                                                    "id": "cute",
+                                                    "language": "en",
+                                                    "text": "cute"
+                                                },
+                                                {
+                                                    "id": "sweet",
+                                                    "language": "en",
+                                                    "text": "sweet"
+                                                },
+                                                {
+                                                    "id": "dear",
+                                                    "language": "en",
+                                                    "text": "dear"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "id": "genID_d82564e1404133",
+                                            "regions": [
+                                                "Scottish"
+                                            ],
+                                            "synonyms": [
+                                                {
+                                                    "id": "wee",
+                                                    "language": "en",
+                                                    "regions": [
+                                                        "Scottish"
+                                                    ],
+                                                    "text": "wee"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "id": "genID_d82564e1404140",
+                                            "registers": [
+                                                "informal"
+                                            ],
+                                            "synonyms": [
+                                                {
+                                                    "id": "teeny",
+                                                    "language": "en",
+                                                    "registers": [
+                                                        "informal"
+                                                    ],
+                                                    "text": "teeny"
+                                                },
+                                                {
+                                                    "id": "teeny-weeny",
+                                                    "language": "en",
+                                                    "text": "teeny-weeny"
+                                                },
+                                                {
+                                                    "id": "teensy",
+                                                    "language": "en",
+                                                    "text": "teensy"
+                                                },
+                                                {
+                                                    "id": "teensy-weensy",
+                                                    "language": "en",
+                                                    "text": "teensy-weensy"
+                                                },
+                                                {
+                                                    "id": "itsy-bitsy",
+                                                    "language": "en",
+                                                    "text": "itsy-bitsy"
+                                                },
+                                                {
+                                                    "id": "tiddly",
+                                                    "language": "en",
+                                                    "text": "tiddly"
+                                                },
+                                                {
+                                                    "id": "half-pint",
+                                                    "language": "en",
+                                                    "text": "half-pint"
+                                                },
+                                                {
+                                                    "id": "dinky",
+                                                    "language": "en",
+                                                    "regions": [
+                                                        "British"
+                                                    ],
+                                                    "registers": [
+                                                        "informal"
+                                                    ],
+                                                    "text": "dinky"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "id": "genID_d82564e1404161",
+                                            "regions": [
+                                                "British"
+                                            ],
+                                            "registers": [
+                                                "informal"
+                                            ],
+                                            "synonyms": [
+                                                {
+                                                    "id": "titchy",
+                                                    "language": "en",
+                                                    "text": "titchy"
+                                                },
+                                                {
+                                                    "id": "ickle",
+                                                    "language": "en",
+                                                    "text": "ickle"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "id": "genID_d82564e1404172",
+                                            "regions": [
+                                                "North American"
+                                            ],
+                                            "registers": [
+                                                "informal"
+                                            ],
+                                            "synonyms": [
+                                                {
+                                                    "id": "little-bitty",
+                                                    "language": "en",
+                                                    "text": "little-bitty"
+                                                },
+                                                {
+                                                    "id": "vest-pocket",
+                                                    "language": "en",
+                                                    "text": "vest-pocket"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "synonyms": [
+                                        {
+                                            "id": "small",
+                                            "language": "en",
+                                            "text": "small"
+                                        },
+                                        {
+                                            "id": "small-scale",
+                                            "language": "en",
+                                            "text": "small-scale"
+                                        },
+                                        {
+                                            "id": "compact",
+                                            "language": "en",
+                                            "text": "compact"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "antonyms": [
+                                        {
+                                            "id": "big",
+                                            "language": "en",
+                                            "text": "big"
+                                        },
+                                        {
+                                            "id": "large",
+                                            "language": "en",
+                                            "text": "large"
+                                        }
+                                    ],
+                                    "examples": [
+                                        {
+                                            "text": "the smile vanished from the little man's face"
+                                        }
+                                    ],
+                                    "id": "t_en_gb0008837.002",
+                                    "subsenses": [
+                                        {
+                                            "id": "genID_d82564e1404229",
+                                            "synonyms": [
+                                                {
+                                                    "id": "squat",
+                                                    "language": "en",
+                                                    "text": "squat"
+                                                },
+                                                {
+                                                    "id": "stubby",
+                                                    "language": "en",
+                                                    "text": "stubby"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "id": "genID_d82564e1404234",
+                                            "synonyms": [
+                                                {
+                                                    "id": "elfin",
+                                                    "language": "en",
+                                                    "text": "elfin"
+                                                },
+                                                {
+                                                    "id": "dwarf",
+                                                    "language": "en",
+                                                    "text": "dwarf"
+                                                },
+                                                {
+                                                    "id": "dwarfish",
+                                                    "language": "en",
+                                                    "text": "dwarfish"
+                                                },
+                                                {
+                                                    "id": "midget",
+                                                    "language": "en",
+                                                    "text": "midget"
+                                                },
+                                                {
+                                                    "id": "pygmy",
+                                                    "language": "en",
+                                                    "text": "pygmy"
+                                                },
+                                                {
+                                                    "id": "bantam",
+                                                    "language": "en",
+                                                    "text": "bantam"
+                                                },
+                                                {
+                                                    "id": "homuncular",
+                                                    "language": "en",
+                                                    "text": "homuncular"
+                                                },
+                                                {
+                                                    "id": "lilliputian",
+                                                    "language": "en",
+                                                    "text": "Lilliputian"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "id": "genID_d82564e1404251",
+                                            "regions": [
+                                                "Scottish"
+                                            ],
+                                            "synonyms": [
+                                                {
+                                                    "id": "wee",
+                                                    "language": "en",
+                                                    "regions": [
+                                                        "Scottish"
+                                                    ],
+                                                    "text": "wee"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "id": "genID_d82564e1404258",
+                                            "registers": [
+                                                "informal"
+                                            ],
+                                            "synonyms": [
+                                                {
+                                                    "id": "teeny",
+                                                    "language": "en",
+                                                    "registers": [
+                                                        "informal"
+                                                    ],
+                                                    "text": "teeny"
+                                                },
+                                                {
+                                                    "id": "teeny-weeny",
+                                                    "language": "en",
+                                                    "text": "teeny-weeny"
+                                                },
+                                                {
+                                                    "id": "pint-sized",
+                                                    "language": "en",
+                                                    "registers": [
+                                                        "informal"
+                                                    ],
+                                                    "text": "pint-sized"
+                                                },
+                                                {
+                                                    "id": "knee_high_to_a_grasshopper",
+                                                    "language": "en",
+                                                    "text": "knee high to a grasshopper"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "synonyms": [
+                                        {
+                                            "id": "short",
+                                            "language": "en",
+                                            "text": "short"
+                                        },
+                                        {
+                                            "id": "small",
+                                            "language": "en",
+                                            "text": "small"
+                                        },
+                                        {
+                                            "id": "slight",
+                                            "language": "en",
+                                            "text": "slight"
+                                        },
+                                        {
+                                            "id": "thin",
+                                            "language": "en",
+                                            "text": "thin"
+                                        },
+                                        {
+                                            "id": "petite",
+                                            "language": "en",
+                                            "text": "petite"
+                                        },
+                                        {
+                                            "id": "diminutive",
+                                            "language": "en",
+                                            "text": "diminutive"
+                                        },
+                                        {
+                                            "id": "tiny",
+                                            "language": "en",
+                                            "text": "tiny"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "antonyms": [
+                                        {
+                                            "id": "big",
+                                            "language": "en",
+                                            "text": "big"
+                                        },
+                                        {
+                                            "id": "old",
+                                            "language": "en",
+                                            "text": "old"
+                                        },
+                                        {
+                                            "id": "elder",
+                                            "language": "en",
+                                            "text": "elder"
+                                        }
+                                    ],
+                                    "examples": [
+                                        {
+                                            "text": "my little sister"
+                                        }
+                                    ],
+                                    "id": "t_en_gb0008837.003",
+                                    "synonyms": [
+                                        {
+                                            "id": "young",
+                                            "language": "en",
+                                            "text": "young"
+                                        },
+                                        {
+                                            "id": "younger",
+                                            "language": "en",
+                                            "text": "younger"
+                                        },
+                                        {
+                                            "id": "junior",
+                                            "language": "en",
+                                            "text": "junior"
+                                        },
+                                        {
+                                            "id": "small",
+                                            "language": "en",
+                                            "text": "small"
+                                        },
+                                        {
+                                            "id": "baby",
+                                            "language": "en",
+                                            "text": "baby"
+                                        },
+                                        {
+                                            "id": "infant",
+                                            "language": "en",
+                                            "text": "infant"
+                                        },
+                                        {
+                                            "id": "minor",
+                                            "language": "en",
+                                            "text": "minor"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "antonyms": [
+                                        {
+                                            "id": "long",
+                                            "language": "en",
+                                            "text": "long"
+                                        }
+                                    ],
+                                    "examples": [
+                                        {
+                                            "text": "I was a bodyguard for a little while"
+                                        }
+                                    ],
+                                    "id": "t_en_gb0008837.004",
+                                    "subsenses": [
+                                        {
+                                            "id": "genID_d82564e1404358",
+                                            "synonyms": [
+                                                {
+                                                    "id": "fleeting",
+                                                    "language": "en",
+                                                    "text": "fleeting"
+                                                },
+                                                {
+                                                    "id": "momentary",
+                                                    "language": "en",
+                                                    "text": "momentary"
+                                                },
+                                                {
+                                                    "id": "transitory",
+                                                    "language": "en",
+                                                    "text": "transitory"
+                                                },
+                                                {
+                                                    "id": "transient",
+                                                    "language": "en",
+                                                    "text": "transient"
+                                                },
+                                                {
+                                                    "id": "ephemeral",
+                                                    "language": "en",
+                                                    "text": "ephemeral"
+                                                },
+                                                {
+                                                    "id": "evanescent",
+                                                    "language": "en",
+                                                    "text": "evanescent"
+                                                },
+                                                {
+                                                    "id": "infinitesimal",
+                                                    "language": "en",
+                                                    "text": "infinitesimal"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "id": "genID_d82564e1404373",
+                                            "synonyms": [
+                                                {
+                                                    "id": "fast",
+                                                    "language": "en",
+                                                    "text": "fast"
+                                                },
+                                                {
+                                                    "id": "quick",
+                                                    "language": "en",
+                                                    "text": "quick"
+                                                },
+                                                {
+                                                    "id": "hasty",
+                                                    "language": "en",
+                                                    "text": "hasty"
+                                                },
+                                                {
+                                                    "id": "cursory",
+                                                    "language": "en",
+                                                    "text": "cursory"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "id": "genID_d82564e1404382",
+                                            "regions": [
+                                                "Scottish"
+                                            ],
+                                            "synonyms": [
+                                                {
+                                                    "id": "wee",
+                                                    "language": "en",
+                                                    "regions": [
+                                                        "Scottish"
+                                                    ],
+                                                    "text": "wee"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "synonyms": [
+                                        {
+                                            "id": "brief",
+                                            "language": "en",
+                                            "text": "brief"
+                                        },
+                                        {
+                                            "id": "short",
+                                            "language": "en",
+                                            "text": "short"
+                                        },
+                                        {
+                                            "id": "short-lived",
+                                            "language": "en",
+                                            "text": "short-lived"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "antonyms": [
+                                        {
+                                            "id": "significant",
+                                            "language": "en",
+                                            "text": "significant"
+                                        },
+                                        {
+                                            "id": "important",
+                                            "language": "en",
+                                            "text": "important"
+                                        }
+                                    ],
+                                    "examples": [
+                                        {
+                                            "text": "this car does have a few little problems"
+                                        }
+                                    ],
+                                    "id": "t_en_gb0008837.005",
+                                    "synonyms": [
+                                        {
+                                            "id": "minor",
+                                            "language": "en",
+                                            "text": "minor"
+                                        },
+                                        {
+                                            "id": "unimportant",
+                                            "language": "en",
+                                            "text": "unimportant"
+                                        },
+                                        {
+                                            "id": "insignificant",
+                                            "language": "en",
+                                            "text": "insignificant"
+                                        },
+                                        {
+                                            "id": "trivial",
+                                            "language": "en",
+                                            "text": "trivial"
+                                        },
+                                        {
+                                            "id": "trifling",
+                                            "language": "en",
+                                            "text": "trifling"
+                                        },
+                                        {
+                                            "id": "petty",
+                                            "language": "en",
+                                            "text": "petty"
+                                        },
+                                        {
+                                            "id": "paltry",
+                                            "language": "en",
+                                            "text": "paltry"
+                                        },
+                                        {
+                                            "id": "inconsequential",
+                                            "language": "en",
+                                            "text": "inconsequential"
+                                        },
+                                        {
+                                            "id": "negligible",
+                                            "language": "en",
+                                            "text": "negligible"
+                                        },
+                                        {
+                                            "id": "inconsiderable",
+                                            "language": "en",
+                                            "text": "inconsiderable"
+                                        },
+                                        {
+                                            "id": "nugatory",
+                                            "language": "en",
+                                            "text": "nugatory"
+                                        },
+                                        {
+                                            "id": "of_minor_importance",
+                                            "language": "en",
+                                            "text": "of minor importance"
+                                        },
+                                        {
+                                            "id": "of_little_account",
+                                            "language": "en",
+                                            "text": "of little account"
+                                        },
+                                        {
+                                            "id": "of_no_account",
+                                            "language": "en",
+                                            "text": "of no account"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "language": "en",
+                    "lexicalCategory": "Adjective",
+                    "text": "little"
+                },
+                {
+                    "entries": [
+                        {
+                            "homographNumber": "002",
+                            "senses": [
+                                {
+                                    "antonyms": [
+                                        {
+                                            "id": "well",
+                                            "language": "en",
+                                            "text": "well"
+                                        }
+                                    ],
+                                    "examples": [
+                                        {
+                                            "text": "he is little known as a teacher"
+                                        }
+                                    ],
+                                    "id": "t_en_gb0008837.011-se1-3",
+                                    "synonyms": [
+                                        {
+                                            "id": "hardly",
+                                            "language": "en",
+                                            "text": "hardly"
+                                        },
+                                        {
+                                            "id": "barely",
+                                            "language": "en",
+                                            "text": "barely"
+                                        },
+                                        {
+                                            "id": "scarcely",
+                                            "language": "en",
+                                            "text": "scarcely"
+                                        },
+                                        {
+                                            "id": "not_much",
+                                            "language": "en",
+                                            "text": "not much"
+                                        },
+                                        {
+                                            "id": "only_slightly",
+                                            "language": "en",
+                                            "text": "only slightly"
+                                        },
+                                        {
+                                            "id": "slightly",
+                                            "language": "en",
+                                            "text": "slightly"
+                                        },
+                                        {
+                                            "id": "only_just",
+                                            "language": "en",
+                                            "text": "only just"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "antonyms": [
+                                        {
+                                            "id": "often",
+                                            "language": "en",
+                                            "text": "often"
+                                        }
+                                    ],
+                                    "examples": [
+                                        {
+                                            "text": "this disease is little seen nowadays"
+                                        }
+                                    ],
+                                    "id": "t_en_gb0008837.012-se1-3",
+                                    "synonyms": [
+                                        {
+                                            "id": "rarely",
+                                            "language": "en",
+                                            "text": "rarely"
+                                        },
+                                        {
+                                            "id": "seldom",
+                                            "language": "en",
+                                            "text": "seldom"
+                                        },
+                                        {
+                                            "id": "infrequently",
+                                            "language": "en",
+                                            "text": "infrequently"
+                                        },
+                                        {
+                                            "id": "hardly_ever",
+                                            "language": "en",
+                                            "text": "hardly ever"
+                                        },
+                                        {
+                                            "id": "hardly",
+                                            "language": "en",
+                                            "text": "hardly"
+                                        },
+                                        {
+                                            "id": "scarcely_ever",
+                                            "language": "en",
+                                            "text": "scarcely ever"
+                                        },
+                                        {
+                                            "id": "scarcely",
+                                            "language": "en",
+                                            "text": "scarcely"
+                                        },
+                                        {
+                                            "id": "not_much",
+                                            "language": "en",
+                                            "text": "not much"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "language": "en",
+                    "lexicalCategory": "Adverb",
+                    "text": "little"
+                }
+            ],
+            "type": "headword",
+            "word": "little"
+        }
+    ]
+}
