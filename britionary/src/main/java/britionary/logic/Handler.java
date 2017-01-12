@@ -141,7 +141,6 @@ public class Handler {
                 || region.equals("Northern English");
     }
 
-
     private HashSet<RegionalWord> handleSynonyms(JSONArray synonyms) {
         HashSet<RegionalWord> synonymSet = new HashSet<>();
 
@@ -162,34 +161,6 @@ public class Handler {
                 JSONObject synonym = synonyms.getJSONObject(i);
                 if (synonym.has("text")) {
                     RegionalWord regionalWord = new RegionalWord("none", synonym.getString("text"));
-                    synonymSet.add(regionalWord);
-                }
-            }
-        }
-        return synonymSet;
-    }
-
-    private HashSet<RegionalWord> handleRegionalSynonyms(JSONArray synonyms) {
-        HashSet<RegionalWord> synonymSet = new HashSet<>();
-
-        for (int i = 0; i < synonyms.length(); i++) {
-            JSONArray regions = Finder.findJSONArray(synonyms.getJSONObject(i), "regions");
-            if (regions != null) {
-                synonymSet.addAll(handleRegions(regions, synonyms));
-            }
-        }
-        return synonymSet;
-    }
-
-    private HashSet<RegionalWord> handleRegions(JSONArray regions, JSONArray synonyms) {
-        HashSet<RegionalWord> synonymSet = new HashSet<>();
-
-        for (int i = 0; i < synonyms.length(); i++) {
-            JSONObject synonym = synonyms.getJSONObject(i);
-            for (int j = 0; j < regions.length(); j++) {
-                if (synonym.has("text")) {
-                    RegionalWord regionalWord = new RegionalWord(regions.getString(j),
-                            synonym.getString("text"));
                     synonymSet.add(regionalWord);
                 }
             }
