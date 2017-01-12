@@ -99,7 +99,7 @@ public class Handler {
             JSONArray subsenseRegions = Finder.findJSONArray(subsenses.getJSONObject(i), "regions");
             JSONArray subsenseSynonyms = Finder.findJSONArray(subsenses.getJSONObject(i), "synonyms");
             if (subsenseSynonyms != null && subsenseRegions != null) {
-                synonymSet.addAll(handleSubsenseSynonyms(subsenses, subsenseRegions, subsenseSynonyms));
+                synonymSet.addAll(handleSubsenseSynonyms(subsenseRegions, subsenseSynonyms));
             } else if (subsenseSynonyms != null) {
                 synonymSet.addAll(handleSynonyms(subsenseSynonyms));
             }
@@ -107,7 +107,7 @@ public class Handler {
         return synonymSet;
     }
 
-    private HashSet<RegionalWord> handleSubsenseSynonyms(JSONArray subsenses, JSONArray subsenseRegions, JSONArray subsenseSynonyms) {
+    private HashSet<RegionalWord> handleSubsenseSynonyms(JSONArray subsenseRegions, JSONArray subsenseSynonyms) {
         HashSet<RegionalWord> subsenseSynonymSet = new HashSet<>();
         boolean isBritish = false;
         for (int i = 0; i < subsenseRegions.length(); i++) {
@@ -116,15 +116,14 @@ public class Handler {
                 break;
             }
         }
-        if (isBritish) {
             for (int j = 0; j < subsenseSynonyms.length(); j++) {
                 JSONObject subsenseSynonym = subsenseSynonyms.getJSONObject(j);
                 if (subsenseSynonym.has("text")) {
-                    RegionalWord regionalWord = new RegionalWord("British", subsenseSynonym.getString("text"));
+                    RegionalWord regionalWord = new RegionalWord(isBritish ? 
+                            "British" : "none", subsenseSynonym.getString("text"));
                     subsenseSynonymSet.add(regionalWord);
                 }
             }
-        }
         return subsenseSynonymSet;
     }
 
