@@ -102,13 +102,45 @@ public class Handler {
         HashSet<RegionalWord> synonymSet = new HashSet<>();
 
         for (int i = 0; i < subsenses.length(); i++) {
+            JSONArray subsenseRegions = Finder.findJSONArray(subsenses.getJSONObject(i), "regions");
             JSONArray subsenseSynonyms = Finder.findJSONArray(subsenses.getJSONObject(i), "synonyms");
-            if (subsenseSynonyms != null) {
-                    synonymSet.addAll(handleSynonyms(subsenseSynonyms));
+            if (subsenseSynonyms != null && subsenseRegions != null) {
+                synonymSet.addAll(handleSubsenseSynonyms(subsenses, subsenseRegions, subsenseSynonyms));
+            } else if (subsenseSynonyms != null) {
+                synonymSet.addAll(handleSynonyms(subsenseSynonyms));
             }
         }
         return synonymSet;
     }
+
+    private HashSet<RegionalWord> handleSubsenseSynonyms(JSONArray subsenses, JSONArray subsenseRegions, JSONArray subsenseSynonyms) {
+        HashSet<RegionalWord> subsenseSynonymSet = new HashSet<>();
+        boolean isBritish = false;
+        for (int i = 0; i < subsenseRegions.length(); i++) {
+            if (isBritish(subsenseRegions.getString(i))) {
+                isBritish = true;
+                break;
+            }
+        }
+        if (isBritish) {
+            for (int j = 0; j < subsenseSynonyms.length(); j++) {
+                JSONObject subsenseSynonym = subsenseSynonyms.getJSONObject(j);
+                if (subsenseSynonym.has("text")) {
+                    RegionalWord regionalWord = new RegionalWord("British", subsenseSynonym.getString("text"));
+                    subsenseSynonymSet.add(regionalWord);
+                }
+            }
+        }
+        return subsenseSynonymSet;
+    }
+
+    private boolean isBritish(String region) {
+        return region.equals("British")
+                || region.equals("Scottish")
+                || region.equals("Irish")
+                || region.equals("Northern English");
+    }
+
 
     private HashSet<RegionalWord> handleSynonyms(JSONArray synonyms) {
         HashSet<RegionalWord> synonymSet = new HashSet<>();
