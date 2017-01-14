@@ -1,33 +1,14 @@
 package britionary.logic;
 
-import static britionary.logic.Target.BRITS;
 import java.util.HashSet;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
 /**
- * Luokka tarjoaa metodeita JSON-taulukoiden läpikäymiseen.
+ * Luokka tarjoaa metodeita JSON-merkkijonon sisältämien taulukoiden ja objektien
+ * läpikäymiseen.
  */
 public class Handler {
-
-    private Target target;
-
-    /**
-     * Konstruktori luo uuden Handler-olion.
-     *
-     * @param   target  kohdesynonyymit: BRITS tai ALL
-     */
-    public Handler(Target target) {
-        this.target = target;
-    }
-
-    public void setTarget(Target target) {
-        this.target = target;
-    }
-
-    public Target getTarget() {
-        return this.target;
-    }
 
     /**
      * Metodi hakee JSON-objektin juuren ja siellä sijaitsevat sanat käyttämällä
@@ -37,22 +18,24 @@ public class Handler {
      * @return                  HashSet löydetyistä sanoista
      * @throws  ParseException  jos JSON-objektin sisältä ei löydy results-taulukkoa
      */
-    public HashSet<RegionalWord> handleResults(JSONObject response) throws ParseException {
+    public static HashSet<RegionalWord> handleResults(JSONObject response) throws ParseException {
         JSONArray results = Finder.findJSONArray(response, "results");
-        if (results == null) {
-            throw new ParseException("Cannot find JSON-array \"results.\"");
-        }
         HashSet<RegionalWord> synonymSet = new HashSet<>();
-        for (int i = 0; i < results.length(); i++) {
-            JSONArray lexicalEntries = Finder.findJSONArray(results.getJSONObject(i), "lexicalEntries");
-            if (lexicalEntries != null) {
-                synonymSet.addAll(handleLexicalEntries(lexicalEntries));
+
+        if (results != null) {
+            for (int i = 0; i < results.length(); i++) {
+                JSONArray lexicalEntries = Finder.findJSONArray(results.getJSONObject(i), "lexicalEntries");
+                if (lexicalEntries != null) {
+                    synonymSet.addAll(handleLexicalEntries(lexicalEntries));
+                }
             }
+        } else { // ParseExceptionin pitäisi olla parserissa (?)
+            throw new ParseException("Cannot find JSON-array \"results.\"");
         }
         return synonymSet;
     }
 
-    private HashSet<RegionalWord> handleLexicalEntries(JSONArray lexicalEntries) {
+    private static HashSet<RegionalWord> handleLexicalEntries(JSONArray lexicalEntries) throws ParseException {
         HashSet<RegionalWord> synonymSet = new HashSet<>();
 
         for (int i = 0; i < lexicalEntries.length(); i++) {
@@ -64,7 +47,7 @@ public class Handler {
         return synonymSet;
     }
 
-    private HashSet<RegionalWord> handleEntries(JSONArray entries) {
+    private static HashSet<RegionalWord> handleEntries(JSONArray entries) {
         HashSet<RegionalWord> synonymSet = new HashSet<>();
 
         for (int i = 0; i < entries.length(); i++) {
@@ -76,88 +59,85 @@ public class Handler {
         return synonymSet;
     }
 
-    private HashSet<RegionalWord> handleSenses(JSONArray senses) {
+    private static HashSet<RegionalWord> handleSenses(JSONArray senses) {
         HashSet<RegionalWord> synonymSet = new HashSet<>();
 
         for (int i = 0; i < senses.length(); i++) {
-            JSONArray subsenses = Finder.findJSONArray(senses.getJSONObject(i), "subsenses");
+            JSONObject sense = senses.getJSONObject(i);
+            JSONArray synonyms = Finder.findJSONArray(sense, "synonyms");
+            JSONArray regions = Finder.findJSONArray(sense, "regions");
+            JSONArray subsenses = Finder.findJSONArray(sense, "subsenses");
+
             if (subsenses != null) {
                 synonymSet.addAll(handleSubsenses(subsenses));
             }
-            JSONArray senseSynonyms = Finder.findJSONArray(senses.getJSONObject(i), "synonyms");
-            if (senseSynonyms != null) {
-                synonymSet.addAll(handleSynonyms(senseSynonyms));
+             /* hyppää handleSynonyms():iin, jos sense-olion sisältä löytyy
+                synonyymi- ja/tai region-taulukoita. */
+            if (synonyms != null && regions != null) {
+                synonymSet.addAll(handleSynonyms(synonyms, regions));
+                // break?
+            } else if (synonyms != null) {
+                synonymSet.addAll(handleSynonyms(synonyms));
             }
         }
         return synonymSet;
     }
 
-    private HashSet<RegionalWord> handleSubsenses(JSONArray subsenses) {
+    private static HashSet<RegionalWord> handleSubsenses(JSONArray subsenses) {
         HashSet<RegionalWord> synonymSet = new HashSet<>();
 
         for (int i = 0; i < subsenses.length(); i++) {
-            JSONArray subsenseRegions = Finder.findJSONArray(subsenses.getJSONObject(i), "regions");
-            JSONArray subsenseSynonyms = Finder.findJSONArray(subsenses.getJSONObject(i), "synonyms");
-            if (subsenseSynonyms != null && subsenseRegions != null) {
-                synonymSet.addAll(handleSubsenseSynonyms(subsenseRegions, subsenseSynonyms));
-            } else if (subsenseSynonyms != null) {
-                synonymSet.addAll(handleSynonyms(subsenseSynonyms));
+            JSONObject subsense = subsenses.getJSONObject(i);
+            JSONArray synonyms = Finder.findJSONArray(subsense, "synonyms");
+            JSONArray regions = Finder.findJSONArray(subsense, "regions");
+
+            if (synonyms != null && regions != null ) {
+                synonymSet.addAll(handleSynonyms(synonyms, regions));
+                // break?
+            } else if (synonyms != null) {
+                synonymSet.addAll(handleSynonyms(synonyms));
             }
         }
         return synonymSet;
     }
 
-    private HashSet<RegionalWord> handleSubsenseSynonyms(JSONArray subsenseRegions, JSONArray subsenseSynonyms) {
-        HashSet<RegionalWord> subsenseSynonymSet = new HashSet<>();
-        boolean isBritish = false;
-        for (int i = 0; i < subsenseRegions.length(); i++) {
-            if (isBritish(subsenseRegions.getString(i))) {
-                isBritish = true;
-                break;
-            }
-        }
-            for (int j = 0; j < subsenseSynonyms.length(); j++) {
-                JSONObject subsenseSynonym = subsenseSynonyms.getJSONObject(j);
-                if (subsenseSynonym.has("text")) {
-                    RegionalWord regionalWord = new RegionalWord(isBritish ? 
-                            "British" : "none", subsenseSynonym.getString("text"));
-                    subsenseSynonymSet.add(regionalWord);
-                }
-            }
-        return subsenseSynonymSet;
-    }
-
-    private HashSet<RegionalWord> handleSynonyms(JSONArray synonyms) {
+    private static HashSet<RegionalWord> handleSynonyms(JSONArray synonyms) {
         HashSet<RegionalWord> synonymSet = new HashSet<>();
 
         for (int i = 0; i < synonyms.length(); i++) {
-            if (this.target.equals(BRITS)) {
+            JSONObject synonym = synonyms.getJSONObject(i);
+            JSONArray regions = Finder.findJSONArray(synonym, "regions");
 
-                JSONObject synonym = synonyms.getJSONObject(i);
-                JSONArray regions = Finder.findJSONArray(synonym, "regions");
-
-                if (synonym.has("text") && regions != null) {
-                    for (int j = 0; j < regions.length(); j++) {
-                    RegionalWord regionalWord = new RegionalWord(regions.getString(j), synonym.getString("text"));
-                    synonymSet.add(regionalWord);
-                    }
+            // TODO: tiivistä koodia
+            if (synonym.has("text") && regions != null) {
+                for (int j = 0; j < regions.length(); j++) {
+                RegionalWord regionalWord = new RegionalWord(regions.getString(j), synonym.getString("text"));
+                synonymSet.add(regionalWord);
                 }
-
-            } else {
-                JSONObject synonym = synonyms.getJSONObject(i);
-                if (synonym.has("text")) {
-                    RegionalWord regionalWord = new RegionalWord("none", synonym.getString("text"));
-                    synonymSet.add(regionalWord);
-                }
+            } else if (synonym.has("text")) {
+                RegionalWord regionalWord = new RegionalWord("none", synonym.getString("text"));
+                synonymSet.add(regionalWord);
             }
         }
         return synonymSet;
     }
 
-    private boolean isBritish(String region) {
-        return region.equals("British")
-                || region.equals("Scottish")
-                || region.equals("Irish")
-                || region.equals("Northern English");
+    private static HashSet<RegionalWord> handleSynonyms(JSONArray synonyms, JSONArray regions) {
+        HashSet<RegionalWord> synonymSet = new HashSet<>();
+
+        String str = "";
+        for (int i = 0; i < regions.length(); i++) {
+            str += regions.getString(i);
+        }
+
+        for (int i = 0; i < synonyms.length(); i++) {
+            JSONObject synonym = synonyms.getJSONObject(i);
+            if (synonym.has("text")) {
+                RegionalWord regionalWord = new RegionalWord(str, synonym.getString("text"));
+                synonymSet.add(regionalWord);
+            }
+        }
+        return synonymSet;
     }
+
 }
