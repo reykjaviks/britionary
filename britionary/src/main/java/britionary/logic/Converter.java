@@ -13,29 +13,7 @@ public class Converter {
      * @return          siistitty hakusana
      */
     public static String convert(String word) {
-        StringBuilder str = new StringBuilder(word.toLowerCase());
-        // Korvaa alaviivat
-        for (int i = 0; i < word.length(); i++) {
-            if (word.charAt(i) == '_') {
-                str.setCharAt(i, ' ');
-            }
-        }
-        // Poistaa numerot
-        for (int i = 0; i < str.length(); i++) {
-            if (Character.isDigit(str.charAt(i))) {
-                str.deleteCharAt(i);
-                i--;
-            }
-        }
-        // Poistaa alkuvälilyönnin
-        if (Character.isSpaceChar(str.charAt(0))) {
-            str.deleteCharAt(0);
-        }
-        // Poistaa loppuvälilyönnin
-        if (Character.isSpaceChar(str.charAt(str.length() - 1))) {
-            str.deleteCharAt(str.length() - 1);
-        }
-        return str.toString();
+        return word.toLowerCase().trim().replace('_', ' ');
     }
 
 }

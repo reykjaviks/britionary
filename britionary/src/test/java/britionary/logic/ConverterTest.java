@@ -1,17 +1,11 @@
 package britionary.logic;
 
-import org.junit.Before;
+import static org.junit.Assert.assertEquals;
 import org.junit.Test;
-import static org.junit.Assert.*;
 
 public class ConverterTest {
 
     public ConverterTest() {
-    }
-    
-    @Test(expected = StringIndexOutOfBoundsException.class)
-    public void testSearchNumbers() {
-        Converter.convert("675");
     }
 
     @Test
@@ -22,11 +16,6 @@ public class ConverterTest {
     @Test
     public void testConvertUnderscores() {
         assertEquals("a great deal of", Converter.convert("a_great_deal_of"));
-    }
-
-    @Test
-    public void testConvertNumbers() {
-        assertEquals("little", Converter.convert("littl3e4"));
     }
 
     @Test
