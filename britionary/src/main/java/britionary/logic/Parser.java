@@ -18,9 +18,9 @@ public class Parser {
      * @throws  ParseException  Heittää poikkeuksen jos merkkijono on tyhjä
      */
     public static String parseJSON(String json, Target target) throws ParseException {
-        Handler handler = new Handler(target);
+        //Handler handler = new Handler(target);
         JSONObject response = new JSONObject(json);
-        HashSet<RegionalWord> wordSet = handler.handleResults(response);
+        HashSet<RegionalWord> wordSet = HandlerNew.handleResults(response);
         if (wordSet.isEmpty()) {
             throw new ParseException("No regional synonyms");
         }
@@ -51,9 +51,9 @@ public class Parser {
      * @return          true jos sana on brittiläinen
      */
     public static boolean isBritish(RegionalWord word) {
-        return word.getRegion().equals("British")
-                || word.getRegion().equals("Scottish")
-                || word.getRegion().equals("Irish")
-                || word.getRegion().equals("Northern English");
+        return word.getRegion().contains("British")
+                || word.getRegion().contains("Scottish")
+                || word.getRegion().contains("Irish")
+                || word.getRegion().contains("Northern English");
     }
 }
