@@ -8,7 +8,6 @@ import org.junit.Test;
 
 public class HandlerTest {
 
-
     public HandlerTest() {
     }
     
