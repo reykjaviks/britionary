@@ -17,7 +17,7 @@ public class HandlerNew {
                     synonymSet.addAll(handleLexicalEntries(lexicalEntries));
                 }
             }
-        } else { //ParseExceptionin pitäisi olla parserissa
+        } else { // ParseExceptionin pitäisi olla parserissa (?)
             throw new ParseException("Cannot find JSON-array \"results.\"");
         }
         return synonymSet;
@@ -96,9 +96,13 @@ public class HandlerNew {
             JSONObject synonym = synonyms.getJSONObject(i);
             JSONArray regions = Finder.findJSONArray(synonym, "regions");
 
-
-
-            if (synonym.has("text")) {
+            // TODO: tiivistä koodia
+            if (synonym.has("text") && regions != null) {
+                for (int j = 0; j < regions.length(); j++) {
+                RegionalWord regionalWord = new RegionalWord(regions.getString(j), synonym.getString("text"));
+                synonymSet.add(regionalWord);
+                }
+            } else if (synonym.has("text")) {
                 RegionalWord regionalWord = new RegionalWord("none", synonym.getString("text"));
                 synonymSet.add(regionalWord);
             }
