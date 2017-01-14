@@ -23,3 +23,5 @@ Päivä | Tunnit | Kuvaus
 10.1. | 5.5h | Toiminnallisuuden laajentamista ja käyttöliittymän korjaamista
 11.1. | 3.5h | Projektin siistimistä ja dokumentaation kirjoittamista
 12.1. | 8h | Bugien korjaamista
+13.1. |  |
+14.1. | 5h | Bugien korjaamista
