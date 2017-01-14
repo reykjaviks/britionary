@@ -4,8 +4,20 @@ import java.util.HashSet;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+/**
+ * Luokka tarjoaa metodeita JSON-merkkijonon sisältämien taulukoiden ja objektien
+ * läpikäymiseen.
+ */
 public class HandlerNew {
 
+    /**
+     * Metodi hakee JSON-objektin juuren ja siellä sijaitsevat sanat käyttämällä
+     * apuna luokan yksityisiä metodeita.
+     *
+     * @param   response        käsiteltävä JSON-objekti
+     * @return                  HashSet löydetyistä sanoista
+     * @throws  ParseException  jos JSON-objektin sisältä ei löydy results-taulukkoa
+     */
     public static HashSet<RegionalWord> handleResults(JSONObject response) throws ParseException {
         JSONArray results = Finder.findJSONArray(response, "results");
         HashSet<RegionalWord> synonymSet = new HashSet<>();
