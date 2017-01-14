@@ -20,7 +20,7 @@ public class Parser {
     public static String parseJSON(String json, Target target) throws ParseException {
         //Handler handler = new Handler(target);
         JSONObject response = new JSONObject(json);
-        HashSet<RegionalWord> wordSet = HandlerNew.handleResults(response);
+        HashSet<RegionalWord> wordSet = Handler.handleResults(response);
         if (wordSet.isEmpty()) {
             throw new ParseException("No regional synonyms");
         }
