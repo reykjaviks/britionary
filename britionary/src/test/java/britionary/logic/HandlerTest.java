@@ -1,7 +1,5 @@
 package britionary.logic;
 
-import static britionary.logic.Target.ALL;
-import static britionary.logic.Target.BRITS;
 import java.util.HashSet;
 import org.json.JSONObject;
 import static org.junit.Assert.assertEquals;
@@ -10,37 +8,12 @@ import org.junit.Test;
 
 public class HandlerTest {
 
-    Handler handler;
 
     public HandlerTest() {
     }
     
     @Before
     public void setUp() {
-        handler = new Handler(ALL);
-    }
-
-    @Test
-    public void testConstructorALL() {
-        assertEquals(ALL, handler.getTarget());
-    }
-
-    @Test
-    public void testConstructorBRITS() {
-        Handler handler = new Handler(BRITS);
-        assertEquals(BRITS, handler.getTarget());
-    }
-
-    @Test
-    public void testSetTargetALL() {
-        handler.setTarget(ALL);
-        assertEquals(ALL, handler.getTarget());
-    }
-
-    @Test
-    public void testSetTargetBRITS() {
-        handler.setTarget(BRITS);
-        assertEquals(BRITS, handler.getTarget());
     }
 
     @Test
@@ -51,7 +24,7 @@ public class HandlerTest {
         String json = "{\n"
                 + "    \"results\": []}\n";
         JSONObject response = new JSONObject(json);
-        words = handler.handleResults(response);
+        words = Handler.handleResults(response);
         
         for (RegionalWord word : words) {
             str += word.getWord() + "\n";
@@ -64,7 +37,7 @@ public class HandlerTest {
         String json = "{\n"
                 + "    \"nothing here\": []}\n";
         JSONObject response = new JSONObject(json);
-        handler.handleResults(response);
+        Handler.handleResults(response);
     }
 
     @Test
@@ -150,13 +123,9 @@ public class HandlerTest {
         HashSet<RegionalWord> synonymSet = new HashSet<>();
         synonymSet.add(new RegionalWord("British", "cookie"));
         synonymSet.add(new RegionalWord("British", "bicky"));
-        handler.setTarget(BRITS);
-        assertEquals(synonymSet, handler.handleResults(response));
-
         synonymSet.add(new RegionalWord("none", "cracker"));
         synonymSet.add(new RegionalWord("none", "wafer"));
-        handler.setTarget(ALL);
-        assertEquals(synonymSet, handler.handleResults(response));
+        assertEquals(synonymSet, Handler.handleResults(response));
 
         /*
          for (RegionalWord word : handler.handleSynonyms(subsenses)) {
