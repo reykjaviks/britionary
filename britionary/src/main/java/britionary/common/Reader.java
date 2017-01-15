@@ -8,7 +8,7 @@ public class Reader {
 
     private BufferedReader br;
 
-    public String getJSON(String textfile) throws IOException {
+    public String read(String textfile) throws IOException {
         StringBuilder sb;
         String line;
         String json;

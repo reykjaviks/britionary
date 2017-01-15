@@ -1,7 +1,7 @@
 package britionary.logic;
 
 import britionary.common.Reader;
-import britionary.common.HashSets;
+import britionary.common.Sets;
 import britionary.common.ParseException;
 import britionary.common.RegionalWord;
 import java.io.IOException;
@@ -40,15 +40,15 @@ public class HandlerTest {
     @Test
     public void testBiscuit() throws IOException, ParseException {
         JSONObject response = new JSONObject(
-                reader.getJSON("src\\test\\resources\\jsons\\biscuit.txt"));
-        assertEquals(HashSets.newBiscuitSet(), Handler.handleResults(response));
+                reader.read("src\\test\\resources\\jsons\\biscuit.txt"));
+        assertEquals(Sets.newBiscuitSet(), Handler.handleResults(response));
     }
 
     @Test
     public void testLeisurely() throws IOException, ParseException {
         JSONObject response = new JSONObject(
-                reader.getJSON("src\\test\\resources\\jsons\\leisurely.txt"));
-        assertEquals(HashSets.newLeisurelySet(), Handler.handleResults(response));
+                reader.read("src\\test\\resources\\jsons\\leisurely.txt"));
+        assertEquals(Sets.newLeisurelySet(), Handler.handleResults(response));
     }
 
 }

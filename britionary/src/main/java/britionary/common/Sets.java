@@ -2,7 +2,7 @@ package britionary.common;
 
 import java.util.HashSet;
 
-public class HashSets {
+public class Sets {
 
     public static HashSet<RegionalWord> newBiscuitSet() {
         HashSet<RegionalWord> synonymSet = new HashSet<>();
@@ -42,5 +42,5 @@ public class HashSets {
 
         return synonymSet;
     }
-
+    
 }

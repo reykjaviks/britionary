@@ -1,5 +1,6 @@
 package britionary.logic;
 
+import britionary.common.Synonyms;
 import static britionary.common.Target.ALL;
 import static britionary.common.Target.BRITS;
 import static org.junit.Assert.assertEquals;
@@ -25,60 +26,38 @@ public class SearcherTest {
     }
     
     @Test
-    public void testSearchBritsUnknownWord() {
+    public void testSearchUnknownWordBrits() {
         assertEquals("No results for \"adjfk\"", searcher.search("Adjfk", BRITS));
     }
     
     @Test
-    public void testSearchBritsUmlauted() {
+    public void testSearchUmlautedBrits() {
         assertEquals("No results for \"äfäfäö\"", searcher.search("Äfäfäö", BRITS));
     }
 
     @Test
-    public void testSearchAllUnknownWord() {
+    public void testSearchUnknownWordAll() {
         assertEquals("No results for \"adjfk\"", searcher.search("Adjfk", ALL));
     }
 
     @Test
-    public void testSearchAllUmlauted() {
+    public void testSearchAllUmlautedAll() {
         assertEquals("No results for \"äfäfäö\"", searcher.search("Äfäfäö", ALL));
     }
 
     @Test
-    public void testSearchBritsNoSynonyms() {
-        assertEquals("cookie\n"
-                + "bicky\n", searcher.search("Biscuit", BRITS));
+    public void testSearchLittleBrits() {
+        assertEquals(Synonyms.littleBrits(), searcher.search("Little", BRITS));
     }
 
     @Test
-    public void testSearchBrits() {
-        assertEquals("titchy\n"
-                + "wee\n"
-                + "dinky\n"
-                + "ickle\n", searcher.search("Little", BRITS));
+    public void testSearchLittleAll() {
+        assertEquals(Synonyms.littleAll(), searcher.search("Little", ALL));
     }
 
     @Test
-    public void testSearchAll() {
-        assertEquals("unhurried\n"
-                + "unrushed\n"
-                + "comfortable\n"
-                + "slow\n"
-                + "gentle\n"
-                + "easy-going\n"
-                + "sedate\n"
-                + "steady\n"
-                + "lackadaisical\n"
-                + "measured\n"
-                + "restful\n"
-                + "effortless\n"
-                + "languorous\n"
-                + "languid\n"
-                + "lazy\n"
-                + "easy\n"
-                + "laid-back\n"
-                + "relaxed\n"
-                + "undemanding\n"
-                + "lingering\n", searcher.search("Leisurely", ALL));
+    public void testSearchLeisurelyAll() {
+        assertEquals(Synonyms.leisurelyAll(), searcher.search("Leisurely", ALL));
     }
+
 }

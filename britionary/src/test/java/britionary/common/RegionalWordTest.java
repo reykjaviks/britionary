@@ -1,16 +1,10 @@
 package britionary.common;
 
-import org.junit.Before;
 import org.junit.Test;
-import static org.junit.Assert.*;
 
 public class RegionalWordTest {
     
     public RegionalWordTest() {
-    }
-    
-    @Before
-    public void setUp() {
     }
 
     @Test

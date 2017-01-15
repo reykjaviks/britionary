@@ -40,7 +40,7 @@ public class Parser {
             for (RegionalWord word : wordSet) {
                 synonyms += word.getWord() + "\n";
             }
-            return synonyms;
+            return synonyms.trim();
     }
 
     /**
