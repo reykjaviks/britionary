@@ -3,7 +3,7 @@ package hashsets;
 import britionary.logic.RegionalWord;
 import java.util.HashSet;
 
-public class HashSets {
+public class Creator {
 
     public static HashSet<RegionalWord> createBiscuitSet() {
         HashSet<RegionalWord> synonymSet = new HashSet<>();
