@@ -1,5 +1,6 @@
 package britionary.logic;
 
+import britionary.common.ParseException;
 import britionary.common.Synonyms;
 import static britionary.common.Target.ALL;
 import static britionary.common.Target.BRITS;
@@ -58,6 +59,11 @@ public class SearcherTest {
     @Test
     public void testSearchLeisurelyAll() {
         assertEquals(Synonyms.leisurelyAll(), searcher.search("Leisurely", ALL));
+    }
+
+    @Test
+    public void testSearchNoBritishWords() throws ParseException {
+        assertEquals("No British synonyms for \"leisurely\"", searcher.search("Leisurely", BRITS));
     }
 
 }

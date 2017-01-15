@@ -17,17 +17,6 @@ public class FetcherTest {
         fetcher = new Fetcher();
     }
 
-    @Test
-    public void testConstructorID() {
-        fetcher = new Fetcher("003", "fbf690");
-        assertEquals("003", fetcher.getAppID());
-    }
-    @Test
-    public void testConstructorKey() {
-        fetcher = new Fetcher("003", "fbf690");
-        assertEquals("fbf690", fetcher.getAppKey());
-    }
-
     @Test(expected = Exception.class)
     public void testConstructorEmptyID() {
         fetcher = new Fetcher("", "fbf690");

@@ -39,15 +39,7 @@ public class Searcher {
      * @return          merkkijono löydetyistä synonyymeistä
      */
     public String search(String word, Target target) {
-        String cleanWord;
-        try {
-            cleanWord = Converter.convert(word);
-        } catch (StringIndexOutOfBoundsException e) {
-            return "Index out of bounds: " + e;
-        } catch (Exception e) {
-            return "Cannot convert word: " + e;
-        }
-
+        String cleanWord = Converter.convert(word);
         String json;
         try {
             json = fetcher.fetchJSON(cleanWord);
@@ -55,8 +47,6 @@ public class Searcher {
             return "Invalid URL: " + e;
         } catch (IOException e) {
             return "No results for \"" + cleanWord + "\"";
-        } catch (IllegalArgumentException e) {
-            return e.getMessage();
         } catch (Exception e) {
             return "Cannot fetch JSON-file: " + e;
         }
