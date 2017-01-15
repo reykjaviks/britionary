@@ -2,8 +2,16 @@ package britionary.common;
 
 import java.util.HashSet;
 
+/**
+ * Luokkaa käytetään testien kirjoittamisen apuna.
+ */
 public class Sets {
 
+    /**
+     * Metodi tallentaa tunnetut biscuit-synonyymit HashSet:iin.
+     *
+     * @return  HashSet synonyymeistä
+     */
     public static HashSet<RegionalWord> newBiscuitSet() {
         HashSet<RegionalWord> synonymSet = new HashSet<>();
 
@@ -15,6 +23,11 @@ public class Sets {
         return synonymSet;
     }
 
+    /**
+     * Metodi tallentaa tunnetut leisurely-synonyymit HashSet:iin.
+     *
+     * @return  HashSet synonyymeistä
+     */
     public static HashSet<RegionalWord> newLeisurelySet() {
         HashSet<RegionalWord> synonymSet = new HashSet<>();
 

@@ -37,10 +37,10 @@ public class Parser {
             }
             return synonyms.trim();
         }
-            for (RegionalWord word : wordSet) {
-                synonyms += word.getWord() + "\n";
-            }
-            return synonyms.trim();
+        for (RegionalWord word : wordSet) {
+            synonyms += word.getWord() + "\n";
+        }
+        return synonyms.trim();
     }
 
     /**

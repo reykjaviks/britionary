@@ -4,14 +4,24 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
+/**
+ * Luokka tarjoaa metodeita tekstitiedostojen lukemiseen.
+ */
 public class Reader {
 
     private BufferedReader br;
 
+    /**
+     * Metodi lukee tekstitiedoston.
+     *
+     * @param   textfile        luettava tekstitiedosto
+     * @return                  tekstitiedoston sisältämät merkit
+     * @throws  IOException     jos tekstitiedostoa ei löydy
+     */
     public String read(String textfile) throws IOException {
         StringBuilder sb;
         String line;
-        String json;
+        String str;
         try {
             br = new BufferedReader(new FileReader(textfile));
             line = br.readLine();
@@ -23,13 +33,13 @@ public class Reader {
                 line = br.readLine();
             }
 
-            json = sb.toString();
+            str = sb.toString();
 
         } finally {
             br.close();
 
         }
-        return json;
+        return str;
     }
 
 }

@@ -73,8 +73,8 @@ public class Handler {
             if (subsenses != null) {
                 synonymSet.addAll(handleSubsenses(subsenses));
             }
-             /* hyppää handleSynonyms():iin, jos sense-olion sisältä löytyy
-                synonyymi- ja/tai region-taulukoita. */
+            /* hyppää handleSynonyms():iin, jos sense-olion sisältä löytyy
+             synonyymi- ja/tai region-taulukoita. */
             if (synonyms != null && regions != null) {
                 synonymSet.addAll(handleSynonyms(synonyms, regions));
                 // break?
@@ -93,7 +93,7 @@ public class Handler {
             JSONArray synonyms = Finder.findJSONArray(subsense, "synonyms");
             JSONArray regions = Finder.findJSONArray(subsense, "regions");
 
-            if (synonyms != null && regions != null ) {
+            if (synonyms != null && regions != null) {
                 synonymSet.addAll(handleSynonyms(synonyms, regions));
                 // break?
             } else if (synonyms != null) {
@@ -113,8 +113,8 @@ public class Handler {
             // TODO: tiivistä koodia
             if (synonym.has("text") && regions != null) {
                 for (int j = 0; j < regions.length(); j++) {
-                RegionalWord regionalWord = new RegionalWord(regions.getString(j), synonym.getString("text"));
-                synonymSet.add(regionalWord);
+                    RegionalWord regionalWord = new RegionalWord(regions.getString(j), synonym.getString("text"));
+                    synonymSet.add(regionalWord);
                 }
             } else if (synonym.has("text")) {
                 RegionalWord regionalWord = new RegionalWord("none", synonym.getString("text"));

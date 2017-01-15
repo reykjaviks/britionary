@@ -1,7 +1,15 @@
 package britionary.common;
 
+/**
+ * Luokkaa käytetään testien kirjoittamisen apuna.
+ */
 public class Synonyms {
 
+    /**
+     * Metodi tallentaa tunnetut leisurely-synonyymit merkkijonoon.
+     *
+     * @return  merkkijono synonyymeistä
+     */
     public static String leisurelyAll() {
         return "unhurried\n"
                 + "unrushed\n"
@@ -25,6 +33,11 @@ public class Synonyms {
                 + "lingering";
     }
 
+    /**
+     * Metodi tallentaa little:n tunnetut brittisynonyymit merkkijonoon.
+     *
+     * @return  merkkijono synonyymeistä
+     */
     public static String littleBrits() {
         return "ickle\n"
                 + "titchy\n"
@@ -32,6 +45,11 @@ public class Synonyms {
                 + "dinky";
     }
 
+    /**
+     * Metodi tallentaa tunnetut little-synonyymit merkkijonoon.
+     *
+     * @return  merkkijono synonyymeistä
+     */
     public static String littleAll() {
         return "homuncular\n"
                 + "short\n"
