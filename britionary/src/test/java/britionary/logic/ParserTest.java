@@ -1,7 +1,9 @@
 package britionary.logic;
 
-import static britionary.logic.Target.ALL;
-import static britionary.logic.Target.BRITS;
+import britionary.rig.ParseException;
+import britionary.rig.RegionalWord;
+import static britionary.rig.Target.ALL;
+import static britionary.rig.Target.BRITS;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;

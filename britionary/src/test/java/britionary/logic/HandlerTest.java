@@ -1,6 +1,8 @@
 package britionary.logic;
 
-import britionary.rig.Creator;
+import britionary.rig.ParseException;
+import britionary.rig.RegionalWord;
+import britionary.rig.HashSets;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -56,13 +58,13 @@ public class HandlerTest {
 
     @Test
     public void testBiscuit() throws IOException, ParseException {
-        assertEquals(Creator.newBiscuitSet(), Handler.handleResults(
+        assertEquals(HashSets.newBiscuitSet(), Handler.handleResults(
                 createJSONObject("src\\test\\resources\\jsons\\biscuit.txt")));
     }
 
     @Test
     public void testLeisurely() throws IOException, ParseException {
-        assertEquals(Creator.newLeisurelySet(), Handler.handleResults(
+        assertEquals(HashSets.newLeisurelySet(), Handler.handleResults(
                 createJSONObject("src\\test\\resources\\jsons\\leisurely.txt")));
     }
 

@@ -1,6 +1,9 @@
 package britionary.logic;
 
-import static britionary.logic.Target.BRITS;
+import britionary.rig.ParseException;
+import britionary.rig.RegionalWord;
+import britionary.rig.Target;
+import static britionary.rig.Target.BRITS;
 import java.util.HashSet;
 import org.json.JSONObject;
 
@@ -49,7 +52,7 @@ public class Parser {
      * @param   word    sana
      * @return          true jos sana on brittiläinen
      */
-    private static boolean isBritish(RegionalWord word) {
+    public static boolean isBritish(RegionalWord word) {
         return word.getRegion().contains("British")
                 || word.getRegion().contains("Scottish")
                 || word.getRegion().contains("Irish")

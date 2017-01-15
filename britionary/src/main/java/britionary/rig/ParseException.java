@@ -1,4 +1,4 @@
-package britionary.logic;
+package britionary.rig;
 
 /**
  * Luokka tarjoaa metodeita erillisten parsimispoikkeusten heittämiseen.

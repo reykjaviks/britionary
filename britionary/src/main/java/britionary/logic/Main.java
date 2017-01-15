@@ -1,6 +1,6 @@
 package britionary.logic;
 
-import static britionary.logic.Target.BRITS;
+import static britionary.rig.Target.BRITS;
 
 public class Main {
 

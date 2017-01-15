@@ -1,11 +1,10 @@
-package hashsets;
+package britionary.rig;
 
-import britionary.rig.RegionalWord;
 import java.util.HashSet;
 
-public class Creator {
+public class HashSets {
 
-    public static HashSet<RegionalWord> createBiscuitSet() {
+    public static HashSet<RegionalWord> newBiscuitSet() {
         HashSet<RegionalWord> synonymSet = new HashSet<>();
 
         synonymSet.add(new RegionalWord("", "cookie"));
@@ -16,7 +15,7 @@ public class Creator {
         return synonymSet;
     }
 
-    public static HashSet<RegionalWord> createLeisurelySet() {
+    public static HashSet<RegionalWord> newLeisurelySet() {
         HashSet<RegionalWord> synonymSet = new HashSet<>();
 
         synonymSet.add(new RegionalWord("", "unhurried"));

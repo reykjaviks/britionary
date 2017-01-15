@@ -1,5 +1,7 @@
 package britionary.logic;
 
+import britionary.rig.ParseException;
+import britionary.rig.RegionalWord;
 import java.util.HashSet;
 import org.json.JSONArray;
 import org.json.JSONObject;

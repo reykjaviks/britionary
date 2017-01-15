@@ -1,7 +1,7 @@
 package britionary.logic;
 
-import static britionary.logic.Target.ALL;
-import static britionary.logic.Target.BRITS;
+import static britionary.rig.Target.ALL;
+import static britionary.rig.Target.BRITS;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import org.junit.Before;
