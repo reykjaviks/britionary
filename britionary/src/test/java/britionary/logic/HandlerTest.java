@@ -1,42 +1,24 @@
 package britionary.logic;
 
+import britionary.common.Creator;
 import britionary.common.HashSets;
 import britionary.common.ParseException;
 import britionary.common.RegionalWord;
-import java.io.BufferedReader;
-import java.io.FileReader;
 import java.io.IOException;
 import java.util.HashSet;
 import org.json.JSONObject;
 import static org.junit.Assert.assertEquals;
+import org.junit.Before;
 import org.junit.Test;
 
 public class HandlerTest {
 
-    private BufferedReader br;
+    Creator creator;
 
-    public JSONObject createJSONObject(String textfile) throws IOException {
-        StringBuilder sb;
-        String line;
-        JSONObject response;
-        try {
-            br = new BufferedReader(new FileReader(textfile));
-            line = br.readLine();
-            sb = new StringBuilder();
-
-            while (line != null) {
-                sb.append(line);
-                sb.append(System.lineSeparator());
-                line = br.readLine();
-            }
-
-            response = new JSONObject(sb.toString());
-
-        } finally {
-            br.close();
-
-        }
-        return response;
+    @Before
+    public void setup() {
+        creator = new Creator();
+        
     }
 
     @Test
@@ -58,13 +40,13 @@ public class HandlerTest {
     @Test
     public void testBiscuit() throws IOException, ParseException {
         assertEquals(HashSets.newBiscuitSet(), Handler.handleResults(
-                createJSONObject("src\\test\\resources\\jsons\\biscuit.txt")));
+                creator.createJSONObject("src\\test\\resources\\jsons\\biscuit.txt")));
     }
 
     @Test
     public void testLeisurely() throws IOException, ParseException {
         assertEquals(HashSets.newLeisurelySet(), Handler.handleResults(
-                createJSONObject("src\\test\\resources\\jsons\\leisurely.txt")));
+                creator.createJSONObject("src\\test\\resources\\jsons\\leisurely.txt")));
     }
 
 }
