@@ -34,19 +34,19 @@ public class Searcher {
     /**
      * Metodi hakee syötettyä sanaa vastaavat synonyymit.
      * 
-     * @param   word    hakusana
+     * @param   word    käyttäjän syöttämä sana
      * @param   target  BRITS tai ALL
-     * @return          merkkijono löydetyistä synonyymeistä
+     * @return          synonyymit
      */
     public String search(String word, Target target) {
-        String cleanWord = Converter.convert(word);
+        String keyword = Converter.convert(word);
         String json;
         try {
-            json = fetcher.fetchJSON(cleanWord);
+            json = fetcher.fetchJSON(keyword);
         } catch (MalformedURLException e) {
             return "Invalid URL: " + e;
         } catch (IOException e) {
-            return "No results for \"" + cleanWord + "\"";
+            return "No results for \"" + keyword + "\"";
         } catch (Exception e) {
             return "Cannot fetch JSON-file: " + e;
         }
@@ -54,7 +54,7 @@ public class Searcher {
         try {
             return Parser.parseJSON(json, target);
         } catch (ParseException e) {
-            return e.getMessage() + " for \"" + cleanWord + "\"";
+            return e.getMessage() + " for \"" + keyword + "\"";
         } catch (Exception e) {
             return "Cannot parse JSON-file: " + e;
         }

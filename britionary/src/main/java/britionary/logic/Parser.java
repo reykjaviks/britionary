@@ -8,7 +8,7 @@ import java.util.HashSet;
 import org.json.JSONObject;
 
 /**
- * Luokka tarjoaa metodeita JSON-tiedoston parsimiseen.
+ * Luokka tarjoaa metodeita JSON-merkkijonon parsimiseen.
  */
 public class Parser {
 
@@ -17,7 +17,7 @@ public class Parser {
      * 
      * @param   json            parsittava JSON-merkkijono
      * @param   target          BRITS tai ALL
-     * @return                  merkkijono löydetyistä synonyymeista
+     * @return                  synonyymit
      * @throws  ParseException  jos wordSet on tyhjä
      */
     public static String parseJSON(String json, Target target) throws ParseException {
@@ -44,7 +44,7 @@ public class Parser {
     }
 
     /**
-     * Metodi tarkistaa kuuluuko sana Iso-Britannian kielialueeseen.
+     * Metodi tarkistaa, kuuluuko sana Iso-Britannian kielialueeseen.
      *
      * @param   word    sana
      * @return          true jos sana on brittiläinen

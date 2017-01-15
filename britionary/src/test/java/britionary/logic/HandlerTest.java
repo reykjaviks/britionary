@@ -41,14 +41,14 @@ public class HandlerTest {
     public void testBiscuit() throws IOException, ParseException {
         JSONObject response = new JSONObject(
                 reader.read("src\\test\\resources\\jsons\\biscuit.txt"));
-        assertEquals(Sets.newBiscuitSet(), Handler.handleResults(response));
+        assertEquals(Sets.createBiscuitSet(), Handler.handleResults(response));
     }
 
     @Test
     public void testLeisurely() throws IOException, ParseException {
         JSONObject response = new JSONObject(
                 reader.read("src\\test\\resources\\jsons\\leisurely.txt"));
-        assertEquals(Sets.newLeisurelySet(), Handler.handleResults(response));
+        assertEquals(Sets.createLeisurelySet(), Handler.handleResults(response));
     }
 
 }

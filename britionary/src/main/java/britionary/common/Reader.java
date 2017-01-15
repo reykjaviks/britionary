@@ -5,7 +5,7 @@ import java.io.FileReader;
 import java.io.IOException;
 
 /**
- * Luokka tarjoaa metodeita tekstitiedostojen lukemiseen.
+ * Luokkaa käytetään testien kirjoittamisen apuna.
  */
 public class Reader {
 

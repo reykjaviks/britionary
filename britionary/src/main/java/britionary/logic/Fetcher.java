@@ -43,15 +43,15 @@ public class Fetcher {
     /**
      * Metodi hakee Oxford Dictionary:sta hakusanaa vastaavan JSON-tiedoston.
      *
-     * @param   cWord                   hakusana
+     * @param   keyword                 hakusana
      * @return                          hakusanaa vastaava JSON-merkkijono
      * @throws  MalformedURLException   jos linkki ei toimi
      * @throws  IOException             jos hakusanasta ei löydetty JSON-tiedostoa
      */
-    public String fetchJSON(String cWord) throws MalformedURLException, IOException {
+    public String fetchJSON(String keyword) throws MalformedURLException, IOException {
         // Esimerkkikoodi: https://developer.oxforddictionaries.com/documentation#/
         String language = "en";
-        String link = "https://od-api.oxforddictionaries.com:443/api/v1/entries/" + language + "/" + cWord + "/synonyms;antonyms";
+        String link = "https://od-api.oxforddictionaries.com:443/api/v1/entries/" + language + "/" + keyword + "/synonyms;antonyms";
 
         URL url = new URL(link);
         HttpsURLConnection urlConnection = (HttpsURLConnection) url.openConnection();

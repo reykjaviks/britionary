@@ -8,11 +8,11 @@ import java.util.HashSet;
 public class Sets {
 
     /**
-     * Metodi tallentaa tunnetut biscuit-synonyymit HashSet:iin.
+     * Metodi tallentaa sanan "biscuit" synonyymit HashSet:iin.
      *
-     * @return  HashSet synonyymeistä
+     * @return  synonyymit
      */
-    public static HashSet<RegionalWord> newBiscuitSet() {
+    public static HashSet<RegionalWord> createBiscuitSet() {
         HashSet<RegionalWord> synonymSet = new HashSet<>();
 
         synonymSet.add(new RegionalWord("", "cookie"));
@@ -24,11 +24,11 @@ public class Sets {
     }
 
     /**
-     * Metodi tallentaa tunnetut leisurely-synonyymit HashSet:iin.
+     * Metodi tallentaa sanan "leisurely" synonyymit HashSet:iin.
      *
-     * @return  HashSet synonyymeistä
+     * @return  synonyymit
      */
-    public static HashSet<RegionalWord> newLeisurelySet() {
+    public static HashSet<RegionalWord> createLeisurelySet() {
         HashSet<RegionalWord> synonymSet = new HashSet<>();
 
         synonymSet.add(new RegionalWord("", "unhurried"));

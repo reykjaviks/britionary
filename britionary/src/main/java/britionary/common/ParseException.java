@@ -1,12 +1,12 @@
 package britionary.common;
 
 /**
- * Luokka tarjoaa metodeita erillisten parsimispoikkeusten heittämiseen.
+ * Luokka tarjoaa metodeita parsimispoikkeusten luomiseen.
 */
 public class ParseException extends Exception {
 
     /**
-     * Konstruktori luo uuden parsimispoikkeuksen ja asettaa sille viestin.
+     * Konstruktori luo uuden parsimispoikkeuksen ja asettaa viestin.
      *
      * @param   message virhetapahtumaa kuvaava viesti
      */

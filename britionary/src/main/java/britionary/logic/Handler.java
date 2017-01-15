@@ -7,17 +7,17 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 /**
- * Luokka tarjoaa metodeita JSON-objektin sisältämien taulukoiden ja objektien
+ * Luokka tarjoaa metodeita JSON-objektin sisällä olevien taulukoiden ja objektien
  * käsittelemiseen.
  */
 public class Handler {
 
     /**
-     * Metodi hakee JSON-objektin juuren ja siellä sijaitsevat sanat käyttämällä
-     * apuna luokan yksityisiä metodeita.
+     * Metodi hakee JSON-objektin juuren ja siellä sijaitsevat synonyymit
+     * käyttämällä apuna luokan yksityisiä metodeita.
      *
      * @param   response        käsiteltävä JSON-objekti
-     * @return                  HashSet löydetyistä sanoista
+     * @return                  HashSet löydetyistä synonyymeistä
      * @throws  ParseException  jos JSON-objektin sisältä ei löydy results-taulukkoa
      */
     public static HashSet<RegionalWord> handleResults(JSONObject response) throws ParseException {
@@ -31,7 +31,7 @@ public class Handler {
                     synonymSet.addAll(handleLexicalEntries(lexicalEntries));
                 }
             }
-        } else { // ParseExceptionin pitäisi olla parserissa (?)
+        } else { // ParseExceptionin pitäisi olla parserissa(?)
             throw new ParseException("Cannot find JSON-array \"results.\"");
         }
         return synonymSet;

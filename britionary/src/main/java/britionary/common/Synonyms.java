@@ -6,9 +6,9 @@ package britionary.common;
 public class Synonyms {
 
     /**
-     * Metodi tallentaa tunnetut leisurely-synonyymit merkkijonoon.
+     * Metodi palauttaa sanan "leisurely" kaikki synonyymit.
      *
-     * @return  merkkijono synonyymeistä
+     * @return  synonyymit
      */
     public static String leisurelyAll() {
         return "unhurried\n"
@@ -34,9 +34,9 @@ public class Synonyms {
     }
 
     /**
-     * Metodi tallentaa little:n tunnetut brittisynonyymit merkkijonoon.
+     * Metodi palauttaa sanan "little" brittisynonyymit.
      *
-     * @return  merkkijono synonyymeistä
+     * @return  synonyymit
      */
     public static String littleBrits() {
         return "ickle\n"
@@ -46,9 +46,9 @@ public class Synonyms {
     }
 
     /**
-     * Metodi tallentaa tunnetut little-synonyymit merkkijonoon.
+     * Metodi palauttaa sanan "little" kaikki synonyymit.
      *
-     * @return  merkkijono synonyymeistä
+     * @return  synonyymit
      */
     public static String littleAll() {
         return "homuncular\n"
