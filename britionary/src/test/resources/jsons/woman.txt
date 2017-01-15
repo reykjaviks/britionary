@@ -1,0 +1,803 @@
+{
+  "metadata": {
+    "provider": "Oxford University Press"
+  },
+  "results": [
+    {
+      "id": "woman",
+      "language": "en",
+      "lexicalEntries": [
+        {
+          "entries": [
+            {
+              "senses": [
+                {
+                  "examples": [
+                    {
+                      "text": "a car drew up and two women got out"
+                    }
+                  ],
+                  "id": "t_en_gb0016349.001",
+                  "subsenses": [
+                    {
+                      "id": "genID_d82564e2630528",
+                      "synonyms": [
+                        {
+                          "id": "matron",
+                          "language": "en",
+                          "text": "matron"
+                        },
+                        {
+                          "id": "dowager",
+                          "language": "en",
+                          "text": "dowager"
+                        }
+                      ]
+                    },
+                    {
+                      "id": "genID_d82564e2630533",
+                      "regions": [
+                        "Scottish",
+                        "Northern English"
+                      ],
+                      "synonyms": [
+                        {
+                          "id": "lass",
+                          "language": "en",
+                          "text": "lass"
+                        },
+                        {
+                          "id": "lassie",
+                          "language": "en",
+                          "text": "lassie"
+                        }
+                      ]
+                    },
+                    {
+                      "id": "genID_d82564e2630545",
+                      "regions": [
+                        "Irish"
+                      ],
+                      "synonyms": [
+                        {
+                          "id": "colleen",
+                          "language": "en",
+                          "text": "colleen"
+                        }
+                      ]
+                    },
+                    {
+                      "id": "genID_d82564e2630552",
+                      "regions": [
+                        "Australian"
+                      ],
+                      "synonyms": [
+                        {
+                          "id": "yorga",
+                          "language": "en",
+                          "text": "yorga"
+                        }
+                      ]
+                    },
+                    {
+                      "id": "genID_d82564e2630559",
+                      "registers": [
+                        "informal"
+                      ],
+                      "synonyms": [
+                        {
+                          "id": "chick",
+                          "language": "en",
+                          "text": "chick"
+                        },
+                        {
+                          "id": "girlie",
+                          "language": "en",
+                          "text": "girlie"
+                        },
+                        {
+                          "id": "filly",
+                          "language": "en",
+                          "text": "filly"
+                        },
+                        {
+                          "id": "biddy",
+                          "language": "en",
+                          "text": "biddy"
+                        }
+                      ]
+                    },
+                    {
+                      "id": "genID_d82564e2630572",
+                      "regions": [
+                        "British"
+                      ],
+                      "registers": [
+                        "informal"
+                      ],
+                      "synonyms": [
+                        {
+                          "id": "bird",
+                          "language": "en",
+                          "text": "bird"
+                        },
+                        {
+                          "id": "bint",
+                          "language": "en",
+                          "text": "bint"
+                        },
+                        {
+                          "id": "popsy",
+                          "language": "en",
+                          "text": "popsy"
+                        }
+                      ]
+                    },
+                    {
+                      "id": "genID_d82564e2630585",
+                      "regions": [
+                        "Northern English",
+                        "Scottish"
+                      ],
+                      "registers": [
+                        "informal"
+                      ],
+                      "synonyms": [
+                        {
+                          "id": "besom",
+                          "language": "en",
+                          "text": "besom"
+                        },
+                        {
+                          "id": "wifie",
+                          "language": "en",
+                          "text": "wifie"
+                        }
+                      ]
+                    },
+                    {
+                      "id": "genID_d82564e2630599",
+                      "regions": [
+                        "North American"
+                      ],
+                      "registers": [
+                        "informal"
+                      ],
+                      "synonyms": [
+                        {
+                          "id": "dame",
+                          "language": "en",
+                          "text": "dame"
+                        },
+                        {
+                          "id": "broad",
+                          "language": "en",
+                          "regions": [
+                            "North American"
+                          ],
+                          "registers": [
+                            "informal"
+                          ],
+                          "text": "broad"
+                        },
+                        {
+                          "id": "gal",
+                          "language": "en",
+                          "text": "gal"
+                        },
+                        {
+                          "id": "jane",
+                          "language": "en",
+                          "text": "jane"
+                        },
+                        {
+                          "id": "sister",
+                          "language": "en",
+                          "text": "sister"
+                        }
+                      ]
+                    },
+                    {
+                      "id": "genID_d82564e2630616",
+                      "regions": [
+                        "NZ",
+                        "Australian"
+                      ],
+                      "registers": [
+                        "informal"
+                      ],
+                      "synonyms": [
+                        {
+                          "id": "sheila",
+                          "language": "en",
+                          "text": "sheila"
+                        }
+                      ]
+                    },
+                    {
+                      "id": "genID_d82564e2630630",
+                      "regions": [
+                        "British"
+                      ],
+                      "registers": [
+                        "dated",
+                        "informal"
+                      ],
+                      "synonyms": [
+                        {
+                          "id": "judy",
+                          "language": "en",
+                          "text": "Judy"
+                        }
+                      ]
+                    },
+                    {
+                      "id": "genID_d82564e2630642",
+                      "regions": [
+                        "North American"
+                      ],
+                      "registers": [
+                        "dated",
+                        "informal"
+                      ],
+                      "synonyms": [
+                        {
+                          "id": "frail",
+                          "language": "en",
+                          "text": "frail"
+                        }
+                      ]
+                    },
+                    {
+                      "id": "genID_d82564e2630654",
+                      "registers": [
+                        "humorous"
+                      ],
+                      "synonyms": [
+                        {
+                          "id": "the_female_of_the_species",
+                          "language": "en",
+                          "text": "the female of the species"
+                        }
+                      ]
+                    },
+                    {
+                      "id": "genID_d82564e2630661",
+                      "registers": [
+                        "derogatory"
+                      ],
+                      "synonyms": [
+                        {
+                          "id": "piece",
+                          "language": "en",
+                          "text": "piece"
+                        },
+                        {
+                          "id": "bit",
+                          "language": "en",
+                          "text": "bit"
+                        },
+                        {
+                          "id": "mare",
+                          "language": "en",
+                          "text": "mare"
+                        },
+                        {
+                          "id": "baggage",
+                          "language": "en",
+                          "text": "baggage"
+                        }
+                      ]
+                    },
+                    {
+                      "id": "genID_d82564e2630674",
+                      "registers": [
+                        "offensive"
+                      ],
+                      "synonyms": [
+                        {
+                          "id": "bitch",
+                          "language": "en",
+                          "text": "bitch"
+                        }
+                      ]
+                    },
+                    {
+                      "id": "genID_d82564e2630681",
+                      "registers": [
+                        "literary"
+                      ],
+                      "synonyms": [
+                        {
+                          "id": "maid",
+                          "language": "en",
+                          "text": "maid"
+                        },
+                        {
+                          "id": "maiden",
+                          "language": "en",
+                          "registers": [
+                            "archaic"
+                          ],
+                          "text": "maiden"
+                        },
+                        {
+                          "id": "damsel",
+                          "language": "en",
+                          "registers": [
+                            "literary"
+                          ],
+                          "text": "damsel"
+                        },
+                        {
+                          "id": "demoiselle",
+                          "language": "en",
+                          "text": "demoiselle"
+                        }
+                      ]
+                    },
+                    {
+                      "id": "genID_d82564e2630694",
+                      "registers": [
+                        "humorous",
+                        "archaic"
+                      ],
+                      "synonyms": [
+                        {
+                          "id": "wench",
+                          "language": "en",
+                          "text": "wench"
+                        }
+                      ]
+                    },
+                    {
+                      "id": "genID_d82564e2630704",
+                      "registers": [
+                        "archaic"
+                      ],
+                      "synonyms": [
+                        {
+                          "id": "gentlewoman",
+                          "language": "en",
+                          "text": "gentlewoman"
+                        },
+                        {
+                          "id": "petticoat",
+                          "language": "en",
+                          "text": "petticoat"
+                        }
+                      ]
+                    }
+                  ],
+                  "synonyms": [
+                    {
+                      "id": "lady",
+                      "language": "en",
+                      "text": "lady"
+                    },
+                    {
+                      "id": "girl",
+                      "language": "en",
+                      "text": "girl"
+                    },
+                    {
+                      "id": "member_of_the_fair_sex",
+                      "language": "en",
+                      "text": "member of the fair sex"
+                    },
+                    {
+                      "id": "member_of_the_gentle_sex",
+                      "language": "en",
+                      "text": "member of the gentle sex"
+                    },
+                    {
+                      "id": "female",
+                      "language": "en",
+                      "text": "female"
+                    }
+                  ]
+                },
+                {
+                  "examples": [
+                    {
+                      "text": "apparently he's found himself a new woman"
+                    }
+                  ],
+                  "id": "t_en_gb0016349.002",
+                  "subsenses": [
+                    {
+                      "id": "genID_d82564e2630745",
+                      "synonyms": [
+                        {
+                          "id": "wife",
+                          "language": "en",
+                          "text": "wife"
+                        },
+                        {
+                          "id": "spouse",
+                          "language": "en",
+                          "text": "spouse"
+                        },
+                        {
+                          "id": "helpmate",
+                          "language": "en",
+                          "text": "helpmate"
+                        },
+                        {
+                          "id": "helpmeet",
+                          "language": "en",
+                          "text": "helpmeet"
+                        },
+                        {
+                          "id": "consort",
+                          "language": "en",
+                          "text": "consort"
+                        }
+                      ]
+                    },
+                    {
+                      "id": "genID_d82564e2630756",
+                      "synonyms": [
+                        {
+                          "id": "lover",
+                          "language": "en",
+                          "text": "lover"
+                        },
+                        {
+                          "id": "mistress",
+                          "language": "en",
+                          "text": "mistress"
+                        },
+                        {
+                          "id": "paramour",
+                          "language": "en",
+                          "text": "paramour"
+                        }
+                      ]
+                    },
+                    {
+                      "id": "genID_d82564e2630763",
+                      "registers": [
+                        "informal"
+                      ],
+                      "synonyms": [
+                        {
+                          "id": "bird",
+                          "language": "en",
+                          "text": "bird"
+                        },
+                        {
+                          "id": "fancy_woman",
+                          "language": "en",
+                          "text": "fancy woman"
+                        },
+                        {
+                          "id": "old_lady",
+                          "language": "en",
+                          "text": "old lady"
+                        },
+                        {
+                          "id": "missus",
+                          "language": "en",
+                          "text": "missus"
+                        },
+                        {
+                          "id": "missis",
+                          "language": "en",
+                          "text": "missis"
+                        },
+                        {
+                          "id": "better_half",
+                          "language": "en",
+                          "text": "better half"
+                        },
+                        {
+                          "id": "other_half",
+                          "language": "en",
+                          "text": "other half"
+                        },
+                        {
+                          "id": "queen",
+                          "language": "en",
+                          "text": "queen"
+                        }
+                      ]
+                    },
+                    {
+                      "id": "genID_d82564e2630784",
+                      "regions": [
+                        "British"
+                      ],
+                      "registers": [
+                        "informal"
+                      ],
+                      "synonyms": [
+                        {
+                          "id": "dutch",
+                          "language": "en",
+                          "text": "Dutch"
+                        },
+                        {
+                          "id": "her_indoors",
+                          "language": "en",
+                          "text": "her indoors"
+                        },
+                        {
+                          "id": "girlf",
+                          "language": "en",
+                          "text": "girlf"
+                        }
+                      ]
+                    },
+                    {
+                      "id": "genID_d82564e2630797",
+                      "regions": [
+                        "Irish"
+                      ],
+                      "registers": [
+                        "informal"
+                      ],
+                      "synonyms": [
+                        {
+                          "id": "mot",
+                          "language": "en",
+                          "text": "mot"
+                        }
+                      ]
+                    },
+                    {
+                      "id": "genID_d82564e2630806",
+                      "regions": [
+                        "North American"
+                      ],
+                      "registers": [
+                        "informal"
+                      ],
+                      "synonyms": [
+                        {
+                          "id": "squeeze",
+                          "language": "en",
+                          "text": "squeeze"
+                        },
+                        {
+                          "id": "patootie",
+                          "language": "en",
+                          "text": "patootie"
+                        }
+                      ]
+                    },
+                    {
+                      "id": "genID_d82564e2630817",
+                      "regions": [
+                        "Australian"
+                      ],
+                      "registers": [
+                        "informal"
+                      ],
+                      "synonyms": [
+                        {
+                          "id": "dona",
+                          "language": "en",
+                          "text": "dona"
+                        }
+                      ]
+                    },
+                    {
+                      "id": "genID_d82564e2630826",
+                      "regions": [
+                        "Indian"
+                      ],
+                      "registers": [
+                        "informal"
+                      ],
+                      "synonyms": [
+                        {
+                          "id": "bibi",
+                          "language": "en",
+                          "text": "bibi"
+                        }
+                      ]
+                    },
+                    {
+                      "id": "genID_d82564e2630835",
+                      "regions": [
+                        "British"
+                      ],
+                      "registers": [
+                        "rhyming slang"
+                      ],
+                      "synonyms": [
+                        {
+                          "id": "trouble_and_strife",
+                          "language": "en",
+                          "text": "trouble and strife"
+                        }
+                      ]
+                    },
+                    {
+                      "id": "genID_d82564e2630845",
+                      "registers": [
+                        "dated"
+                      ],
+                      "synonyms": [
+                        {
+                          "id": "lady_friend",
+                          "language": "en",
+                          "text": "lady friend"
+                        },
+                        {
+                          "id": "lady_love",
+                          "language": "en",
+                          "text": "lady love"
+                        },
+                        {
+                          "id": "young_lady",
+                          "language": "en",
+                          "text": "young lady"
+                        },
+                        {
+                          "id": "lady",
+                          "language": "en",
+                          "text": "lady"
+                        },
+                        {
+                          "id": "lady_wife",
+                          "language": "en",
+                          "text": "lady wife"
+                        }
+                      ]
+                    },
+                    {
+                      "id": "genID_d82564e2630860",
+                      "registers": [
+                        "archaic"
+                      ],
+                      "synonyms": [
+                        {
+                          "id": "leman",
+                          "language": "en",
+                          "text": "leman"
+                        },
+                        {
+                          "id": "doxy",
+                          "language": "en",
+                          "text": "doxy"
+                        },
+                        {
+                          "id": "concubine",
+                          "language": "en",
+                          "text": "concubine"
+                        }
+                      ]
+                    }
+                  ],
+                  "synonyms": [
+                    {
+                      "id": "girlfriend",
+                      "language": "en",
+                      "text": "girlfriend"
+                    },
+                    {
+                      "id": "girl",
+                      "language": "en",
+                      "text": "girl"
+                    },
+                    {
+                      "id": "sweetheart",
+                      "language": "en",
+                      "text": "sweetheart"
+                    },
+                    {
+                      "id": "partner",
+                      "language": "en",
+                      "text": "partner"
+                    },
+                    {
+                      "id": "significant_other",
+                      "language": "en",
+                      "text": "significant other"
+                    },
+                    {
+                      "id": "inamorata",
+                      "language": "en",
+                      "text": "inamorata"
+                    },
+                    {
+                      "id": "fianc%C3%A9e",
+                      "language": "en",
+                      "text": "fiancée"
+                    }
+                  ]
+                },
+                {
+                  "examples": [
+                    {
+                      "text": "her daily woman was due to arrive any minute"
+                    }
+                  ],
+                  "id": "t_en_gb0016349.003",
+                  "subsenses": [
+                    {
+                      "id": "genID_d82564e2630899",
+                      "regions": [
+                        "British"
+                      ],
+                      "registers": [
+                        "dated"
+                      ],
+                      "synonyms": [
+                        {
+                          "id": "charwoman",
+                          "language": "en",
+                          "text": "charwoman"
+                        },
+                        {
+                          "id": "char",
+                          "language": "en",
+                          "text": "char"
+                        }
+                      ]
+                    },
+                    {
+                      "id": "genID_d82564e2630910",
+                      "regions": [
+                        "British"
+                      ],
+                      "registers": [
+                        "informal"
+                      ],
+                      "synonyms": [
+                        {
+                          "id": "daily",
+                          "language": "en",
+                          "text": "daily"
+                        },
+                        {
+                          "id": "mrs_mop",
+                          "language": "en",
+                          "text": "Mrs Mop"
+                        }
+                      ]
+                    }
+                  ],
+                  "synonyms": [
+                    {
+                      "id": "cleaning_woman",
+                      "language": "en",
+                      "text": "cleaning woman"
+                    },
+                    {
+                      "id": "cleaner",
+                      "language": "en",
+                      "text": "cleaner"
+                    },
+                    {
+                      "id": "domestic_help",
+                      "language": "en",
+                      "text": "domestic help"
+                    },
+                    {
+                      "id": "domestic",
+                      "language": "en",
+                      "text": "domestic"
+                    },
+                    {
+                      "id": "maid",
+                      "language": "en",
+                      "text": "maid"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "language": "en",
+          "lexicalCategory": "Noun",
+          "text": "woman"
+        }
+      ],
+      "type": "headword",
+      "word": "woman"
+    }
+  ]
+}

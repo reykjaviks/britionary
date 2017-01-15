@@ -1,0 +1,157 @@
+{
+  "metadata": {
+    "provider": "Oxford University Press"
+  },
+  "results": [
+    {
+      "id": "leisurely",
+      "language": "en",
+      "lexicalEntries": [
+        {
+          "entries": [
+            {
+              "senses": [
+                {
+                  "examples": [
+                    {
+                      "text": "the journey was taken at a leisurely pace"
+                    },
+                    {
+                      "text": "a leisurely stroll"
+                    }
+                  ],
+                  "id": "t_en_gb0008684.001",
+                  "subsenses": [
+                    {
+                      "id": "genID_d82564e1374393",
+                      "synonyms": [
+                        {
+                          "id": "measured",
+                          "language": "en",
+                          "text": "measured"
+                        },
+                        {
+                          "id": "steady",
+                          "language": "en",
+                          "text": "steady"
+                        }
+                      ]
+                    },
+                    {
+                      "id": "genID_d82564e1374398",
+                      "registers": [
+                        "informal"
+                      ],
+                      "synonyms": [
+                        {
+                          "id": "laid-back",
+                          "language": "en",
+                          "registers": [
+                            "informal"
+                          ],
+                          "text": "laid-back"
+                        }
+                      ]
+                    }
+                  ],
+                  "synonyms": [
+                    {
+                      "id": "unhurried",
+                      "language": "en",
+                      "text": "unhurried"
+                    },
+                    {
+                      "id": "relaxed",
+                      "language": "en",
+                      "text": "relaxed"
+                    },
+                    {
+                      "id": "unrushed",
+                      "language": "en",
+                      "text": "unrushed"
+                    },
+                    {
+                      "id": "easy",
+                      "language": "en",
+                      "text": "easy"
+                    },
+                    {
+                      "id": "easy-going",
+                      "language": "en",
+                      "text": "easy-going"
+                    },
+                    {
+                      "id": "gentle",
+                      "language": "en",
+                      "text": "gentle"
+                    },
+                    {
+                      "id": "sedate",
+                      "language": "en",
+                      "text": "sedate"
+                    },
+                    {
+                      "id": "comfortable",
+                      "language": "en",
+                      "text": "comfortable"
+                    },
+                    {
+                      "id": "restful",
+                      "language": "en",
+                      "text": "restful"
+                    },
+                    {
+                      "id": "effortless",
+                      "language": "en",
+                      "text": "effortless"
+                    },
+                    {
+                      "id": "undemanding",
+                      "language": "en",
+                      "text": "undemanding"
+                    },
+                    {
+                      "id": "slow",
+                      "language": "en",
+                      "text": "slow"
+                    },
+                    {
+                      "id": "lazy",
+                      "language": "en",
+                      "text": "lazy"
+                    },
+                    {
+                      "id": "lackadaisical",
+                      "language": "en",
+                      "text": "lackadaisical"
+                    },
+                    {
+                      "id": "languid",
+                      "language": "en",
+                      "text": "languid"
+                    },
+                    {
+                      "id": "languorous",
+                      "language": "en",
+                      "text": "languorous"
+                    },
+                    {
+                      "id": "lingering",
+                      "language": "en",
+                      "text": "lingering"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "language": "en",
+          "lexicalCategory": "Adjective",
+          "text": "leisurely"
+        }
+      ],
+      "type": "headword",
+      "word": "leisurely"
+    }
+  ]
+}

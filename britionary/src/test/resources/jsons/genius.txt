@@ -1,0 +1,472 @@
+{
+  "metadata": {
+    "provider": "Oxford University Press"
+  },
+  "results": [
+    {
+      "id": "genius",
+      "language": "en",
+      "lexicalEntries": [
+        {
+          "entries": [
+            {
+              "senses": [
+                {
+                  "examples": [
+                    {
+                      "text": "the world had already heard of Hawking's genius"
+                    }
+                  ],
+                  "id": "t_en_gb0006293.001",
+                  "synonyms": [
+                    {
+                      "id": "brilliance",
+                      "language": "en",
+                      "text": "brilliance"
+                    },
+                    {
+                      "id": "great_intelligence",
+                      "language": "en",
+                      "text": "great intelligence"
+                    },
+                    {
+                      "id": "great_intellect",
+                      "language": "en",
+                      "text": "great intellect"
+                    },
+                    {
+                      "id": "great_ability",
+                      "language": "en",
+                      "text": "great ability"
+                    },
+                    {
+                      "id": "cleverness",
+                      "language": "en",
+                      "text": "cleverness"
+                    },
+                    {
+                      "id": "brains",
+                      "language": "en",
+                      "text": "brains"
+                    },
+                    {
+                      "id": "erudition",
+                      "language": "en",
+                      "text": "erudition"
+                    },
+                    {
+                      "id": "wisdom",
+                      "language": "en",
+                      "text": "wisdom"
+                    },
+                    {
+                      "id": "sagacity",
+                      "language": "en",
+                      "text": "sagacity"
+                    },
+                    {
+                      "id": "fine_mind",
+                      "language": "en",
+                      "text": "fine mind"
+                    },
+                    {
+                      "id": "wit",
+                      "language": "en",
+                      "text": "wit"
+                    },
+                    {
+                      "id": "artistry",
+                      "language": "en",
+                      "text": "artistry"
+                    },
+                    {
+                      "id": "flair",
+                      "language": "en",
+                      "text": "flair"
+                    },
+                    {
+                      "id": "creative_power",
+                      "language": "en",
+                      "text": "creative power"
+                    },
+                    {
+                      "id": "precocity",
+                      "language": "en",
+                      "text": "precocity"
+                    },
+                    {
+                      "id": "precociousness",
+                      "language": "en",
+                      "text": "precociousness"
+                    }
+                  ]
+                },
+                {
+                  "examples": [
+                    {
+                      "text": "that woman has a genius for organization"
+                    }
+                  ],
+                  "id": "t_en_gb0006293.002",
+                  "subsenses": [
+                    {
+                      "id": "genID_d82564e994997",
+                      "synonyms": [
+                        {
+                          "id": "endowment",
+                          "language": "en",
+                          "text": "endowment"
+                        },
+                        {
+                          "id": "strength",
+                          "language": "en",
+                          "text": "strength"
+                        },
+                        {
+                          "id": "strong_point",
+                          "language": "en",
+                          "text": "strong point"
+                        },
+                        {
+                          "id": "forte",
+                          "language": "en",
+                          "text": "forte"
+                        },
+                        {
+                          "id": "brilliance",
+                          "language": "en",
+                          "text": "brilliance"
+                        }
+                      ]
+                    },
+                    {
+                      "id": "genID_d82564e995008",
+                      "synonyms": [
+                        {
+                          "id": "dexterity",
+                          "language": "en",
+                          "text": "dexterity"
+                        },
+                        {
+                          "id": "adroitness",
+                          "language": "en",
+                          "text": "adroitness"
+                        },
+                        {
+                          "id": "skill",
+                          "language": "en",
+                          "text": "skill"
+                        },
+                        {
+                          "id": "cleverness",
+                          "language": "en",
+                          "text": "cleverness"
+                        },
+                        {
+                          "id": "virtuosity",
+                          "language": "en",
+                          "text": "virtuosity"
+                        },
+                        {
+                          "id": "artistry",
+                          "language": "en",
+                          "text": "artistry"
+                        }
+                      ]
+                    }
+                  ],
+                  "synonyms": [
+                    {
+                      "id": "talent",
+                      "language": "en",
+                      "text": "talent"
+                    },
+                    {
+                      "id": "gift",
+                      "language": "en",
+                      "text": "gift"
+                    },
+                    {
+                      "id": "flair",
+                      "language": "en",
+                      "text": "flair"
+                    },
+                    {
+                      "id": "aptitude",
+                      "language": "en",
+                      "text": "aptitude"
+                    },
+                    {
+                      "id": "facility",
+                      "language": "en",
+                      "text": "facility"
+                    },
+                    {
+                      "id": "knack",
+                      "language": "en",
+                      "text": "knack"
+                    },
+                    {
+                      "id": "technique",
+                      "language": "en",
+                      "text": "technique"
+                    },
+                    {
+                      "id": "touch",
+                      "language": "en",
+                      "text": "touch"
+                    },
+                    {
+                      "id": "bent",
+                      "language": "en",
+                      "text": "bent"
+                    },
+                    {
+                      "id": "ability",
+                      "language": "en",
+                      "text": "ability"
+                    },
+                    {
+                      "id": "expertise",
+                      "language": "en",
+                      "text": "expertise"
+                    },
+                    {
+                      "id": "capacity",
+                      "language": "en",
+                      "text": "capacity"
+                    },
+                    {
+                      "id": "power",
+                      "language": "en",
+                      "text": "power"
+                    },
+                    {
+                      "id": "faculty",
+                      "language": "en",
+                      "text": "faculty"
+                    }
+                  ]
+                },
+                {
+                  "examples": [
+                    {
+                      "text": "the boy is an absolute genius"
+                    }
+                  ],
+                  "id": "t_en_gb0006293.003",
+                  "subsenses": [
+                    {
+                      "id": "genID_d82564e995064",
+                      "synonyms": [
+                        {
+                          "id": "prodigy",
+                          "language": "en",
+                          "text": "prodigy"
+                        },
+                        {
+                          "id": "gifted_child",
+                          "language": "en",
+                          "text": "gifted child"
+                        }
+                      ]
+                    },
+                    {
+                      "id": "genID_d82564e995069",
+                      "synonyms": [
+                        {
+                          "id": "idiot_savant",
+                          "language": "en",
+                          "text": "idiot savant"
+                        }
+                      ]
+                    },
+                    {
+                      "id": "genID_d82564e995076",
+                      "registers": [
+                        "informal"
+                      ],
+                      "synonyms": [
+                        {
+                          "id": "egghead",
+                          "language": "en",
+                          "registers": [
+                            "informal"
+                          ],
+                          "text": "egghead"
+                        },
+                        {
+                          "id": "brains",
+                          "language": "en",
+                          "text": "brains"
+                        },
+                        {
+                          "id": "bright_spark",
+                          "language": "en",
+                          "text": "bright spark"
+                        },
+                        {
+                          "id": "whizz",
+                          "language": "en",
+                          "text": "whizz"
+                        },
+                        {
+                          "id": "wizard",
+                          "language": "en",
+                          "text": "wizard"
+                        },
+                        {
+                          "id": "ninja",
+                          "language": "en",
+                          "text": "ninja"
+                        },
+                        {
+                          "id": "alpha_geek",
+                          "language": "en",
+                          "text": "alpha geek"
+                        },
+                        {
+                          "id": "walking_encyclopedia",
+                          "language": "en",
+                          "text": "walking encyclopedia"
+                        }
+                      ]
+                    },
+                    {
+                      "id": "genID_d82564e995097",
+                      "regions": [
+                        "British"
+                      ],
+                      "registers": [
+                        "informal"
+                      ],
+                      "synonyms": [
+                        {
+                          "id": "brainbox",
+                          "language": "en",
+                          "text": "brainbox"
+                        },
+                        {
+                          "id": "clever_clogs",
+                          "language": "en",
+                          "text": "clever clogs"
+                        },
+                        {
+                          "id": "boffin",
+                          "language": "en",
+                          "regions": [
+                            "British"
+                          ],
+                          "registers": [
+                            "informal"
+                          ],
+                          "text": "boffin"
+                        }
+                      ]
+                    },
+                    {
+                      "id": "genID_d82564e995110",
+                      "regions": [
+                        "North American"
+                      ],
+                      "registers": [
+                        "informal"
+                      ],
+                      "synonyms": [
+                        {
+                          "id": "brainiac",
+                          "language": "en",
+                          "text": "brainiac"
+                        },
+                        {
+                          "id": "rocket_scientist",
+                          "language": "en",
+                          "text": "rocket scientist"
+                        },
+                        {
+                          "id": "maven",
+                          "language": "en",
+                          "text": "maven"
+                        }
+                      ]
+                    }
+                  ],
+                  "synonyms": [
+                    {
+                      "id": "brilliant_person",
+                      "language": "en",
+                      "text": "brilliant person"
+                    },
+                    {
+                      "id": "mental_giant",
+                      "language": "en",
+                      "text": "mental giant"
+                    },
+                    {
+                      "id": "mastermind",
+                      "language": "en",
+                      "text": "mastermind"
+                    },
+                    {
+                      "id": "einstein",
+                      "language": "en",
+                      "text": "Einstein"
+                    },
+                    {
+                      "id": "intellectual",
+                      "language": "en",
+                      "text": "intellectual"
+                    },
+                    {
+                      "id": "intellect",
+                      "language": "en",
+                      "text": "intellect"
+                    },
+                    {
+                      "id": "brain",
+                      "language": "en",
+                      "registers": [
+                        "informal"
+                      ],
+                      "text": "brain"
+                    },
+                    {
+                      "id": "highbrow",
+                      "language": "en",
+                      "text": "highbrow"
+                    },
+                    {
+                      "id": "expert",
+                      "language": "en",
+                      "text": "expert"
+                    },
+                    {
+                      "id": "master",
+                      "language": "en",
+                      "text": "master"
+                    },
+                    {
+                      "id": "artist",
+                      "language": "en",
+                      "text": "artist"
+                    },
+                    {
+                      "id": "polymath",
+                      "language": "en",
+                      "text": "polymath"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "language": "en",
+          "lexicalCategory": "Noun",
+          "text": "genius"
+        }
+      ],
+      "type": "headword",
+      "word": "genius"
+    }
+  ]
+}
