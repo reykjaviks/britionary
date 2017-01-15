@@ -12,13 +12,12 @@ Kaikki, jotka haluavat kehittää brittiläistä aksenttiaan.
 ### **Toiminnot**
 * Sanojen hakeminen
 * Synonyymien listaus
-* Äänitiedoston soittaminen
+* Äänitiedoston soittaminen (TODO)
 
 ### **Käyttöohjeet**
 Sanoja voi hakea kirjoittamalla ne hakupalkkiin ja painamalla enter-näppäintä tai vastaavasti klikkaamalla jompaa kumpaa käyttöliittymän hakunäppäintä. Enter-pikanäppäin toimii ainoastaa brittisynonyymien hakemiseen. Kaikkia synonyymeja voi kokeilla hakea tab + enter -yhdistelmällä.
 
-Brittisynonyymihakua voi kokeilla esim. seuraavilla hakusanoilla: __*little*__, __*huge*__, __*idiot*__, __*genius*__ ja __*ace*__.
-
+Brittisynonyymihakua voi kokeilla esim. seuraavilla hakusanoilla: __*little*__, __*huge*__, __*mad*__ ja __*genius*__.
 ### **Rakennekuvaus**
 Ohjelman sovelluslogiikka on jaettu kolmen pääluokan välille: Fetcher noutaa JSON-merkkijonoja, Parser nimensä mukaisesti parsii ne ja Converter muuntaa hakusanat ohjelman toiminnan kannalta oikeaan hakumuotoon. Searcher hakee sanoja kutsumalla näiden luokkien julkisia metodeita.
 
