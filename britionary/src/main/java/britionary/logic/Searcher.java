@@ -17,7 +17,7 @@ public class Searcher {
     }
 
     /**
-     * Metodi pitää huolen, että luokasta voi tehdä vain yhden ilmentymän 
+     * Metodi varmistaa, että luokasta voi tehdä vain yhden ilmentymän
      * kerrallaan.
      * 
      * @return          ilmentymä
@@ -32,9 +32,9 @@ public class Searcher {
     /**
      * Metodi hakee syötettyä sanaa vastaavat synonyymit.
      * 
-     * @param   word    käyttäjän syöttämä hakusana
-     * @param   target  kohdesynonyymit: BRITS tai ALL
-     * @return          lista löydetyistä synonyymeistä
+     * @param   word    hakusana
+     * @param   target  BRITS tai ALL
+     * @return          merkkijono löydetyistä synonyymeistä
      */
     public String search(String word, Target target) {
         String cleanWord;

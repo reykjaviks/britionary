@@ -10,15 +10,14 @@ import org.json.JSONObject;
 public class Parser {
 
     /**
-     * Metodi parsii JSON-tiedoston.
+     * Metodi parsii JSON-merkkijonosta kohdesynonyymit.
      * 
-     * @param   json            Parsittava JSON-tiedosto
-     * @param   target          kohdesynonyymit: BRITS tai ALL
-     * @return                  Lista löydetyistä synonyymeista
-     * @throws  ParseException  Heittää poikkeuksen jos merkkijono on tyhjä
+     * @param   json            parsittava JSON-merkkijono
+     * @param   target          BRITS tai ALL
+     * @return                  merkkijono löydetyistä synonyymeista
+     * @throws  ParseException  jos wordSet on tyhjä
      */
     public static String parseJSON(String json, Target target) throws ParseException {
-        //Handler handler = new Handler(target);
         JSONObject response = new JSONObject(json);
         HashSet<RegionalWord> wordSet = Handler.handleResults(response);
         if (wordSet.isEmpty()) {
@@ -47,10 +46,10 @@ public class Parser {
     /**
      * Metodi tarkistaa kuuluuko sana Iso-Britannian kielialueeseen.
      *
-     * @param   word    tarkistettava sana
+     * @param   word    sana
      * @return          true jos sana on brittiläinen
      */
-    public static boolean isBritish(RegionalWord word) {
+    private static boolean isBritish(RegionalWord word) {
         return word.getRegion().contains("British")
                 || word.getRegion().contains("Scottish")
                 || word.getRegion().contains("Irish")
