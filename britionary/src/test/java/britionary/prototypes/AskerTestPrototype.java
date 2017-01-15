@@ -6,12 +6,12 @@ import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-public class AskerTest {
+public class AskerTestPrototype {
     
     AskerPrototype asker;
     String data;
     
-    public AskerTest() {
+    public AskerTestPrototype() {
     }
     
     @Before
