@@ -25,3 +25,4 @@ Päivä | Tunnit | Kuvaus
 12.1. | 8h | Bugien korjaamista
 13.1. |  |
 14.1. | 5h | Bugien korjaamista
+15.1. | 6h | Testien korjaamista ja projektin siistimistä
