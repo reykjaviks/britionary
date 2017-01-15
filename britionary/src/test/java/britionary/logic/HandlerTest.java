@@ -1,6 +1,6 @@
 package britionary.logic;
 
-import britionary.common.Creator;
+import britionary.common.FileReader;
 import britionary.common.HashSets;
 import britionary.common.ParseException;
 import britionary.common.RegionalWord;
@@ -13,11 +13,11 @@ import org.junit.Test;
 
 public class HandlerTest {
 
-    Creator creator;
+    FileReader creator;
 
     @Before
     public void setup() {
-        creator = new Creator();
+        creator = new FileReader();
         
     }
 
@@ -40,14 +40,14 @@ public class HandlerTest {
     @Test
     public void testBiscuit() throws IOException, ParseException {
         JSONObject response = new JSONObject(
-                creator.createJSONObject("src\\test\\resources\\jsons\\biscuit.txt"));
+                creator.getJSON("src\\test\\resources\\jsons\\biscuit.txt"));
         assertEquals(HashSets.newBiscuitSet(), Handler.handleResults(response));
     }
 
     @Test
     public void testLeisurely() throws IOException, ParseException {
         JSONObject response = new JSONObject(
-                creator.createJSONObject("src\\test\\resources\\jsons\\leisurely.txt"));
+                creator.getJSON("src\\test\\resources\\jsons\\leisurely.txt"));
         assertEquals(HashSets.newLeisurelySet(), Handler.handleResults(response));
     }
 

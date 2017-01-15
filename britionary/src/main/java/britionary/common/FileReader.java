@@ -4,11 +4,11 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
-public class Creator {
+public class FileReader {
 
     private BufferedReader br;
 
-    public String createJSONObject(String textfile) throws IOException {
+    public String getJSON(String textfile) throws IOException {
         StringBuilder sb;
         String line;
         String json;
