@@ -1,4 +1,4 @@
-package britionary.logic;
+package britionary.common;
 
 import org.junit.Before;
 import org.junit.Test;
