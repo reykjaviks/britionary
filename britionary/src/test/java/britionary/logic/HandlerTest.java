@@ -39,14 +39,16 @@ public class HandlerTest {
 
     @Test
     public void testBiscuit() throws IOException, ParseException {
-        assertEquals(HashSets.newBiscuitSet(), Handler.handleResults(
-                creator.createJSONObject("src\\test\\resources\\jsons\\biscuit.txt")));
+        JSONObject response = new JSONObject(
+                creator.createJSONObject("src\\test\\resources\\jsons\\biscuit.txt"));
+        assertEquals(HashSets.newBiscuitSet(), Handler.handleResults(response));
     }
 
     @Test
     public void testLeisurely() throws IOException, ParseException {
-        assertEquals(HashSets.newLeisurelySet(), Handler.handleResults(
-                creator.createJSONObject("src\\test\\resources\\jsons\\leisurely.txt")));
+        JSONObject response = new JSONObject(
+                creator.createJSONObject("src\\test\\resources\\jsons\\leisurely.txt"));
+        assertEquals(HashSets.newLeisurelySet(), Handler.handleResults(response));
     }
 
 }

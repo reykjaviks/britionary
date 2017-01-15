@@ -3,16 +3,15 @@ package britionary.common;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import org.json.JSONObject;
 
 public class Creator {
 
     private BufferedReader br;
 
-    public JSONObject createJSONObject(String textfile) throws IOException {
+    public String createJSONObject(String textfile) throws IOException {
         StringBuilder sb;
         String line;
-        JSONObject response;
+        String json;
         try {
             br = new BufferedReader(new FileReader(textfile));
             line = br.readLine();
@@ -24,13 +23,13 @@ public class Creator {
                 line = br.readLine();
             }
 
-            response = new JSONObject(sb.toString());
+            json = sb.toString();
 
         } finally {
             br.close();
 
         }
-        return response;
+        return json;
     }
 
 }
