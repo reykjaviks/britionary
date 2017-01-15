@@ -1,30 +1,47 @@
 package britionary.logic;
 
+import hashsets.Creator;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.HashSet;
 import org.json.JSONObject;
 import static org.junit.Assert.assertEquals;
-import org.junit.Before;
 import org.junit.Test;
 
 public class HandlerTest {
 
-    public HandlerTest() {
-    }
-    
-    @Before
-    public void setUp() {
+    private BufferedReader br;
+
+    public JSONObject createJSONObject(String textfile) throws IOException {
+        StringBuilder sb;
+        String line;
+        JSONObject response;
+        try {
+            br = new BufferedReader(new FileReader(textfile));
+            line = br.readLine();
+            sb = new StringBuilder();
+
+            while (line != null) {
+                sb.append(line);
+                sb.append(System.lineSeparator());
+                line = br.readLine();
+            }
+
+            response = new JSONObject(sb.toString());
+
+        } finally {
+            br.close();
+
+        }
+        return response;
     }
 
     @Test
-    public void testHandleResults() throws Exception {
+    public void testFindResults() throws ParseException {
         String str = "";
-        HashSet<RegionalWord> words = new HashSet<>();
-        
-        String json = "{\n"
-                + "    \"results\": []}\n";
-        JSONObject response = new JSONObject(json);
-        words = Handler.handleResults(response);
-        
+        HashSet<RegionalWord> words = Handler.handleResults(
+                new JSONObject("{\n\"results\": []}\n"));
         for (RegionalWord word : words) {
             str += word.getWord() + "\n";
         }
@@ -32,105 +49,21 @@ public class HandlerTest {
     }
 
     @Test(expected = ParseException.class)
-    public void testHandleResults2() throws Exception {
-        String json = "{\n"
-                + "    \"nothing here\": []}\n";
-        JSONObject response = new JSONObject(json);
+    public void testUnFindResults() throws Exception {
+        JSONObject response = new JSONObject("{\n\"no results\": []}\n");
         Handler.handleResults(response);
     }
 
     @Test
-    public void testHandleResultsBiscuit() throws Exception {
-        String json = "{\n"
-                + "  \"metadata\": {\n"
-                + "    \"provider\": \"Oxford University Press\"\n"
-                + "  },\n"
-                + "  \"results\": [\n"
-                + "    {\n"
-                + "      \"id\": \"biscuit\",\n"
-                + "      \"language\": \"en\",\n"
-                + "      \"lexicalEntries\": [\n"
-                + "        {\n"
-                + "          \"entries\": [\n"
-                + "            {\n"
-                + "              \"senses\": [\n"
-                + "                {\n"
-                + "                  \"id\": \"t_en_gb0001444.001\",\n"
-                + "                  \"regions\": [\n"
-                + "                    \"British\"\n"
-                + "                  ],\n"
-                + "                  \"subsenses\": [\n"
-                + "                    {\n"
-                + "                      \"id\": \"genID_d82564e210054\",\n"
-                + "                      \"regions\": [\n"
-                + "                        \"North American\",\n"
-                + "                        \"British\"\n"
-                + "                      ],\n"
-                + "                      \"synonyms\": [\n"
-                + "                        {\n"
-                + "                          \"id\": \"cookie\",\n"
-                + "                          \"language\": \"en\",\n"
-                + "                          \"text\": \"cookie\"\n"
-                + "                        }\n"
-                + "                      ]\n"
-                + "                    },\n"
-                + "                    {\n"
-                + "                      \"id\": \"genID_d82564e210061\",\n"
-                + "                      \"regions\": [\n"
-                + "                        \"British\"\n"
-                + "                      ],\n"
-                + "                      \"registers\": [\n"
-                + "                        \"informal\"\n"
-                + "                      ],\n"
-                + "                      \"synonyms\": [\n"
-                + "                        {\n"
-                + "                          \"id\": \"bicky\",\n"
-                + "                          \"language\": \"en\",\n"
-                + "                          \"text\": \"bicky\"\n"
-                + "                        }\n"
-                + "                      ]\n"
-                + "                    }\n"
-                + "                  ],\n"
-                + "                  \"synonyms\": [\n"
-                + "                    {\n"
-                + "                      \"id\": \"cracker\",\n"
-                + "                      \"language\": \"en\",\n"
-                + "                      \"text\": \"cracker\"\n"
-                + "                    },\n"
-                + "                    {\n"
-                + "                      \"id\": \"wafer\",\n"
-                + "                      \"language\": \"en\",\n"
-                + "                      \"text\": \"wafer\"\n"
-                + "                    }\n"
-                + "                  ]\n"
-                + "                }\n"
-                + "              ]\n"
-                + "            }\n"
-                + "          ],\n"
-                + "          \"language\": \"en\",\n"
-                + "          \"lexicalCategory\": \"Noun\",\n"
-                + "          \"text\": \"biscuit\"\n"
-                + "        }\n"
-                + "      ],\n"
-                + "      \"type\": \"headword\",\n"
-                + "      \"word\": \"biscuit\"\n"
-                + "    }\n"
-                + "  ]\n"
-                + "}";
+    public void testBiscuit() throws IOException, ParseException {
+        assertEquals(Creator.createBiscuitSet(), Handler.handleResults(
+                createJSONObject("src\\test\\resources\\jsons\\biscuit.txt")));
+    }
 
-        JSONObject response = new JSONObject(json);
-        HashSet<RegionalWord> synonymSet = new HashSet<>();
-        synonymSet.add(new RegionalWord("British", "cookie"));
-        synonymSet.add(new RegionalWord("British", "bicky"));
-        synonymSet.add(new RegionalWord("none", "cracker"));
-        synonymSet.add(new RegionalWord("none", "wafer"));
-        assertEquals(synonymSet, Handler.handleResults(response));
-
-        /*
-         for (RegionalWord word : handler.handleSynonyms(subsenses)) {
-         System.out.println("Found " + word.getWord());
-         }
-         */
+    @Test
+    public void testLeisurely() throws IOException, ParseException {
+        assertEquals(Creator.createLeisurelySet(), Handler.handleResults(
+                createJSONObject("src\\test\\resources\\jsons\\leisurely.txt")));
     }
 
 }
