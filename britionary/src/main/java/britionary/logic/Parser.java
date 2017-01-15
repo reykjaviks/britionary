@@ -21,12 +21,10 @@ public class Parser {
      * @throws  ParseException  jos wordSet on tyhjä
      */
     public static String parseJSON(String json, Target target) throws ParseException {
-        JSONObject response = new JSONObject(json);
-        HashSet<RegionalWord> wordSet = Handler.handleResults(response);
+        HashSet<RegionalWord> wordSet = Handler.handleResults(new JSONObject(json));
         if (wordSet.isEmpty()) {
             throw new ParseException("No regional synonyms");
         }
-
         String synonyms = "";
         if (target.equals(BRITS)) {
             for (RegionalWord word : wordSet) {
@@ -37,13 +35,12 @@ public class Parser {
             if (synonyms.equals("")) {
                 throw new ParseException("No British synonyms");
             }
-            return synonyms;
-        } else {
+            return synonyms.trim();
+        }
             for (RegionalWord word : wordSet) {
                 synonyms += word.getWord() + "\n";
             }
             return synonyms;
-        }
     }
 
     /**
