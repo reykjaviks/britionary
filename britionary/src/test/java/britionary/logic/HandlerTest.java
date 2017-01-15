@@ -1,8 +1,8 @@
 package britionary.logic;
 
+import britionary.common.HashSets;
 import britionary.common.ParseException;
 import britionary.common.RegionalWord;
-import britionary.common.HashSets;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -52,8 +52,7 @@ public class HandlerTest {
 
     @Test(expected = ParseException.class)
     public void testUnFindResults() throws Exception {
-        JSONObject response = new JSONObject("{\n\"no results\": []}\n");
-        Handler.handleResults(response);
+        Handler.handleResults(new JSONObject("{\n\"no results\": []}\n"));
     }
 
     @Test
