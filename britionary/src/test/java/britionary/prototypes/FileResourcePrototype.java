@@ -1,4 +1,4 @@
-package britionary.logic;
+package britionary.prototypes;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -8,14 +8,13 @@ import java.io.InputStreamReader;
 import java.nio.charset.Charset;
 import org.junit.rules.ExternalResource;
 
-
-public class FileResource extends ExternalResource {
+public class FileResourcePrototype extends ExternalResource {
 
     String resource;
     File file = null;
     InputStream stream;
 
-    public FileResource(String resource) {
+    public FileResourcePrototype(String resource) {
         this.resource = resource;
     }
 
