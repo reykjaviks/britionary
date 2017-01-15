@@ -1,8 +1,8 @@
 package britionary.logic;
 
 import org.json.JSONObject;
+import static org.junit.Assert.assertNotNull;
 import org.junit.Test;
-import static org.junit.Assert.*;
 
 public class FinderTest {
 
