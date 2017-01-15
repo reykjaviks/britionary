@@ -1,4 +1,4 @@
-package britionary.rig;
+package britionary.common;
 
 public enum Target {
     BRITS, ALL

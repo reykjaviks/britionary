@@ -1,7 +1,7 @@
 package britionary.logic;
 
-import britionary.rig.ParseException;
-import britionary.rig.Target;
+import britionary.common.ParseException;
+import britionary.common.Target;
 import java.io.IOException;
 import java.net.MalformedURLException;
 

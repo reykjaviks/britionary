@@ -1,4 +1,4 @@
-package britionary.rig;
+package britionary.common;
 
 import java.util.HashSet;
 

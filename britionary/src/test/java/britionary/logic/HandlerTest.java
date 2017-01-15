@@ -1,8 +1,8 @@
 package britionary.logic;
 
-import britionary.rig.ParseException;
-import britionary.rig.RegionalWord;
-import britionary.rig.HashSets;
+import britionary.common.ParseException;
+import britionary.common.RegionalWord;
+import britionary.common.HashSets;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
