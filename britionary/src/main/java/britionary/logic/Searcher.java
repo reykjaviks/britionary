@@ -34,7 +34,7 @@ public class Searcher {
     /**
      * Metodi hakee syötettyä sanaa vastaavat synonyymit.
      * 
-     * @param   word    käyttäjän syöttämä sana
+     * @param   word    hakusana
      * @param   target  BRITS tai ALL
      * @return          synonyymit
      */

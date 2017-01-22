@@ -9,8 +9,8 @@ public class Converter {
      * Metodi muuntaa käyttäjän syöttämää sanaa niin, että sillä voidaan hakea
      * tietoa Oxford Dictionary:n ohjelmointirajapinnasta.
      * 
-     * @param   word    käyttäjän syöttämä sana
-     * @return          hakusana
+     * @param   word    hakusana
+     * @return          avainsana
      */
     public static String convert(String word) {
         return word.toLowerCase().trim().replace('_', ' ');
