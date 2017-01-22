@@ -1,4 +1,4 @@
-package britionary.common;
+package britionary.logic.common;
 
 /**
  * Luokkaa käytetään testien kirjoittamisen apuna.

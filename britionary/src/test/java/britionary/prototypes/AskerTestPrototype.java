@@ -1,7 +1,7 @@
 package britionary.prototypes;
 
 import java.io.ByteArrayInputStream;
-import britionary.prototypes.AskerPrototype;
+import britionary.logic.prototypes.AskerPrototype;
 import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;

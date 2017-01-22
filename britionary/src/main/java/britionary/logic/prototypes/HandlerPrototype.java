@@ -1,4 +1,4 @@
-package britionary.prototypes;
+package britionary.logic.prototypes;
 
 import britionary.logic.Finder;
 import java.util.ArrayList;

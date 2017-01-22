@@ -1,4 +1,4 @@
-package britionary.common;
+package britionary.logic.common;
 
 /**
  * Luokka tarjoaa metodeita maantieteellisten sanojen tallentamiseen.

@@ -1,4 +1,4 @@
-package britionary.prototypes;
+package britionary.logic.prototypes;
 
 import org.json.JSONArray;
 import org.json.JSONObject;

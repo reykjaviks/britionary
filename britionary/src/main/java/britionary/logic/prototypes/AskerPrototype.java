@@ -1,4 +1,4 @@
-package britionary.prototypes;
+package britionary.logic.prototypes;
 
 import java.io.InputStream;
 import java.util.Scanner;

@@ -1,9 +1,9 @@
 package britionary.gui;
 
 import britionary.logic.Searcher;
-import britionary.common.Target;
-import static britionary.common.Target.ALL;
-import static britionary.common.Target.BRITS;
+import britionary.logic.common.Target;
+import static britionary.logic.common.Target.ALL;
+import static britionary.logic.common.Target.BRITS;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.GridLayout;

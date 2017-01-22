@@ -1,11 +1,11 @@
 package britionary.logic;
 
-import britionary.common.ParseException;
-import britionary.common.Reader;
-import britionary.common.RegionalWord;
-import britionary.common.Synonyms;
-import static britionary.common.Target.ALL;
-import static britionary.common.Target.BRITS;
+import britionary.logic.common.ParseException;
+import britionary.logic.common.Reader;
+import britionary.logic.common.RegionalWord;
+import britionary.logic.common.Synonyms;
+import static britionary.logic.common.Target.ALL;
+import static britionary.logic.common.Target.BRITS;
 import java.io.IOException;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;

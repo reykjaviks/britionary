@@ -1,9 +1,9 @@
 package britionary.logic;
 
-import britionary.common.ParseException;
-import britionary.common.RegionalWord;
-import britionary.common.Target;
-import static britionary.common.Target.BRITS;
+import britionary.logic.common.ParseException;
+import britionary.logic.common.RegionalWord;
+import britionary.logic.common.Target;
+import static britionary.logic.common.Target.BRITS;
 import java.util.HashSet;
 import org.json.JSONObject;
 
